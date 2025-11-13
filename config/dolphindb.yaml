@@ -1,0 +1,72 @@
+# DolphinDB文档专用配置
+
+input:
+  directory: "."
+  recursive: true
+  include_patterns:
+    - "tools/**/*.html"
+    - "plugins/**/*.html"
+    - "tutorials/**/*.html"
+    - "funcs/**/*.html"
+    - "api/**/*.html"
+    - "stream/**/*.html"
+    - "db_distr_comp/**/*.html"
+    - "getstarted/**/*.html"
+    - "deploy/**/*.html"
+    - "sys_man/**/*.html"
+    - "progr/**/*.html"
+    - "rn/**/*.html"
+    - "about/**/*.html"
+    - "modules/**/*.html"
+  exclude_patterns:
+    - "oxygen-webhelp/**"
+    - "**/search.html"
+    - "**/index-*.js"
+    - "**/nav-links/**"
+    - "**/*.js"
+    - "**/*.css"
+    - "**/*.xml"
+
+output:
+  directory: "./output"
+  keep_structure: true
+  overwrite: false
+
+server:
+  enabled: true
+  port: 8000
+  auto_find_port: true
+
+pdf:
+  format: "A4"
+  landscape: false
+  margin:
+    top: "15mm"
+    bottom: "15mm"
+    left: "12mm"
+    right: "12mm"
+  print_background: true
+  scale: 0.95
+  display_header_footer: true
+  header_template: "<div style='font-size:9px; width:100%; text-align:center; padding:5px;'><span class='title'></span></div>"
+  footer_template: "<div style='font-size:9px; width:100%; text-align:center; padding:5px;'><span class='pageNumber'></span> / <span class='totalPages'></span></div>"
+
+browser:
+  headless: true
+  timeout: 60000
+  wait_until: "networkidle"
+  wait_after_load: 2000
+  viewport_width: 1280
+  viewport_height: 1024
+
+processing:
+  workers: 6
+  retry_count: 3
+  retry_delay: 2
+  skip_errors: true
+
+logging:
+  level: "INFO"
+  file: "./logs/conversion.log"
+  console: true
+  format: "[{time}] [{level}] [{process}] {message}"

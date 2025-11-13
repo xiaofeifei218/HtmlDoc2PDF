@@ -1,0 +1,44 @@
+browser:
+  headless: true
+  timeout: 60000
+  viewport_height: 1024
+  viewport_width: 1280
+  wait_after_load: 2000
+  wait_until: networkidle
+input:
+  directory: .
+  exclude_patterns: []
+  include_patterns:
+  - '**/*.html'
+  recursive: true
+logging:
+  console: true
+  file: ./logs/conversion.log
+  format: '[{time}] [{level}] [{process}] {message}'
+  level: INFO
+output:
+  directory: ./output
+  keep_structure: true
+  overwrite: false
+pdf:
+  display_header_footer: false
+  footer_template: ''
+  format: A4
+  header_template: ''
+  landscape: false
+  margin:
+    bottom: 15mm
+    left: 12mm
+    right: 12mm
+    top: 15mm
+  print_background: true
+  scale: 1.0
+processing:
+  retry_count: 3
+  retry_delay: 2
+  skip_errors: true
+  workers: 4
+server:
+  auto_find_port: true
+  enabled: true
+  port: 8000
