@@ -52,6 +52,13 @@ pdf:
   header_template: "<div style='font-size:9px; width:100%; text-align:center; padding:5px 0;'><span class='title'></span></div>"
   # 移除页脚，保持页面简洁
   footer_template: ""
+  # 动态隐藏CSS选择器列表（用于隐藏不需要打印的元素）
+  hide_selectors:
+    - ".copyright-info"  # 版权信息框
+    - ".search-input"    # 搜索输入框
+    - ".search-box"      # 搜索框
+    - ".navheader"       # 导航页眉
+    - ".no-print"        # 标记为不打印的元素
 
 browser:
   headless: true
