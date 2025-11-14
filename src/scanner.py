@@ -8,6 +8,7 @@ from typing import List, Set
 from dataclasses import dataclass
 import fnmatch
 from urllib.parse import quote
+from datetime import datetime
 
 
 @dataclass
@@ -34,7 +35,15 @@ class FileScanner:
         """
         self.config = config
         self.input_dir = Path(config.input.directory).resolve()
-        self.output_dir = Path(config.output.directory).resolve()
+
+        # 生成输出目录名: 输入目录的最末尾文件夹名 + "_PDF_" + 日期时间
+        input_folder_name = self.input_dir.name
+        timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+        output_folder_name = f"{input_folder_name}_PDF_{timestamp}"
+
+        # 在配置的输出目录下创建新的子目录
+        base_output_dir = Path(config.output.directory).resolve()
+        self.output_dir = base_output_dir / output_folder_name
 
     def scan(self, base_url: str = "") -> List[FileTask]:
         """
