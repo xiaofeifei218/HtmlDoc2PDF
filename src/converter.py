@@ -163,6 +163,13 @@ class PlaywrightConverter:
             css_content = f"""
                 /* 隐藏元素 */
                 {hide_rules} {{
+            # 注入CSS样式(隐藏不需要的元素)
+            await page.add_style_tag(content="""
+                /* 隐藏搜索框和导航元素 */
+                .search-input,
+                .search-box,
+                .navheader,
+                .no-print {
                     display: none !important;
                 }}
 
