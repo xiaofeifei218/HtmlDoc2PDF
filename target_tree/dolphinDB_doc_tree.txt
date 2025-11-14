@@ -1,0 +1,5956 @@
+(base) xiaofeifei@Mac-mini documentation.2.00.17.zh % tree 
+.
+|-- about
+|   |-- ddb_intro.html
+|   `-- images
+|       `-- 1.png
+|-- api
+|   |-- connapi_intro.html
+|   |-- cpp
+|   |   |-- create_dbconn_obj.html
+|   |   `-- threadedclient.html
+|   `-- python
+|       |-- AdvancedOperations
+|       |   |-- DataTypeCasting
+|       |   |   |-- ForceTypeCasting.html
+|       |   |   |-- PROTOCOL_DDB.html
+|       |   |   `-- PROTOCOL_PICKLE.html
+|       |   `-- SubscriptionOptions
+|       |       `-- SubscriptionOptions.html
+|       `-- BasicOperations
+|           `-- Subscription
+|               `-- Subscription.html
+|-- context-help-map.xml
+|-- cshelp.html
+|-- db_distr_comp
+|   |-- cfg
+|   |   |-- cluster.html
+|   |   |-- db_intro.html
+|   |   |-- function_configuration.html
+|   |   |-- init.html
+|   |   |-- para_cfg.html
+|   |   `-- standalone.html
+|   |-- clients.html
+|   |-- db
+|   |   |-- db_architecture.html
+|   |   |-- db_partitioning.html
+|   |   |-- ha.html
+|   |   |-- images
+|   |   |   |-- compo.png
+|   |   |   |-- hash.png
+|   |   |   |-- imoltp
+|   |   |   |   |-- 1-1.png
+|   |   |   |   |-- 1-2.png
+|   |   |   |   `-- 1-3.png
+|   |   |   |-- list.png
+|   |   |   |-- multimodal_new_1.png
+|   |   |   |-- range.png
+|   |   |   |-- three_centers_in_two_places
+|   |   |   |   `-- 1-1.png
+|   |   |   `-- value.png
+|   |   |-- imoltp.html
+|   |   |-- iotdb.html
+|   |   |-- multimodal_storage.html
+|   |   |-- olap.html
+|   |   |-- pkey_engine.html
+|   |   |-- rebalance.html
+|   |   |-- recovery.html
+|   |   |-- storage_compute_separation.html
+|   |   |-- textdb.html
+|   |   |-- three_centers_in_two_places.html
+|   |   |-- tiered_storage.html
+|   |   |-- transaction.html
+|   |   `-- tsdb.html
+|   |-- db_distr_comp.html
+|   |-- db_man
+|   |   |-- images
+|   |   |   |-- access_man
+|   |   |   |   |-- 2_1.png
+|   |   |   |   |-- 2_10.png
+|   |   |   |   |-- 2_13.png
+|   |   |   |   |-- 2_14.png
+|   |   |   |   |-- 2_15.png
+|   |   |   |   |-- 2_16.png
+|   |   |   |   |-- 2_17.png
+|   |   |   |   |-- 2_18.png
+|   |   |   |   |-- 2_19.png
+|   |   |   |   |-- 3_1.png
+|   |   |   |   |-- 3_2.png
+|   |   |   |   |-- 3_3.png
+|   |   |   |   |-- 3_4.png
+|   |   |   |   |-- 3_5.png
+|   |   |   |   |-- 3_6.png
+|   |   |   |   `-- 3_7.png
+|   |   |   |-- access_man_check_user_access_a.png
+|   |   |   |-- access_man_icon_user_access_coding_if.png
+|   |   |   |-- access_man_overview.png
+|   |   |   |-- access_man_range.png
+|   |   |   |-- access_man_user_access_over_coding_if.png
+|   |   |   |-- access_man_user_man.png
+|   |   |   |-- add_compute_group.png
+|   |   |   |-- add_compute_group_node.png
+|   |   |   |-- cfg_man_cluster_node_cfg_new.png
+|   |   |   |-- cfg_man_cluster_node_cfg_tab.png
+|   |   |   |-- cfg_man_clusternode_man.png
+|   |   |   |-- cfg_man_example.png
+|   |   |   |-- cfg_man_example_result.png
+|   |   |   |-- cfg_man_new_controller_node_cfg.png
+|   |   |   |-- cfg_man_overview.png
+|   |   |   |-- check_user_access_over_coding_if.png
+|   |   |   |-- config_compute_group.png
+|   |   |   |-- dashboard_1_1.png
+|   |   |   |-- dashboard_1_10.png
+|   |   |   |-- dashboard_1_11.png
+|   |   |   |-- dashboard_1_12.png
+|   |   |   |-- dashboard_1_13.png
+|   |   |   |-- dashboard_1_14.png
+|   |   |   |-- dashboard_1_15.png
+|   |   |   |-- dashboard_1_16.png
+|   |   |   |-- dashboard_1_17.png
+|   |   |   |-- dashboard_1_18.png
+|   |   |   |-- dashboard_1_19.png
+|   |   |   |-- dashboard_1_2.png
+|   |   |   |-- dashboard_1_20.png
+|   |   |   |-- dashboard_1_21.png
+|   |   |   |-- dashboard_1_22.png
+|   |   |   |-- dashboard_1_3.png
+|   |   |   |-- dashboard_1_4.png
+|   |   |   |-- dashboard_1_5.png
+|   |   |   |-- dashboard_1_6.png
+|   |   |   |-- dashboard_1_7.png
+|   |   |   |-- dashboard_1_8.png
+|   |   |   |-- dashboard_1_9.png
+|   |   |   |-- data_lineage_1.png
+|   |   |   |-- git_multiple_tabs
+|   |   |   |   |-- 2-1.png
+|   |   |   |   |-- 2-2.png
+|   |   |   |   |-- 2-3.png
+|   |   |   |   |-- 3-1.png
+|   |   |   |   |-- 3-10.png
+|   |   |   |   |-- 3-11.png
+|   |   |   |   |-- 3-12.png
+|   |   |   |   |-- 3-13.png
+|   |   |   |   |-- 3-14.png
+|   |   |   |   |-- 3-15.png
+|   |   |   |   |-- 3-16.png
+|   |   |   |   |-- 3-17.png
+|   |   |   |   |-- 3-18.png
+|   |   |   |   |-- 3-19.png
+|   |   |   |   |-- 3-2.png
+|   |   |   |   |-- 3-20.png
+|   |   |   |   |-- 3-21.png
+|   |   |   |   |-- 3-3.png
+|   |   |   |   |-- 3-4.png
+|   |   |   |   |-- 3-5.png
+|   |   |   |   |-- 3-6.png
+|   |   |   |   |-- 3-7.png
+|   |   |   |   |-- 3-8.png
+|   |   |   |   `-- 3-9.png
+|   |   |   |-- mt_5.png
+|   |   |   |-- multisource_graph.png
+|   |   |   |-- nb_db_1.png
+|   |   |   |-- nb_db_10.png
+|   |   |   |-- nb_db_4.png
+|   |   |   |-- nb_db_5.png
+|   |   |   |-- nb_db_6.png
+|   |   |   |-- nb_db_7.png
+|   |   |   |-- nb_db_8.png
+|   |   |   |-- nb_db_9.png
+|   |   |   |-- nb_ddb_0.png
+|   |   |   |-- nb_ddb_1.png
+|   |   |   |-- nb_ddb_2.png
+|   |   |   |-- nb_ddb_3.png
+|   |   |   |-- nb_ddb_4.png
+|   |   |   |-- nb_edt_0.png
+|   |   |   |-- nb_log_1.png
+|   |   |   |-- nb_ve_0.png
+|   |   |   |-- plugin_management
+|   |   |   |   |-- 1-1.png
+|   |   |   |   |-- 1-2.png
+|   |   |   |   |-- 1-3.png
+|   |   |   |   `-- 1-4.png
+|   |   |   |-- querybuilder_1.png
+|   |   |   |-- querybuilder_10.png
+|   |   |   |-- querybuilder_11.png
+|   |   |   |-- querybuilder_12.png
+|   |   |   |-- querybuilder_13.png
+|   |   |   |-- querybuilder_14.png
+|   |   |   |-- querybuilder_15.png
+|   |   |   |-- querybuilder_16.png
+|   |   |   |-- querybuilder_17.png
+|   |   |   |-- querybuilder_18.png
+|   |   |   |-- querybuilder_19.png
+|   |   |   |-- querybuilder_2.png
+|   |   |   |-- querybuilder_20.png
+|   |   |   |-- querybuilder_21.png
+|   |   |   |-- querybuilder_22.png
+|   |   |   |-- querybuilder_23.png
+|   |   |   |-- querybuilder_24.png
+|   |   |   |-- querybuilder_25.png
+|   |   |   |-- querybuilder_26.png
+|   |   |   |-- querybuilder_27.png
+|   |   |   |-- querybuilder_28.png
+|   |   |   |-- querybuilder_29.png
+|   |   |   |-- querybuilder_3.png
+|   |   |   |-- querybuilder_4.png
+|   |   |   |-- querybuilder_5.png
+|   |   |   |-- querybuilder_6.png
+|   |   |   |-- querybuilder_7.png
+|   |   |   |-- querybuilder_8.png
+|   |   |   |-- querybuilder_9.png
+|   |   |   |-- reguar_inspection
+|   |   |   |   |-- 1-1.png
+|   |   |   |   |-- 2-1.png
+|   |   |   |   |-- 2-2.png
+|   |   |   |   |-- 2-3.png
+|   |   |   |   |-- 2-4.png
+|   |   |   |   |-- 4-1.png
+|   |   |   |   |-- 4-2.png
+|   |   |   |   |-- 4-3.png
+|   |   |   |   |-- 4-4.png
+|   |   |   |   |-- 4-5.png
+|   |   |   |   |-- 5-1.png
+|   |   |   |   |-- 5-2.png
+|   |   |   |   `-- 7-1.png
+|   |   |   |-- relitu.png
+|   |   |   |-- shell_0.png
+|   |   |   |-- shell_1.png
+|   |   |   |-- shell_2.png
+|   |   |   |-- shell_3.png
+|   |   |   |-- shell_4.png
+|   |   |   |-- shell_5.png
+|   |   |   |-- stream_engine_status.png
+|   |   |   |-- stream_mon.png
+|   |   |   |-- stream_tb_status.png
+|   |   |   |-- web
+|   |   |   |   |-- agent_nodes.png
+|   |   |   |   |-- cluster_overview_1.png
+|   |   |   |   |-- cluster_overview_2.png
+|   |   |   |   |-- mt.png
+|   |   |   |   |-- mt_1.png
+|   |   |   |   |-- mt_2.png
+|   |   |   |   |-- tb.png
+|   |   |   |   `-- web_overview.png
+|   |   |   |-- web_1.png
+|   |   |   |-- web_2.png
+|   |   |   |-- web_job_0.png
+|   |   |   `-- web_log_0.png
+|   |   `-- web
+|   |       |-- GettingStart.html
+|   |       |-- Shell.html
+|   |       |-- access_man.html
+|   |       |-- cfg_man.html
+|   |       |-- cluster_overview.html
+|   |       |-- git_multiple_tabs.html
+|   |       |-- intro.html
+|   |       |-- job_man.html
+|   |       |-- log.html
+|   |       |-- plugin_management.html
+|   |       |-- querybuilder.html
+|   |       |-- regulr_inspection.html
+|   |       `-- stream_monitor.html
+|   |-- db_oper
+|   |   |-- FunctionView.html
+|   |   |-- add_partitions.html
+|   |   |-- binary_records_import.html
+|   |   |-- create_db_tb.html
+|   |   |-- data_import_method.html
+|   |   |-- drop_db_tb.html
+|   |   |-- drop_partitions.html
+|   |   |-- hdf5_files_import.html
+|   |   |-- images
+|   |   |   |-- binary_records_import
+|   |   |   |   |-- 2-1.png
+|   |   |   |   |-- 2-2.png
+|   |   |   |   `-- 2-3.png
+|   |   |   |-- hdf5_files_import
+|   |   |   |   |-- 3-1.png
+|   |   |   |   |-- 3-2.png
+|   |   |   |   |-- 3-3.png
+|   |   |   |   |-- 4-1.png
+|   |   |   |   |-- 4-2.png
+|   |   |   |   |-- 4-3.png
+|   |   |   |   |-- 4-4.png
+|   |   |   |   `-- 5-1.png
+|   |   |   |-- parquet_files_import
+|   |   |   |   |-- 3-1.png
+|   |   |   |   |-- 3-2.png
+|   |   |   |   |-- 3-3.png
+|   |   |   |   |-- 4-1.png
+|   |   |   |   |-- 4-2.png
+|   |   |   |   |-- 4-3.png
+|   |   |   |   |-- 4-4.png
+|   |   |   |   `-- 5-1.png
+|   |   |   `-- text_files_import
+|   |   |       |-- 1-1.png
+|   |   |       |-- 1-2.png
+|   |   |       |-- 2-1.png
+|   |   |       |-- 2-2.png
+|   |   |       |-- 2-3.png
+|   |   |       |-- 2-4.png
+|   |   |       |-- 3-1.png
+|   |   |       |-- 3-2.png
+|   |   |       |-- 7-1.png
+|   |   |       `-- 7-2.png
+|   |   |-- import_data.html
+|   |   |-- insert_data.html
+|   |   |-- parquet_files_import.html
+|   |   |-- queries.html
+|   |   |-- scripts
+|   |   |   |-- demo1.csv
+|   |   |   |-- demo1.h5
+|   |   |   |-- demo1.parquet
+|   |   |   |-- hdf5Sample.h5
+|   |   |   `-- text_files_import
+|   |   |       `-- tsdbDatabaseTableGenerationAndDataSimulationForWritingArrayVector.dos
+|   |   `-- text_files_import.html
+|   |-- drop_database_table.html
+|   |-- gui.html
+|   |-- jupyter.html
+|   |-- mod_data.html
+|   |-- modify_table_structure.html
+|   |-- terminal.html
+|   `-- vscode.html
+|-- deploy
+|   |-- deploy_intro.html
+|   `-- license_fingerprint_collection.html
+|-- error_codes
+|   |-- S00001.html
+|   |-- S00002.html
+|   |-- S00003.html
+|   |-- S00004.html
+|   |-- S00006.html
+|   |-- S00007.html
+|   |-- S00008.html
+|   |-- S01001.html
+|   |-- S01002.html
+|   |-- S01003.html
+|   |-- S01004.html
+|   |-- S01005.html
+|   |-- S01006.html
+|   |-- S01007.html
+|   |-- S01008.html
+|   |-- S01009.html
+|   |-- S01011.html
+|   |-- S01012.html
+|   |-- S01013.html
+|   |-- S01014.html
+|   |-- S01015.html
+|   |-- S01016.html
+|   |-- S01018.html
+|   |-- S01019.html
+|   |-- S01020.html
+|   |-- S01021.html
+|   |-- S01022.html
+|   |-- S01023.html
+|   |-- S01024.html
+|   |-- S01025.html
+|   |-- S01026.html
+|   |-- S01027.html
+|   |-- S01028.html
+|   |-- S01029.html
+|   |-- S01030.html
+|   |-- S01031.html
+|   |-- S01032.html
+|   |-- S01035.html
+|   |-- S01036.html
+|   |-- S01037.html
+|   |-- S01038.html
+|   |-- S01039.html
+|   |-- S01040.html
+|   |-- S01041.html
+|   |-- S01042.html
+|   |-- S01043.html
+|   |-- S01044.html
+|   |-- S01045.html
+|   |-- S01050.html
+|   |-- S01051.html
+|   |-- S01052.html
+|   |-- S01053.html
+|   |-- S01054.html
+|   |-- S01055.html
+|   |-- S01056.html
+|   |-- S01057.html
+|   |-- S01058.html
+|   |-- S01059.html
+|   |-- S01060.html
+|   |-- S01061.html
+|   |-- S01062.html
+|   |-- S01063.html
+|   |-- S01064.html
+|   |-- S01065.html
+|   |-- S01067.html
+|   |-- S01068.html
+|   |-- S01069.html
+|   |-- S02000.html
+|   |-- S02001.html
+|   |-- S02002.html
+|   |-- S02003.html
+|   |-- S02004.html
+|   |-- S02005.html
+|   |-- S02006.html
+|   |-- S02007.html
+|   |-- S02008.html
+|   |-- S02009.html
+|   |-- S02010.html
+|   |-- S02011.html
+|   |-- S02012.html
+|   |-- S02013.html
+|   |-- S02014.html
+|   |-- S02015_0.html
+|   |-- S02016.html
+|   |-- S02017.html
+|   |-- S02018.html
+|   |-- S02019.html
+|   |-- S02020.html
+|   |-- S02021.html
+|   |-- S02022.html
+|   |-- S02023.html
+|   |-- S02024.html
+|   |-- S02025.html
+|   |-- S02026.html
+|   |-- S02027.html
+|   |-- S02028.html
+|   |-- S02029.html
+|   |-- S02030.html
+|   |-- S02031.html
+|   |-- S02044.html
+|   |-- S02045.html
+|   |-- S02046.html
+|   |-- S02047.html
+|   |-- S02048.html
+|   |-- S02049.html
+|   |-- S02050.html
+|   |-- S02051.html
+|   |-- S02052.html
+|   |-- S02053.html
+|   |-- S02054.html
+|   |-- S02055.html
+|   |-- S02056.html
+|   |-- S02057.html
+|   |-- S02059.html
+|   |-- S03000.html
+|   |-- S03001.html
+|   |-- S03002.html
+|   |-- S03003.html
+|   |-- S03005.html
+|   |-- S03006.html
+|   |-- S03007.html
+|   |-- S03008.html
+|   |-- S03009.html
+|   |-- S03012.html
+|   |-- S03013.html
+|   |-- S03014.html
+|   |-- S03015.html
+|   |-- S03016.html
+|   |-- S03017.html
+|   |-- S03018.html
+|   |-- S03019.html
+|   |-- S03020.html
+|   |-- S04001.html
+|   |-- S04002.html
+|   |-- S04003.html
+|   |-- S04004.html
+|   |-- S04005.html
+|   |-- S05000.html
+|   |-- S05001.html
+|   |-- S05003.html
+|   |-- S05004.html
+|   |-- S05005.html
+|   |-- S05006.html
+|   |-- S05007.html
+|   |-- S05010.html
+|   |-- S06000.html
+|   |-- S06001.html
+|   |-- S06002.html
+|   |-- S06003.html
+|   |-- S06004.html
+|   |-- S06005.html
+|   |-- S06006.html
+|   |-- err_codes.html
+|   |-- s00005.html
+|   |-- s00009.html
+|   |-- s00010.html
+|   |-- s00011.html
+|   |-- s00012.html
+|   |-- s00013.html
+|   |-- s00014.html
+|   |-- s00015.html
+|   |-- s00016.html
+|   |-- s00017.html
+|   |-- s00018.html
+|   |-- s00019.html
+|   |-- s00020.html
+|   |-- s01000_0.html
+|   |-- s01010.html
+|   |-- s01017.html
+|   |-- s01033.html
+|   |-- s01034.html
+|   |-- s01046.html
+|   |-- s01047.html
+|   |-- s01048.html
+|   |-- s01049.html
+|   |-- s01070.html
+|   |-- s01071.html
+|   |-- s01072.html
+|   |-- s01074.html
+|   |-- s01076.html
+|   |-- s01077.html
+|   |-- s02032.html
+|   |-- s02033.html
+|   |-- s02034.html
+|   |-- s02035.html
+|   |-- s02036.html
+|   |-- s02037.html
+|   |-- s02038.html
+|   |-- s02039.html
+|   |-- s02040.html
+|   |-- s02041.html
+|   |-- s02042.html
+|   |-- s02043.html
+|   |-- s03021.html
+|   |-- s03022.html
+|   |-- s03023.html
+|   |-- s03024.html
+|   |-- s03025.html
+|   |-- s03027.html
+|   |-- s03028.html
+|   |-- s03036.html
+|   |-- s03037.html
+|   |-- s03038.html
+|   |-- s03039.html
+|   |-- s03040.html
+|   |-- s03041.html
+|   |-- s03042.html
+|   |-- s03043.html
+|   |-- s04006.html
+|   |-- s04007.html
+|   |-- s04008.html
+|   |-- s05008.html
+|   |-- s05009.html
+|   |-- s05011.html
+|   |-- s05012.html
+|   |-- s05013.html
+|   |-- s05014.html
+|   |-- s05015.html
+|   |-- s05016.html
+|   |-- s05017.html
+|   |-- s06007.html
+|   |-- s06008.html
+|   |-- s06009.html
+|   |-- s06010.html
+|   |-- s06011.html
+|   |-- s06012.html
+|   |-- s06013.html
+|   |-- s07000.html
+|   |-- s07001.html
+|   |-- s07002.html
+|   |-- s07003.html
+|   |-- s07004.html
+|   |-- s07005.html
+|   |-- s07006.html
+|   |-- s09000.html
+|   |-- s09001.html
+|   |-- s09002.html
+|   |-- s09003.html
+|   |-- s09004.html
+|   |-- s09005.html
+|   |-- s09006.html
+|   |-- s09007.html
+|   |-- s09008.html
+|   |-- s09009.html
+|   `-- troubleshooting.html
+|-- favicon.ico
+|-- funcs
+|   |-- a
+|   |   |-- abs.html
+|   |   |-- acf.html
+|   |   |-- acos.html
+|   |   |-- acosh.html
+|   |   |-- adaBoostClassifier.html
+|   |   |-- adaBoostRegressor.html
+|   |   |-- add.html
+|   |   |-- addAccessControl.html
+|   |   |-- addColumn.html
+|   |   |-- addEventListener.html
+|   |   |-- addFunctionView.html
+|   |   |-- addGroupMember.html
+|   |   |-- addMarketHoliday.html
+|   |   |-- addMetrics.html
+|   |   |-- addNode.html
+|   |   |-- addRangePartitions.html
+|   |   |-- addValuePartitions.html
+|   |   |-- addVolumes.html
+|   |   |-- addipblacklist.html
+|   |   |-- addipwhitelist.html
+|   |   |-- addreactivemetrics.html
+|   |   |-- adfuller.html
+|   |   |-- align.html
+|   |   |-- all.html
+|   |   |-- amortizingfixedratebonddirtyprice.html
+|   |   |-- and.html
+|   |   |-- anova.html
+|   |   |-- any.html
+|   |   |-- append!.html
+|   |   |-- appendEvent.html
+|   |   |-- appendForJoin.html
+|   |   |-- appendMsg.html
+|   |   |-- appendTupel_.html
+|   |   |-- arima.html
+|   |   |-- array.html
+|   |   |-- arrayVector.html
+|   |   |-- asFreq.html
+|   |   |-- asIs.html
+|   |   |-- asfreq1.html
+|   |   |-- asin.html
+|   |   |-- asinh.html
+|   |   |-- asof.html
+|   |   |-- at.html
+|   |   |-- atImax.html
+|   |   |-- atImin.html
+|   |   |-- atan.html
+|   |   |-- atanh.html
+|   |   |-- autocorr.html
+|   |   `-- avg.html
+|   |-- appendix.html
+|   |-- b
+|   |   |-- backup.html
+|   |   |-- backupDB.html
+|   |   |-- backupTable.html
+|   |   |-- backupsettings.html
+|   |   |-- bar.html
+|   |   |-- base64Decode.html
+|   |   |-- base64Encode.html
+|   |   |-- beta.html
+|   |   |-- between.html
+|   |   |-- bfill.html
+|   |   |-- bfill_.html
+|   |   |-- bigarray.html
+|   |   |-- binaryExpr.html
+|   |   |-- binsrch.html
+|   |   |-- bitAnd.html
+|   |   |-- bitNot.html
+|   |   |-- bitOr.html
+|   |   |-- bitXor.html
+|   |   |-- blob.html
+|   |   |-- bondCalculator.html
+|   |   |-- bondCashflow.html
+|   |   |-- bondDirtyPrice.html
+|   |   |-- bondDuration.html
+|   |   |-- bondaccrint.html
+|   |   |-- bondconvexity.html
+|   |   |-- bondinstrumentcalculator.html
+|   |   |-- bondyield.html
+|   |   |-- bool.html
+|   |   |-- boxcox.html
+|   |   |-- brentq.html
+|   |   |-- brute.html
+|   |   |-- bucket.html
+|   |   |-- bucketCount.html
+|   |   |-- businessDay.html
+|   |   |-- businessMonthBegin.html
+|   |   |-- businessMonthEnd.html
+|   |   |-- businessQuarterBegin.html
+|   |   |-- businessQuarterEnd.html
+|   |   |-- businessYearBegin.html
+|   |   |-- businessYearEnd.html
+|   |   `-- bvls.html
+|   |-- c
+|   |   |-- cacheDSNow.html
+|   |   |-- cacheDS_.html
+|   |   |-- cachedTable.html
+|   |   |-- callableFixedRateBondDirtyPrice.html
+|   |   |-- cancelConsoleJob.html
+|   |   |-- cancelJob.html
+|   |   |-- cancelRebalanceTask.html
+|   |   |-- cancelRecoveryTask.html
+|   |   |-- cast.html
+|   |   |-- cbrt.html
+|   |   |-- cdfBeta.html
+|   |   |-- cdfBinomial.html
+|   |   |-- cdfChiSquare.html
+|   |   |-- cdfExp.html
+|   |   |-- cdfF.html
+|   |   |-- cdfGamma.html
+|   |   |-- cdfKolmogorov.html
+|   |   |-- cdfLogistic.html
+|   |   |-- cdfNormal.html
+|   |   |-- cdfPoisson.html
+|   |   |-- cdfStudent.html
+|   |   |-- cdfUniform.html
+|   |   |-- cdfWeibull.html
+|   |   |-- cdfZipf.html
+|   |   |-- cds.html
+|   |   |-- ceil.html
+|   |   |-- cell.html
+|   |   |-- cells.html
+|   |   |-- changePwd.html
+|   |   |-- char.html
+|   |   |-- charAt.html
+|   |   |-- checkBackup.html
+|   |   |-- chiSquareTest.html
+|   |   |-- cholesky.html
+|   |   |-- cj.html
+|   |   |-- cleanOutdateLogFiles.html
+|   |   |-- clearAllCache.html
+|   |   |-- clearCachedDatabase.html
+|   |   |-- clearCachedModules.html
+|   |   |-- clearDSCacheNow.html
+|   |   |-- clearDSCache_.html
+|   |   |-- clearTablePersistence.html
+|   |   |-- clear_.html
+|   |   |-- clearalliotdblatestkeycache.html
+|   |   |-- clearalliotdbstatictablecache.html
+|   |   |-- clearalltsdbsymbolbasecache.html
+|   |   |-- clearcomputenodecache.html
+|   |   |-- clearcomputenodediskcache.html
+|   |   |-- clip.html
+|   |   |-- clip_.html
+|   |   |-- close.html
+|   |   |-- closeSessions.html
+|   |   |-- coevent.html
+|   |   |-- coint.html
+|   |   |-- col.html
+|   |   |-- cols.html
+|   |   |-- columnNames.html
+|   |   |-- complex.html
+|   |   |-- compress.html
+|   |   |-- concat.html
+|   |   |-- concatDateTime.html
+|   |   |-- concatMatrix.html
+|   |   |-- conditionalFilter.html
+|   |   |-- conditionalIterate.html
+|   |   |-- constantdesc.html
+|   |   |-- contextCount.html
+|   |   |-- contextSum.html
+|   |   |-- contextSum2.html
+|   |   |-- convertEncode.html
+|   |   |-- convertExcelFormula.html
+|   |   |-- convertTZ.html
+|   |   |-- convertiblefixedratebonddirtyprice.html
+|   |   |-- copy.html
+|   |   |-- copyReplicas.html
+|   |   |-- corr.html
+|   |   |-- corrMatrix.html
+|   |   |-- cos.html
+|   |   |-- cosh.html
+|   |   |-- count.html
+|   |   |-- countNanInf.html
+|   |   |-- covar.html
+|   |   |-- covarMatrix.html
+|   |   |-- crc32.html
+|   |   |-- createAnomalyDetectionEngine.html
+|   |   |-- createAsofJoinEngine.html
+|   |   |-- createCEPEngine.html
+|   |   |-- createCrossSectionalAggregator.html
+|   |   |-- createCrossSectionalEngine.html
+|   |   |-- createDailyTimeSeriesEngine.html
+|   |   |-- createDataViewEngine.html
+|   |   |-- createDistributedInMemoryTable.html
+|   |   |-- createDualOwnershipReactiveStateEngine.html
+|   |   |-- createEqualJoinEngine.html
+|   |   |-- createEquiJoinEngine.html
+|   |   |-- createGroup.html
+|   |   |-- createIMOLTPTable.html
+|   |   |-- createIPCInMemoryTable.html
+|   |   |-- createLeftSemiJoinEngine.html
+|   |   |-- createLookupJoinEngine.html
+|   |   |-- createNearestJoinEngine.html
+|   |   |-- createOrderReconstituteEngine.html
+|   |   |-- createPartitionedTable.html
+|   |   |-- createReactiveStateEngine.html
+|   |   |-- createReactiveStatelessEngine.html
+|   |   |-- createRuleEngine.html
+|   |   |-- createSessionWindowEngine.html
+|   |   |-- createStreamDispatchEngine.html
+|   |   |-- createTable.html
+|   |   |-- createTimeSeriesAggregator.html
+|   |   |-- createTimeSeriesEngine.html
+|   |   |-- createUser.html
+|   |   |-- createWindowJoinEngine.html
+|   |   |-- createcryptoorderbookengine.html
+|   |   |-- createdimensiontable.html
+|   |   |-- createnarrowreactivestateengine.html
+|   |   |-- createorderbooksnapshotengine.html
+|   |   |-- createsnapshotjoinengine.html
+|   |   |-- createstreambroadcastengine.html
+|   |   |-- createthresholdengine.html
+|   |   |-- createtimebucketengine.html
+|   |   |-- crmwcbond.html
+|   |   |-- crossStat.html
+|   |   |-- cubichermitesplinefit.html
+|   |   |-- cubicspline.html
+|   |   |-- cubicsplinepredic.html
+|   |   |-- cumPositiveStreak.html
+|   |   |-- cumavg.html
+|   |   |-- cumavgTopN.html
+|   |   |-- cumbeta.html
+|   |   |-- cumbetaTopN.html
+|   |   |-- cumcorr.html
+|   |   |-- cumcorrTopN.html
+|   |   |-- cumcount.html
+|   |   |-- cumcovar.html
+|   |   |-- cumcovarTopN.html
+|   |   |-- cumdenseRank.html
+|   |   |-- cumfirstNot.html
+|   |   |-- cumkurtosisTopN.html
+|   |   |-- cumlastNot.html
+|   |   |-- cummax.html
+|   |   |-- cummdd.html
+|   |   |-- cummed.html
+|   |   |-- cummin.html
+|   |   |-- cumnunique.html
+|   |   |-- cumpercentile.html
+|   |   |-- cumprod.html
+|   |   |-- cumrank.html
+|   |   |-- cumskewTopN.html
+|   |   |-- cumstd.html
+|   |   |-- cumstdTopN.html
+|   |   |-- cumstdp.html
+|   |   |-- cumstdpTopN.html
+|   |   |-- cumsum.html
+|   |   |-- cumsum2.html
+|   |   |-- cumsum3.html
+|   |   |-- cumsum4.html
+|   |   |-- cumsumTopN.html
+|   |   |-- cumvar.html
+|   |   |-- cumvarTopN.html
+|   |   |-- cumvarp.html
+|   |   |-- cumvarpTopN.html
+|   |   |-- cumwavg.html
+|   |   |-- cumwsum.html
+|   |   |-- cumwsumTopN.html
+|   |   |-- cut.html
+|   |   |-- cutPoints.html
+|   |   |-- cvar.html
+|   |   `-- demoData.tar.gz
+|   |-- d
+|   |   |-- dailyAlignedBar.html
+|   |   |-- database.html
+|   |   |-- date.html
+|   |   |-- datehour.html
+|   |   |-- datetime.html
+|   |   |-- datetimeParse.html
+|   |   |-- dayOfMonth.html
+|   |   |-- dayOfWeek.html
+|   |   |-- dayOfYear.html
+|   |   |-- daysInMonth.html
+|   |   |-- decimal128.html
+|   |   |-- decimal32.html
+|   |   |-- decimal64.html
+|   |   |-- decimalFormat.html
+|   |   |-- decimalMultiply.html
+|   |   |-- decodeShortGenomeSeq.html
+|   |   |-- decompress.html
+|   |   |-- deepCopy.html
+|   |   |-- defined.html
+|   |   |-- defs.html
+|   |   |-- deg2rad.html
+|   |   |-- deleteDataViewItems.html
+|   |   |-- deleteGroup.html
+|   |   |-- deleteGroupMember.html
+|   |   |-- deleteMarketHoliday.html
+|   |   |-- deleteReplicas.html
+|   |   |-- deleteRule.html
+|   |   |-- deleteScheduledJob.html
+|   |   |-- deleteUser.html
+|   |   |-- deletechunkmetaonmasterbyid.html
+|   |   |-- deltas.html
+|   |   |-- dema.html
+|   |   |-- demean.html
+|   |   |-- denseRank.html
+|   |   |-- deny.html
+|   |   |-- derivative.html
+|   |   |-- det.html
+|   |   |-- diag.html
+|   |   |-- dict.html
+|   |   |-- dictUpdate_.html
+|   |   |-- difference.html
+|   |   |-- differentialevolution.html
+|   |   |-- digitize.html
+|   |   |-- disableActivePartition.html
+|   |   |-- disableQueryMonitor.html
+|   |   |-- disableTSDBAsyncSorting.html
+|   |   |-- disableTablePersistence.html
+|   |   |-- disableresourcetracking.html
+|   |   |-- distance.html
+|   |   |-- distinct.html
+|   |   |-- div.html
+|   |   |-- dividedDifference.html
+|   |   |-- dot.html
+|   |   |-- double.html
+|   |   |-- drop.html
+|   |   |-- dropAggregator.html
+|   |   |-- dropColumns_.html
+|   |   |-- dropDataViewEngine.html
+|   |   |-- dropDatabase.html
+|   |   |-- dropDistributedInMemoryTable.html
+|   |   |-- dropFunctionView.html
+|   |   |-- dropIPCInMemoryTable.html
+|   |   |-- dropPartition.html
+|   |   |-- dropStreamEngine.html
+|   |   |-- dropStreamTable.html
+|   |   |-- dropTable.html
+|   |   |-- dropna.html
+|   |   |-- dumpheapsample.html
+|   |   |-- duration.html
+|   |   |-- dynamicGroupCumcount.html
+|   |   `-- dynamicGroupCumsum.html
+|   |-- data
+|   |   |-- CryptoOrderBookInput.zip
+|   |   |-- arima
+|   |   |   `-- macrodata.csv
+|   |   |-- macrodata.csv
+|   |   |-- orderbookDemoInput.zip
+|   |   |-- testset.txt
+|   |   `-- trainset.txt
+|   |-- e
+|   |   |-- eig.html
+|   |   |-- elasticNet.html
+|   |   |-- elasticNetBasic.html
+|   |   |-- elasticNetCV.html
+|   |   |-- ema.html
+|   |   |-- emitEvent.html
+|   |   |-- enableActivePartition.html
+|   |   |-- enableQueryMonitor.html
+|   |   |-- enableTSDBAsyncSorting.html
+|   |   |-- enableTablePersistence.html
+|   |   |-- enableTableShareAndPersistence.html
+|   |   |-- enableresourcetracking.html
+|   |   |-- enabletablecachepurge.html
+|   |   |-- enabletableshareandcachepurge.html
+|   |   |-- enabletdekey.html
+|   |   |-- encodeShortGenomeSeq.html
+|   |   |-- endsWith.html
+|   |   |-- enlist.html
+|   |   |-- eq.html
+|   |   |-- eqFloat.html
+|   |   |-- eqObj.html
+|   |   |-- eqpercent.html
+|   |   |-- erase_.html
+|   |   |-- esd.html
+|   |   |-- euclidean.html
+|   |   |-- eval.html
+|   |   |-- evalTimer.html
+|   |   |-- ewmCorr.html
+|   |   |-- ewmCov.html
+|   |   |-- ewmMean.html
+|   |   |-- ewmStd.html
+|   |   |-- ewmVar.html
+|   |   |-- exists.html
+|   |   |-- existsDatabase.html
+|   |   |-- existsPartition.html
+|   |   |-- existsStreamTable.html
+|   |   |-- existsSubscriptionTopic.html
+|   |   |-- existsTable.html
+|   |   |-- exp.html
+|   |   |-- exp2.html
+|   |   |-- expm1.html
+|   |   |-- expr.html
+|   |   |-- extractTextSchema.html
+|   |   `-- eye.html
+|   |-- f
+|   |   |-- fTest.html
+|   |   |-- ffill.html
+|   |   |-- ffill_.html
+|   |   |-- fflush.html
+|   |   |-- file.html
+|   |   |-- files.html
+|   |   |-- fill_.html
+|   |   |-- find.html
+|   |   |-- first.html
+|   |   |-- firstHit.html
+|   |   |-- firstNot.html
+|   |   |-- fixedLengthArrayVector.html
+|   |   |-- flatten.html
+|   |   |-- flip.html
+|   |   |-- floatingratebonddirtyprice.html
+|   |   |-- floor.html
+|   |   |-- flushOLAPCache.html
+|   |   |-- flushTSDBCache.html
+|   |   |-- flushcomputenodememcache.html
+|   |   |-- fmin.html
+|   |   |-- fminbfgs.html
+|   |   |-- fminlbfgsb.html
+|   |   |-- fminncg.html
+|   |   |-- fminslsqp.html
+|   |   |-- forceTriggerOrderBookSnapshot.html
+|   |   |-- form.html
+|   |   |-- format.html
+|   |   |-- fromJson.html
+|   |   |-- fromStdJson.html
+|   |   |-- fromUTF8.html
+|   |   |-- funcByName.html
+|   |   |-- fy5253.html
+|   |   `-- fy5253Quarter.html
+|   |-- funcs_by_topics.html
+|   |-- funcs_intro.html
+|   |-- g
+|   |   |-- garch.html
+|   |   |-- gaussianNB.html
+|   |   |-- gaussiankde.html
+|   |   |-- gaussiankdepredict.html
+|   |   |-- ge.html
+|   |   |-- gema.html
+|   |   |-- genShortGenomeSeq.html
+|   |   |-- generateuserticket.html
+|   |   |-- genericStateIterate.html
+|   |   |-- genericTStateIterate.html
+|   |   |-- genoutputcolumnsforobsnapshotengine.html
+|   |   |-- geowithin.html
+|   |   |-- getActiveMaster.html
+|   |   |-- getAggregator.html
+|   |   |-- getAggregatorStat.html
+|   |   |-- getAllDBGranularity.html
+|   |   |-- getAllDBs.html
+|   |   |-- getAuthenticatedUsers.html
+|   |   |-- getBackupList.html
+|   |   |-- getBackupMeta.html
+|   |   |-- getBackupStatus.html
+|   |   |-- getCEPEngineStat\ .html
+|   |   |-- getCacheEngineMemSize.html
+|   |   |-- getCacheEngineStat.html
+|   |   |-- getCachedSymbolBaseMemSize.html
+|   |   |-- getChunkPath.html
+|   |   |-- getChunksMeta.html
+|   |   |-- getClusterChunksStatus.html
+|   |   |-- getClusterDFSDatabases.html
+|   |   |-- getClusterDFSTables.html
+|   |   |-- getClusterPerf.html
+|   |   |-- getClusterVolumeUsage.html
+|   |   |-- getCompletedQueries.html
+|   |   |-- getComputeNodeCacheDetails.html
+|   |   |-- getConfig.html
+|   |   |-- getConfigure.html
+|   |   |-- getConnections.html
+|   |   |-- getConsoleJobs.html
+|   |   |-- getControllerAlias.html
+|   |   |-- getControllerElectionTick.html
+|   |   |-- getCurrentSessionAndUser.html
+|   |   |-- getDBAccess.html
+|   |   |-- getDFSDatabases.html
+|   |   |-- getDFSTablesByDatabase.html
+|   |   |-- getDataViewEngine.html
+|   |   |-- getDatabaseClusterReplicationStatus.html
+|   |   |-- getDatanodeRestartInterval.html
+|   |   |-- getDfsRebalanceConcurrency.html
+|   |   |-- getDfsRecoveryConcurrency.html
+|   |   |-- getDiskIOStat.html
+|   |   |-- getEnv.html
+|   |   |-- getEventListener.html
+|   |   |-- getExecDir.html
+|   |   |-- getFunctionViews.html
+|   |   |-- getGroupAccess.html
+|   |   |-- getGroupList.html
+|   |   |-- getGroupsByUserId.html
+|   |   |-- getHomeDir.html
+|   |   |-- getIPConnectionLimit.html
+|   |   |-- getJobMessage.html
+|   |   |-- getJobReturn.html
+|   |   |-- getJobStat.html
+|   |   |-- getJobStatus.html
+|   |   |-- getLeftStream.html
+|   |   |-- getLevelFileIndexCacheStats.html
+|   |   |-- getLicenseExpiration.html
+|   |   |-- getLocalIOTDBStaticTable.html
+|   |   |-- getMachineFingerprint.html
+|   |   |-- getMarketCalendar.html
+|   |   |-- getMasterReplicationStatus.html
+|   |   |-- getMemLimitOfQueryResult.html
+|   |   |-- getMemLimitOfTaskGroupResult.html
+|   |   |-- getMemoryStat.html
+|   |   |-- getNodeAlias.html
+|   |   |-- getNodeHost.html
+|   |   |-- getNodePort.html
+|   |   |-- getNodeType.html
+|   |   |-- getOLAPCacheEngineSize.html
+|   |   |-- getOLAPCacheEngineStat.html
+|   |   |-- getOLAPCachedSymbolBaseMemSize.html
+|   |   |-- getOS.html
+|   |   |-- getOSBit.html
+|   |   |-- getOauthClientSecret.html
+|   |   |-- getPerf.html
+|   |   |-- getPersistenceMeta.html
+|   |   |-- getQueryStatus.html
+|   |   |-- getRaftElectionTick.html
+|   |   |-- getRecentJobs.html
+|   |   |-- getRecentSlaveReplicationInfo.html
+|   |   |-- getRecoveryTaskStatus.html
+|   |   |-- getRecoveryWorkerNum.html
+|   |   |-- getRedoLogGCStat.html
+|   |   |-- getRightStream.html
+|   |   |-- getRunningQueries.html
+|   |   |-- getScheduledJobs.html
+|   |   |-- getSessionMemoryStat.html
+|   |   |-- getSlaveReplicationStatus.html
+|   |   |-- getSnapshotMsgId.html
+|   |   |-- getStreamEngine.html
+|   |   |-- getStreamEngineStat.html
+|   |   |-- getStreamTableFilterColumn.html
+|   |   |-- getStreamingLeader.html
+|   |   |-- getStreamingRaftGroups.html
+|   |   |-- getStreamingStat.html
+|   |   |-- getSubscriptionTopic.html
+|   |   |-- getSupportBundle.html
+|   |   |-- getSystemCpuUsage.html
+|   |   |-- getSystemLoadAvg.html
+|   |   |-- getTSDBCacheEngineSize.html
+|   |   |-- getTSDBCachedSymbolBaseMemSize.html
+|   |   |-- getTSDBCompactionTaskStatus.html
+|   |   |-- getTSDBMetaData.html
+|   |   |-- getTSDBSortKeyEntry.html
+|   |   |-- getTables.html
+|   |   |-- getTablet.html
+|   |   |-- getTabletsMeta.html
+|   |   |-- getTopicProcessedOffset.html
+|   |   |-- getTransactionStatus.html
+|   |   |-- getUnresolvedTxn.html
+|   |   |-- getUserAccess.html
+|   |   |-- getUserHardwareUsage.html
+|   |   |-- getUserList.html
+|   |   |-- getUserLockedStatus.html
+|   |   |-- getUserPasswordStatus.html
+|   |   |-- getUserTableAccessRecords.html
+|   |   |-- getUsersByGroupId.html
+|   |   |-- getWorkDir.html
+|   |   |-- getaclauditlog.html
+|   |   |-- getauditlog.html
+|   |   |-- getauthenticateduserticket.html
+|   |   |-- getclustertdekeys.html
+|   |   |-- getcomputegroupchunksstatus.html
+|   |   |-- getcomputenodecachestat.html
+|   |   |-- getcomputenodecachewarmupjobstatus.html
+|   |   |-- getcomputenodecachingdelay.html
+|   |   |-- getcurrenttdekeyversion.html
+|   |   |-- getdfsdatabasebyowner.html
+|   |   |-- getdynamicconfig.html
+|   |   |-- getenablenullsafejoin.html
+|   |   |-- getipblacklist.html
+|   |   |-- getipwhitelist.html
+|   |   |-- getloadedplugins.html
+|   |   |-- getmemlimitofalltempresults.html
+|   |   |-- getprefetchcomputenodedata.html
+|   |   |-- getreactivemetrics.html
+|   |   |-- getrules.html
+|   |   |-- getsessionexpiredtime.html
+|   |   |-- getslavereplicationexecutionstatus.html
+|   |   |-- getslavereplicationqueuestatus.html
+|   |   |-- getstreamenginelist.html
+|   |   |-- getstreamtablecacheoffset.html
+|   |   |-- getstreamtables.html
+|   |   |-- gettableaccess.html
+|   |   |-- gettradingcalendartype.html
+|   |   |-- gettsdbdatastat.html
+|   |   |-- gettsdbtableindexcachestatus.html
+|   |   |-- glm.html
+|   |   |-- gmd5.html
+|   |   |-- gmm.html
+|   |   |-- gmtime.html
+|   |   |-- gram.html
+|   |   |-- gramSchmidt.html
+|   |   |-- grant.html
+|   |   |-- groups.html
+|   |   `-- gt.html
+|   |-- h
+|   |   |-- haStreamTable.html
+|   |   |-- hasNull.html
+|   |   |-- hashBucket.html
+|   |   |-- head.html
+|   |   |-- hex.html
+|   |   |-- highDouble.html
+|   |   |-- highlong.html
+|   |   |-- histogram.html
+|   |   |-- histogram2d.html
+|   |   |-- hmac.html
+|   |   |-- hour.html
+|   |   `-- hourOfDay.html
+|   |-- ho_funcs
+|   |   |-- accumulate.html
+|   |   |-- aggrTopN.html
+|   |   |-- all.html
+|   |   |-- any.html
+|   |   |-- byColumn.html
+|   |   |-- byRow.html
+|   |   |-- call.html
+|   |   |-- contextby.html
+|   |   |-- cross.html
+|   |   |-- each.html
+|   |   |-- eachLeft.html
+|   |   |-- eachPost.html
+|   |   |-- eachPre.html
+|   |   |-- eachRight.html
+|   |   |-- groupby.html
+|   |   |-- ho_funcs.html
+|   |   |-- loop.html
+|   |   |-- moving.html
+|   |   |-- nullCompare.html
+|   |   |-- pcall.html
+|   |   |-- pcross.html
+|   |   |-- peach.html
+|   |   |-- pivot.html
+|   |   |-- ploop.html
+|   |   |-- reduce.html
+|   |   |-- rolling.html
+|   |   |-- rowgroupby.html
+|   |   |-- segmentby.html
+|   |   |-- talib.html
+|   |   |-- tmoving.html
+|   |   |-- twindow.html
+|   |   |-- unifiedCall.html
+|   |   |-- window.html
+|   |   `-- withNullFill.html
+|   |-- i
+|   |   |-- ifNull.html
+|   |   |-- ifValid.html
+|   |   |-- ifirstHit.html
+|   |   |-- ifirstNot.html
+|   |   |-- iif.html
+|   |   |-- ilastNot.html
+|   |   |-- ilike.html
+|   |   |-- imax.html
+|   |   |-- imaxlast.html
+|   |   |-- imin.html
+|   |   |-- iminlast.html
+|   |   |-- imr.html
+|   |   |-- imtForceGCRedolog.html
+|   |   |-- imtUpdateChunkVersionOnDataNode.html
+|   |   |-- in.html
+|   |   |-- indexedSeries.html
+|   |   |-- indexedTable.html
+|   |   |-- initcap.html
+|   |   |-- initimoltpcheckpointencryption.html
+|   |   |-- installPlugin.html
+|   |   |-- int.html
+|   |   |-- int128.html
+|   |   |-- integral.html
+|   |   |-- interpolate.html
+|   |   |-- intersection.html
+|   |   |-- invBeta.html
+|   |   |-- invBinomial.html
+|   |   |-- invChiSquare.html
+|   |   |-- invExp.html
+|   |   |-- invF.html
+|   |   |-- invGamma.html
+|   |   |-- invLogistic.html
+|   |   |-- invNormal.html
+|   |   |-- invPoisson.html
+|   |   |-- invStudent.html
+|   |   |-- invUniform.html
+|   |   |-- invWeibull.html
+|   |   |-- inverse.html
+|   |   |-- ipaddr.html
+|   |   |-- irs.html
+|   |   |-- isAlNum.html
+|   |   |-- isAlpha.html
+|   |   |-- isChunkNodeInit.html
+|   |   |-- isColumnarTuple.html
+|   |   |-- isControllerInitialized.html
+|   |   |-- isDataNodeInitialized.html
+|   |   |-- isDigit.html
+|   |   |-- isDuplicated.html
+|   |   |-- isIndexedMatrix.html
+|   |   |-- isIndexedSeries.html
+|   |   |-- isLeapYear.html
+|   |   |-- isLoggedIn.html
+|   |   |-- isLower.html
+|   |   |-- isMonotonic.html
+|   |   |-- isMonotonicDecreasing.html
+|   |   |-- isMonotonicIncreasing.html
+|   |   |-- isMonthEnd.html
+|   |   |-- isMonthStart.html
+|   |   |-- isNanInf.html
+|   |   |-- isNothing.html
+|   |   |-- isNull.html
+|   |   |-- isNumeric.html
+|   |   |-- isOrderedDict.html
+|   |   |-- isPeak.html
+|   |   |-- isQuarterEnd.html
+|   |   |-- isQuarterStart.html
+|   |   |-- isSorted.html
+|   |   |-- isSpace.html
+|   |   |-- isTitle.html
+|   |   |-- isUpper.html
+|   |   |-- isValid.html
+|   |   |-- isValley.html
+|   |   |-- isVoid.html
+|   |   |-- isYearEnd.html
+|   |   |-- isYearStart.html
+|   |   |-- isclientauth.html
+|   |   |-- isort.html
+|   |   |-- isortTop.html
+|   |   |-- isort_.html
+|   |   `-- iterate.html
+|   |-- images
+|   |   |-- boxcox.png
+|   |   |-- fminLBFGSB1.png
+|   |   |-- fminLBFGSB2.png
+|   |   |-- fminLBFGSB3.png
+|   |   |-- fminSLSQP2.png
+|   |   |-- kernelRidge.png
+|   |   |-- mdd1.png
+|   |   |-- mdd2.png
+|   |   |-- rms1.png
+|   |   `-- vectorar.png
+|   |-- j
+|   |   |-- join!.html
+|   |   |-- join.html
+|   |   `-- jsonextract.html
+|   |-- k
+|   |   |-- kama.html
+|   |   |-- kendall.html
+|   |   |-- kernelRidge.html
+|   |   |-- keyedStreamTable.html
+|   |   |-- keyedTable.html
+|   |   |-- keys.html
+|   |   |-- kmeans.html
+|   |   |-- knn.html
+|   |   |-- kroghinterpolate.html
+|   |   |-- kroghinterpolatefit.html
+|   |   |-- ksTest.html
+|   |   `-- kurtosis.html
+|   |-- l
+|   |   |-- lasso.html
+|   |   |-- lassoBasic.html
+|   |   |-- lassoCV.html
+|   |   |-- last.html
+|   |   |-- lastNot.html
+|   |   |-- lastWeekOfMonth.html
+|   |   |-- latestIndexedTable.html
+|   |   |-- latestKeyedTable.html
+|   |   |-- latestkeyedstreamtable.html
+|   |   |-- le.html
+|   |   |-- left.html
+|   |   |-- lfill.html
+|   |   |-- lfill_.html
+|   |   |-- license.html
+|   |   |-- like.html
+|   |   |-- linearTimeTrend.html
+|   |   |-- linearinterpolatefit.html
+|   |   |-- linprog.html
+|   |   |-- listAllMarkets.html
+|   |   |-- listRemotePlugins.html
+|   |   |-- listTables.html
+|   |   |-- loadBackup.html
+|   |   |-- loadDistributedInMemoryTable.html
+|   |   |-- loadIPCInMemoryTable.html
+|   |   |-- loadModel.html
+|   |   |-- loadModule.html
+|   |   |-- loadMvccTable.html
+|   |   |-- loadNpy.html
+|   |   |-- loadNpz.html
+|   |   |-- loadPlugin.html
+|   |   |-- loadRecord.html
+|   |   |-- loadTable.html
+|   |   |-- loadTableBySQL.html
+|   |   |-- loadText.html
+|   |   |-- loadTextEx.html
+|   |   |-- loadmodulefromscript.html
+|   |   |-- loc.html
+|   |   |-- localtime.html
+|   |   |-- lockUser.html
+|   |   |-- loess.html
+|   |   |-- log.html
+|   |   |-- log10.html
+|   |   |-- log1p.html
+|   |   |-- log2.html
+|   |   |-- login.html
+|   |   |-- logisticRegression.html
+|   |   |-- logout.html
+|   |   |-- long.html
+|   |   |-- lowDouble.html
+|   |   |-- lowRange.html
+|   |   |-- lower.html
+|   |   |-- lowerbound.html
+|   |   |-- lowlong.html
+|   |   |-- lpad.html
+|   |   |-- lshift.html
+|   |   |-- lt.html
+|   |   |-- ltrim.html
+|   |   `-- lu.html
+|   |-- m
+|   |   |-- ma.html
+|   |   |-- mad.html
+|   |   |-- makeCall.html
+|   |   |-- makeKey.html
+|   |   |-- makeSortedKey.html
+|   |   |-- makeUnifiedCall.html
+|   |   |-- mannWhitneyUTest.html
+|   |   |-- manova.html
+|   |   |-- mask.html
+|   |   |-- matrix.html
+|   |   |-- matrixRank.html
+|   |   |-- mavg.html
+|   |   |-- mavgTopN.html
+|   |   |-- max.html
+|   |   |-- maxPositiveStreak.html
+|   |   |-- maxdrawdown.html
+|   |   |-- maxignorenull.html
+|   |   |-- mbeta.html
+|   |   |-- mbetaTopN.html
+|   |   |-- mcorr.html
+|   |   |-- mcorrTopN.html
+|   |   |-- mcount.html
+|   |   |-- mcovar.html
+|   |   |-- mcovarTopN.html
+|   |   |-- md5.html
+|   |   |-- mdd.html
+|   |   |-- mean.html
+|   |   |-- med.html
+|   |   |-- mem.html
+|   |   |-- memSize.html
+|   |   |-- member.html
+|   |   |-- membermodify.html
+|   |   |-- merge.html
+|   |   |-- mfirst.html
+|   |   |-- mfirstnot.html
+|   |   |-- microsecond.html
+|   |   |-- mifirstNot.html
+|   |   |-- migrate.html
+|   |   |-- milastNot.html
+|   |   |-- millisecond.html
+|   |   |-- mimax.html
+|   |   |-- mimaxlast.html
+|   |   |-- mimin.html
+|   |   |-- miminlast.html
+|   |   |-- min.html
+|   |   |-- minignorenull.html
+|   |   |-- minute.html
+|   |   |-- minuteOfHour.html
+|   |   |-- mkdir.html
+|   |   |-- mkurtosis.html
+|   |   |-- mkurtosisTopN.html
+|   |   |-- mlast.html
+|   |   |-- mlastnot.html
+|   |   |-- mlowrange.html
+|   |   |-- mmad.html
+|   |   |-- mmax.html
+|   |   |-- mmaxPositiveStreak.html
+|   |   |-- mmed.html
+|   |   |-- mmin.html
+|   |   |-- mmse.html
+|   |   |-- mod.html
+|   |   |-- mode.html
+|   |   |-- month.html
+|   |   |-- monthBegin.html
+|   |   |-- monthEnd.html
+|   |   |-- monthOfYear.html
+|   |   |-- move.html
+|   |   |-- moveChunksAcrossVolume.html
+|   |   |-- moveHotDataToColdVolume.html
+|   |   |-- moveReplicas.html
+|   |   |-- movingTopNIndex.html
+|   |   |-- movingWindowData.html
+|   |   |-- movingWindowIndex.html
+|   |   |-- mpercentile.html
+|   |   |-- mpercentiletopn.html
+|   |   |-- mprod.html
+|   |   |-- mr.html
+|   |   |-- mrank.html
+|   |   |-- mskew.html
+|   |   |-- mskewTopN.html
+|   |   |-- mslr.html
+|   |   |-- mstd.html
+|   |   |-- mstdTopN.html
+|   |   |-- mstdp.html
+|   |   |-- mstdpTopN.html
+|   |   |-- msum.html
+|   |   |-- msum2.html
+|   |   |-- msumTopN.html
+|   |   |-- mtoprange.html
+|   |   |-- mul.html
+|   |   |-- multiTableRepartitionDS.html
+|   |   |-- multinomialNB.html
+|   |   |-- mutualInfo.html
+|   |   |-- mvar.html
+|   |   |-- mvarTopN.html
+|   |   |-- mvarp.html
+|   |   |-- mvarpTopN.html
+|   |   |-- mvccTable.html
+|   |   |-- mwavg.html
+|   |   |-- mwsum.html
+|   |   `-- mwsumTopN.html
+|   |-- n
+|   |   |-- nanInfFill.html
+|   |   |-- nanosecond.html
+|   |   |-- nanotime.html
+|   |   |-- nanotimestamp.html
+|   |   |-- ne.html
+|   |   |-- neg.html
+|   |   |-- neville.html
+|   |   |-- next.html
+|   |   |-- nextState.html
+|   |   |-- norm.html
+|   |   |-- normal.html
+|   |   |-- not.html
+|   |   |-- notbetween.html
+|   |   |-- notin.html
+|   |   |-- notlike.html
+|   |   |-- now.html
+|   |   |-- ns.html
+|   |   |-- nss.html
+|   |   |-- nsspredict.html
+|   |   |-- nullFill.html
+|   |   |-- nullFill_.html
+|   |   |-- nullIf.html
+|   |   `-- nunique.html
+|   |-- o
+|   |   |-- oauthlogin.html
+|   |   |-- objByName.html
+|   |   |-- objectChecksum.html
+|   |   |-- objectComponent.html
+|   |   |-- objectType.html
+|   |   |-- objs.html
+|   |   |-- ols.html
+|   |   |-- olsEx.html
+|   |   |-- oneHot.html
+|   |   |-- or.html
+|   |   `-- osqp.html
+|   |-- p
+|   |   |-- pack.html
+|   |   |-- pair.html
+|   |   |-- panel.html
+|   |   |-- parseExpr.html
+|   |   |-- parseInt.html
+|   |   |-- parseInteger.html
+|   |   |-- parsejsontable.html
+|   |   |-- partial.html
+|   |   |-- pca.html
+|   |   |-- pchipInterpolateFit.html
+|   |   |-- pdfChiSquare.html
+|   |   |-- pdfF.html
+|   |   |-- pdfNormal.html
+|   |   |-- percentChange.html
+|   |   |-- percentile.html
+|   |   |-- percentileRank.html
+|   |   |-- piecewiselinfit.html
+|   |   |-- pinverse.html
+|   |   |-- pipeline.html
+|   |   |-- ploadText.html
+|   |   |-- plot.html
+|   |   |-- plotHist.html
+|   |   |-- pnodeRun.html
+|   |   |-- point.html
+|   |   |-- poly1d.html
+|   |   |-- polyPredict.html
+|   |   |-- polyfit.html
+|   |   |-- polynomial.html
+|   |   |-- pop_.html
+|   |   |-- pow.html
+|   |   |-- power.html
+|   |   |-- predict.html
+|   |   |-- prev.html
+|   |   |-- prevState.html
+|   |   |-- print.html
+|   |   |-- prod.html
+|   |   |-- purgeCacheEngine.html
+|   |   |-- push_.html
+|   |   `-- pwlfpredict.html
+|   |-- q
+|   |   |-- qclp.html
+|   |   |-- qr.html
+|   |   |-- quadprog.html
+|   |   |-- quantile.html
+|   |   |-- quantileSeries.html
+|   |   |-- quarterBegin.html
+|   |   |-- quarterEnd.html
+|   |   `-- quarterOfYear.html
+|   |-- r
+|   |   |-- rad2deg.html
+|   |   |-- rand.html
+|   |   |-- randBeta.html
+|   |   |-- randBinomial.html
+|   |   |-- randChiSquare.html
+|   |   |-- randDiscrete.html
+|   |   |-- randExp.html
+|   |   |-- randF.html
+|   |   |-- randGamma.html
+|   |   |-- randLogistic.html
+|   |   |-- randMultivariateNormal.html
+|   |   |-- randNormal.html
+|   |   |-- randPoisson.html
+|   |   |-- randStudent.html
+|   |   |-- randUniform.html
+|   |   |-- randWeibull.html
+|   |   |-- randomForestClassifier.html
+|   |   |-- randomForestRegressor.html
+|   |   |-- rank.html
+|   |   |-- ratio.html
+|   |   |-- ratios.html
+|   |   |-- rdp.html
+|   |   |-- readBytes.html
+|   |   |-- readLine.html
+|   |   |-- readLines.html
+|   |   |-- readLines_.html
+|   |   |-- readObject.html
+|   |   |-- readRecord_.html
+|   |   |-- read_.html
+|   |   |-- rebalanceChunksAmongDataNodes.html
+|   |   |-- rebalanceChunksWithinDataNode.html
+|   |   |-- reciprocal.html
+|   |   |-- refCount.html
+|   |   |-- regexCount.html
+|   |   |-- regexFind.html
+|   |   |-- regexReplace.html
+|   |   |-- regexfindstr.html
+|   |   |-- regroup.html
+|   |   |-- remoteRun.html
+|   |   |-- remoteRunWithCompression.html
+|   |   |-- remoteruncompatible.html
+|   |   |-- removeHead_.html
+|   |   |-- removeTail_.html
+|   |   |-- removeTopicOffset.html
+|   |   |-- removeipblacklist.html
+|   |   |-- removeipwhitelist.html
+|   |   |-- removenode.html
+|   |   |-- renameCatalogName.html
+|   |   |-- renameTable.html
+|   |   |-- rename_.html
+|   |   |-- reorderColumns_.html
+|   |   |-- repartitionDS.html
+|   |   |-- repeat.html
+|   |   |-- replace.html
+|   |   |-- replaceColumn_.html
+|   |   |-- replace_.html
+|   |   |-- replay.html
+|   |   |-- replayDS.html
+|   |   |-- repmat.html
+|   |   |-- resample.html
+|   |   |-- resetDBDirMeta.html
+|   |   |-- resetDfsRebalanceConcurrency.html
+|   |   |-- resetDfsRecoveryConcurrency.html
+|   |   |-- resetPwd.html
+|   |   |-- resetRecoveryWorkerNum.html
+|   |   |-- reshape.html
+|   |   |-- residual.html
+|   |   |-- restore.html
+|   |   |-- restoreDB.html
+|   |   |-- restoreDislocatedTablet.html
+|   |   |-- restoreTable.html
+|   |   |-- restoresettings.html
+|   |   |-- resumeRecovery.html
+|   |   |-- reverse.html
+|   |   |-- revoke.html
+|   |   |-- ridge.html
+|   |   |-- ridgeBasic.html
+|   |   |-- ridgeCV.html
+|   |   |-- right.html
+|   |   |-- rm.html
+|   |   |-- rmdir.html
+|   |   |-- rms.html
+|   |   |-- rollingPanel.html
+|   |   |-- rotatetdekey.html
+|   |   |-- round.html
+|   |   |-- routeEvent.html
+|   |   |-- row.html
+|   |   |-- rowAlign.html
+|   |   |-- rowAnd.html
+|   |   |-- rowAt.html
+|   |   |-- rowAvg.html
+|   |   |-- rowBeta.html
+|   |   |-- rowCorr.html
+|   |   |-- rowCount.html
+|   |   |-- rowCovar.html
+|   |   |-- rowCummax.html
+|   |   |-- rowCummin.html
+|   |   |-- rowCumprod.html
+|   |   |-- rowCumsum.html
+|   |   |-- rowCumwsum.html
+|   |   |-- rowDenseRank.html
+|   |   |-- rowDot.html
+|   |   |-- rowEuclidean.html
+|   |   |-- rowImax.html
+|   |   |-- rowImin.html
+|   |   |-- rowKurtosis.html
+|   |   |-- rowMax.html
+|   |   |-- rowMin.html
+|   |   |-- rowMove.html
+|   |   |-- rowNames.html
+|   |   |-- rowNext.html
+|   |   |-- rowNo.html
+|   |   |-- rowOr.html
+|   |   |-- rowPrev.html
+|   |   |-- rowProd.html
+|   |   |-- rowRank.html
+|   |   |-- rowSize.html
+|   |   |-- rowSkew.html
+|   |   |-- rowStd.html
+|   |   |-- rowStdp.html
+|   |   |-- rowSum.html
+|   |   |-- rowSum2.html
+|   |   |-- rowTanimoto.html
+|   |   |-- rowVar.html
+|   |   |-- rowVarp.html
+|   |   |-- rowWavg.html
+|   |   |-- rowWsum.html
+|   |   |-- rowXor.html
+|   |   |-- rowgmd5.html
+|   |   |-- rowimaxlast.html
+|   |   |-- rowiminlast.html
+|   |   |-- rows.html
+|   |   |-- rpad.html
+|   |   |-- rpc.html
+|   |   |-- rshift.html
+|   |   |-- rtrim.html
+|   |   |-- run.html
+|   |   |-- runScript.html
+|   |   `-- runsql.html
+|   |-- s
+|   |   |-- saveAsNpy.html
+|   |   |-- saveDatabase.html
+|   |   |-- saveDualPartition.html
+|   |   |-- saveModel.html
+|   |   |-- saveModule.html
+|   |   |-- savePartition.html
+|   |   |-- saveTable.html
+|   |   |-- saveText.html
+|   |   |-- saveTextFile.html
+|   |   |-- scheduleJob.html
+|   |   |-- schema.html
+|   |   |-- schur.html
+|   |   |-- scramClientFinal.html
+|   |   |-- scramClientFirst.html
+|   |   |-- scs.html
+|   |   |-- searchK.html
+|   |   |-- seasonalEsd.html
+|   |   |-- second.html
+|   |   |-- secondOfMinute.html
+|   |   |-- seek.html
+|   |   |-- segment.html
+|   |   |-- sem.html
+|   |   |-- semiMonthBegin.html
+|   |   |-- semiMonthEnd.html
+|   |   |-- semiannualBegin.html
+|   |   |-- semiannualEnd.html
+|   |   |-- sendEvent.html
+|   |   |-- seq.html
+|   |   |-- sessionWindow.html
+|   |   |-- set.html
+|   |   |-- setAtomicLevel.html
+|   |   |-- setCacheEngineMemSize.html
+|   |   |-- setChunkLastUpdateTime.html
+|   |   |-- setColumnComment.html
+|   |   |-- setColumnarTuple_.html
+|   |   |-- setDatabaseForClusterReplication.html
+|   |   |-- setDatanodeRestartInterval.html
+|   |   |-- setIPConnectionLimit.html
+|   |   |-- setIndexedMatrix_.html
+|   |   |-- setIndexedSeries_.html
+|   |   |-- setLogLevel.html
+|   |   |-- setMaxBlockSizeForReservedMemory.html
+|   |   |-- setMaxConnections.html
+|   |   |-- setMaxJobParallelism.html
+|   |   |-- setMaxJobPriority.html
+|   |   |-- setMaxMemSize.html
+|   |   |-- setMaxTransactionSize.html
+|   |   |-- setMemLimitOfQueryResult.html
+|   |   |-- setMemLimitOfTaskGroupResult.html
+|   |   |-- setMemLimitOfTempResult.html
+|   |   |-- setOLAPCacheEngineSize.html
+|   |   |-- setRaftElectionTick.html
+|   |   |-- setRandomSeed.html
+|   |   |-- setReservedMemSize.html
+|   |   |-- setRetentionPolicy.html
+|   |   |-- setStreamTableFilterColumn.html
+|   |   |-- setSystem.html
+|   |   |-- setTSDBCacheEngineSize.html
+|   |   |-- setTableSensitiveColumn.html
+|   |   |-- setTimeoutTick.html
+|   |   |-- setcomputenodecachingdelay.html
+|   |   |-- setdatabaseclusterreplicationexecutionset.html
+|   |   |-- setdynamicconfig.html
+|   |   |-- setmemlimitofalltempresults.html
+|   |   |-- setprefetchcomputenodedata.html
+|   |   |-- setsessionexpiredtime.html
+|   |   |-- setstreamtabletimestamp.html
+|   |   |-- settablecomment.html
+|   |   |-- shape.html
+|   |   |-- shapiroTest.html
+|   |   |-- share.html
+|   |   |-- shell.html
+|   |   |-- short.html
+|   |   |-- shuffle.html
+|   |   |-- shuffle_.html
+|   |   |-- signbit.html
+|   |   |-- signum.html
+|   |   |-- sin.html
+|   |   |-- sinh.html
+|   |   |-- sinppet.html
+|   |   |-- size.html
+|   |   |-- skew.html
+|   |   |-- skipClusterReplicationTask.html
+|   |   |-- sleep.html
+|   |   |-- slice.html
+|   |   |-- sliceByKey.html
+|   |   |-- sma.html
+|   |   |-- socp.html
+|   |   |-- solve.html
+|   |   |-- sort.html
+|   |   |-- sortBy_.html
+|   |   |-- sort_.html
+|   |   |-- spearmanr.html
+|   |   |-- splev.html
+|   |   |-- spline.html
+|   |   |-- split.html
+|   |   |-- splrep.html
+|   |   |-- sql.html
+|   |   |-- sqlCol.html
+|   |   |-- sqlColAlias.html
+|   |   |-- sqlDS.html
+|   |   |-- sqlDelete.html
+|   |   |-- sqlTuple.html
+|   |   |-- sqlUpdate.html
+|   |   |-- sqrt.html
+|   |   |-- square.html
+|   |   |-- startClusterReplication.html
+|   |   |-- startDataNode.html
+|   |   |-- startheapsample.html
+|   |   |-- startsWith.html
+|   |   |-- stat.html
+|   |   |-- stateIterate.html
+|   |   |-- stateMavg.html
+|   |   |-- std.html
+|   |   |-- stdp.html
+|   |   |-- stl.html
+|   |   |-- stopClusterReplication.html
+|   |   |-- stopDataNode.html
+|   |   |-- stopSubEngine.html
+|   |   |-- stopheapsample.html
+|   |   |-- strReplace.html
+|   |   |-- streamEngineParser.html
+|   |   |-- streamFilter.html
+|   |   |-- streamTable.html
+|   |   |-- stretch.html
+|   |   |-- string.html
+|   |   |-- stringFormat.html
+|   |   |-- strip.html
+|   |   |-- strlen.html
+|   |   |-- strlenu.html
+|   |   |-- strpos.html
+|   |   |-- sub.html
+|   |   |-- subarray.html
+|   |   |-- submitJob.html
+|   |   |-- submitJobEx.html
+|   |   |-- submitJobEx2.html
+|   |   |-- subscribeTable.html
+|   |   |-- substr.html
+|   |   |-- substru.html
+|   |   |-- subtuple.html
+|   |   |-- sum.html
+|   |   |-- sum2.html
+|   |   |-- sum3.html
+|   |   |-- sum4.html
+|   |   |-- sumbars.html
+|   |   |-- summary.html
+|   |   |-- suspendRecovery.html
+|   |   |-- svd.html
+|   |   |-- symbol.html
+|   |   |-- symbolCode.html
+|   |   |-- symmetricDifference.html
+|   |   |-- syncDict.html
+|   |   `-- syntax.html
+|   |-- t
+|   |   |-- t3.html
+|   |   |-- tTest.html
+|   |   |-- table.html
+|   |   |-- tableInsert.html
+|   |   |-- tableUpsert.html
+|   |   |-- tail.html
+|   |   |-- take.html
+|   |   |-- talibNull.html
+|   |   |-- tan.html
+|   |   |-- tanh.html
+|   |   |-- tanimoto.html
+|   |   |-- tema.html
+|   |   |-- temporalAdd.html
+|   |   |-- temporalDeltas.html
+|   |   |-- temporalDiff.html
+|   |   |-- temporalFormat.html
+|   |   |-- temporalParse.html
+|   |   |-- temporalSeq.html
+|   |   |-- terminate.html
+|   |   |-- test.html
+|   |   |-- textChunkDS.html
+|   |   |-- til.html
+|   |   |-- time.html
+|   |   |-- timestamp.html
+|   |   |-- tmavg.html
+|   |   |-- tmavgTopN.html
+|   |   |-- tmbeta.html
+|   |   |-- tmbetaTopN.html
+|   |   |-- tmcorr.html
+|   |   |-- tmcorrTopN.html
+|   |   |-- tmcount.html
+|   |   |-- tmcovar.html
+|   |   |-- tmcovarTopN.html
+|   |   |-- tmfirst.html
+|   |   |-- tmkurtosis.html
+|   |   |-- tmkurtosisTopN.html
+|   |   |-- tmlast.html
+|   |   |-- tmlowrange.html
+|   |   |-- tmmax.html
+|   |   |-- tmmed.html
+|   |   |-- tmmin.html
+|   |   |-- tmove.html
+|   |   |-- tmovingWindowData.html
+|   |   |-- tmpercentile.html
+|   |   |-- tmprod.html
+|   |   |-- tmrank.html
+|   |   |-- tmskew.html
+|   |   |-- tmskewTopN.html
+|   |   |-- tmstd.html
+|   |   |-- tmstdTopN.html
+|   |   |-- tmstdp.html
+|   |   |-- tmstdpTopN.html
+|   |   |-- tmsum.html
+|   |   |-- tmsum2.html
+|   |   |-- tmsumTopN.html
+|   |   |-- tmtoprange.html
+|   |   |-- tmvar.html
+|   |   |-- tmvarTopN.html
+|   |   |-- tmvarp.html
+|   |   |-- tmvarpTopN.html
+|   |   |-- tmwavg.html
+|   |   |-- tmwsum.html
+|   |   |-- tmwsumTopN.html
+|   |   |-- toArray.html
+|   |   |-- toCharArray.html
+|   |   |-- toJson.html
+|   |   |-- toStdJson.html
+|   |   |-- toUTF8.html
+|   |   |-- today.html
+|   |   |-- topRange.html
+|   |   |-- transDS_.html
+|   |   |-- transFreq.html
+|   |   |-- transpose.html
+|   |   |-- treasuryconversionfactor.html
+|   |   |-- triggerNodeReport.html
+|   |   |-- triggerTSDBCompaction.html
+|   |   |-- triggercheckpointforimoltp.html
+|   |   |-- tril.html
+|   |   |-- trim.html
+|   |   |-- trima.html
+|   |   |-- triu.html
+|   |   |-- trueRange.html
+|   |   |-- truncate.html
+|   |   |-- tupleSum.html
+|   |   |-- type.html
+|   |   `-- typestr.html
+|   |-- themes
+|   |   |-- TAlib.html
+|   |   |-- TopN.html
+|   |   |-- cumFunctions.html
+|   |   |-- cumTopN.html
+|   |   |-- mFunctions.html
+|   |   |-- rowFunctions.html
+|   |   |-- streamingEngine.html
+|   |   |-- themes.html
+|   |   |-- tmFunctions.html
+|   |   `-- tmTopN.html
+|   |-- u
+|   |   |-- undef.html
+|   |   |-- ungroup.html
+|   |   |-- unifiedExpr.html
+|   |   |-- union.html
+|   |   |-- unionAll.html
+|   |   |-- unlockUser.html
+|   |   |-- unpack.html
+|   |   |-- unpivot.html
+|   |   |-- unsubscribeTable.html
+|   |   |-- updateLicense.html
+|   |   |-- updateMarketHoliday.html
+|   |   |-- updateOrderBookEngineParams.html
+|   |   |-- updateRule.html
+|   |   |-- update_.html
+|   |   |-- upper.html
+|   |   |-- upsert_.html
+|   |   `-- uuid.html
+|   |-- v
+|   |   |-- valueChanged.html
+|   |   |-- values.html
+|   |   |-- vanillaoption.html
+|   |   |-- var.html
+|   |   |-- var_0.html
+|   |   |-- varma.html
+|   |   |-- varp.html
+|   |   |-- vectorar.html
+|   |   |-- vectornorm.html
+|   |   |-- version.html
+|   |   `-- volumeBar.html
+|   |-- w
+|   |   |-- warmupStreamEngine.html
+|   |   |-- warmupcomputenodecache.html
+|   |   |-- wavg.html
+|   |   |-- wc.html
+|   |   |-- wcovar.html
+|   |   |-- weekBegin.html
+|   |   |-- weekEnd.html
+|   |   |-- weekOfMonth.html
+|   |   |-- weekOfYear.html
+|   |   |-- weekday.html
+|   |   |-- wilder.html
+|   |   |-- winsorize.html
+|   |   |-- winsorize_.html
+|   |   |-- wls.html
+|   |   |-- wma.html
+|   |   |-- write.html
+|   |   |-- writeBytes.html
+|   |   |-- writeLine.html
+|   |   |-- writeLines.html
+|   |   |-- writeLog.html
+|   |   |-- writeObject.html
+|   |   |-- writeRecord.html
+|   |   |-- writeloglevel.html
+|   |   |-- wslr.html
+|   |   |-- wsum.html
+|   |   `-- wsum2.html
+|   |-- x
+|   |   |-- xdb.html
+|   |   `-- xor.html
+|   |-- y
+|   |   |-- year.html
+|   |   |-- yearBegin.html
+|   |   `-- yearEnd.html
+|   `-- z
+|       |-- zTest.html
+|       |-- zigzag.html
+|       `-- zscore.html
+|-- getstarted
+|   |-- chap1_getstarted.html
+|   |-- data
+|   |   `-- testdata.csv
+|   |-- images
+|   |   |-- 1-1.png
+|   |   |-- 1-2.png
+|   |   |-- 2-1.png
+|   |   |-- 2-2.png
+|   |   |-- 2-3.png
+|   |   |-- 3-1.png
+|   |   |-- 4-1.png
+|   |   |-- 4-2.png
+|   |   |-- 4-3.png
+|   |   |-- 4-4.png
+|   |   `-- 6.png
+|   `-- use_clients_server.html
+|-- images
+|   |-- GUI
+|   |   |-- csv.png
+|   |   |-- csv2.png
+|   |   |-- csv3.png
+|   |   |-- gui.png
+|   |   |-- gui_1.png
+|   |   |-- new_add_server.png
+|   |   |-- synchronize.png
+|   |   `-- userName.png
+|   |-- addMarketHoliday.png
+|   |-- analyticFuncs
+|   |   |-- agg.png
+|   |   |-- frame.png
+|   |   |-- orderBy.png
+|   |   |-- paititionBy.png
+|   |   `-- rowsRange.png
+|   |-- arrayVector01.png
+|   |-- arrayvector_.png
+|   |-- client_dl.png
+|   |-- clusterAsync.png
+|   |-- conditionalIterate_output.png
+|   |-- cumTopN_1.png
+|   |-- cum_1.png
+|   |-- database01.png
+|   |-- database02.png
+|   |-- database03.png
+|   |-- database04.png
+|   |-- database05.png
+|   |-- database06.png
+|   |-- database07.png
+|   |-- db_distr_comp
+|   |   |-- Level_file.png
+|   |   |-- OLAP\ \345\274\225\346\223\216\346\236\266\346\236\204\345\233\276.png
+|   |   |-- OLAP_file.png
+|   |   |-- TSDB_architecture.png
+|   |   |-- TSDB_write.png
+|   |   |-- index.png
+|   |   |-- level_file_disk.png
+|   |   |-- level_file_struc.png
+|   |   |-- pkey_engine_delete_bitmap.png
+|   |   |-- pkey_engine_level_file.png
+|   |   |-- pkey_engine_read_write_flowchart.png
+|   |   |-- pkey_engine_storage_layout.png
+|   |   |-- proxy_caching_engine.png
+|   |   |-- query_optimization.png
+|   |   |-- storage_compute_separation_arch.png
+|   |   |-- transaction.png
+|   |   |-- \345\237\272\346\234\254\344\272\213\345\212\241\346\265\201\347\250\213\345\233\276.png
+|   |   `-- \346\225\260\346\215\256\347\273\223\346\236\204\345\233\276.png
+|   |-- dema.png
+|   |-- elasticnet.png
+|   |-- ema1.png
+|   |-- ema2.png
+|   |-- ema_k.png
+|   |-- ema_ktrue.png
+|   |-- ewmmean_adjust_false.png
+|   |-- ewmmean_adjust_true.png
+|   |-- ewmmean_com.png
+|   |-- ewmmean_halflife.png
+|   |-- ewmmean_span.png
+|   |-- fixedLengthArrayVector.png
+|   |-- fraction.png
+|   |-- fraction_cumpercentile.png
+|   |-- gd.png
+|   |-- gema.png
+|   |-- gema_k.png
+|   |-- getstarted_download.png
+|   |-- getstarted_singleserver_on.png
+|   |-- getstarted_userlogin_web.png
+|   |-- higher.png
+|   |-- interval01.png
+|   |-- interval02.png
+|   |-- k0.png
+|   |-- k1.png
+|   |-- kurtosisx.png
+|   |-- lasso.png
+|   |-- linear.png
+|   |-- linprog.png
+|   |-- linprog1.png
+|   |-- linprog2.png
+|   |-- lower.png
+|   |-- mTopN_1.png
+|   |-- mapr.png
+|   |-- mfunc_1.png
+|   |-- mfunc_2.png
+|   |-- midpoint.png
+|   |-- mmse.png
+|   |-- mpercentiletopn.png
+|   |-- mutualinfo.png
+|   |-- orderBook1.png
+|   |-- orderBook2.png
+|   |-- osqp.png
+|   |-- pi.png
+|   |-- pi1.png
+|   |-- plot01.png
+|   |-- plot02.png
+|   |-- plot03.png
+|   |-- plot04.png
+|   |-- plot05.png
+|   |-- plot06.png
+|   |-- plot07.png
+|   |-- plot08.png
+|   |-- plot09.png
+|   |-- plotHist01.png
+|   |-- plotHist02.png
+|   |-- polynomial.png
+|   |-- predict01.png
+|   |-- product_dl.png
+|   |-- pscore.png
+|   |-- qclp.png
+|   |-- quadprog.png
+|   |-- quadprog1.png
+|   |-- quadprog2.png
+|   |-- quadprog3.png
+|   |-- ridge.png
+|   |-- rowAlign_1.png
+|   |-- rowAlign_2.png
+|   |-- rowfunc_1.png
+|   |-- rowskewx.png
+|   |-- scs01.png
+|   |-- scs02.png
+|   |-- scs03.png
+|   |-- skew.png
+|   |-- sma.png
+|   |-- socp.png
+|   |-- socp_exp.png
+|   |-- socp_h.png
+|   |-- socp_matrix_g.png
+|   |-- socp_standard_format.png
+|   |-- sqlTrace_getTraces.png
+|   |-- sqlTrace_viewTraceInfo.png
+|   |-- startup.png
+|   |-- stl01.png
+|   |-- stl02.png
+|   |-- t3.png
+|   |-- talib_1.png
+|   |-- tema.png
+|   |-- tmTopN_1.png
+|   |-- tmfraction.png
+|   |-- tmfunc_1.png
+|   |-- tmlinear.png
+|   |-- trima.png
+|   |-- vscodeext
+|   |   |-- allow-browser-popup.png
+|   |   |-- close-proxy.png
+|   |   |-- connections.png
+|   |   |-- database-hint.png
+|   |   |-- debug
+|   |   |   `-- zh
+|   |   |       |-- F10.png
+|   |   |       |-- F11.png
+|   |   |       |-- F5.png
+|   |   |       |-- all-header.png
+|   |   |       |-- breakpoints-manager.png
+|   |   |       |-- call-stack.png
+|   |   |       |-- callstack-view.png
+|   |   |       |-- cancel-breakpoint.png
+|   |   |       |-- components.png
+|   |   |       |-- debug-bar.png
+|   |   |       |-- debug-errmsg.png
+|   |   |       |-- delete-breakpoints.png
+|   |   |       |-- disable-breakpoints.png
+|   |   |       |-- language.png
+|   |   |       |-- launched.png
+|   |   |       |-- long-var.png
+|   |   |       |-- multi-server.png
+|   |   |       |-- primary-sidebar.png
+|   |   |       |-- restart-icon.png
+|   |   |       |-- server.png
+|   |   |       |-- set-breakpoint1.png
+|   |   |       |-- set-breakpoint2.png
+|   |   |       |-- set-breakpoint3.png
+|   |   |       |-- step-out-icon.png
+|   |   |       |-- step-out.png
+|   |   |       |-- stop-icon.png
+|   |   |       |-- var-hover.png
+|   |   |       `-- var.png
+|   |   |-- debug_var.png
+|   |   |-- definition-location.png
+|   |   |-- demo.png
+|   |   |-- drag-dataview.png
+|   |   |-- expand-doc.png
+|   |   |-- explorer.png
+|   |   |-- func-comment.png
+|   |   |-- func-hint.png
+|   |   |-- go-to-definition.png
+|   |   |-- key-bindings.png
+|   |   |-- keywords-hint.png
+|   |   |-- language-mode.png
+|   |   |-- mappings.png
+|   |   |-- module-available.png
+|   |   |-- module-hint.png
+|   |   |-- module-import.png
+|   |   |-- reset-location.png
+|   |   |-- select-language.png
+|   |   |-- table-hint.png
+|   |   |-- variable-definition.png
+|   |   |-- variable-hint.png
+|   |   `-- with-dataview.png
+|   |-- web_login.png
+|   |-- wilderxk.png
+|   |-- wilderxk_name.png
+|   |-- wma.png
+|   |-- wslr.png
+|   |-- x.png
+|   |-- xi.png
+|   |-- xk.png
+|   |-- xn.png
+|   `-- xp1.png
+|-- index.html
+|-- license-3rd-party.txt
+|-- logo.png
+|-- modules
+|   |-- MarketHoliday
+|   |   |-- mkt_calendar.html
+|   |   `-- release.html
+|   |-- easyNSQ
+|   |   |-- easynsq.html
+|   |   |-- easynsq_2.html
+|   |   |-- images
+|   |   |   |-- 1.1.png
+|   |   |   |-- 1.2.png
+|   |   |   |-- 1.3.png
+|   |   |   |-- 1.4.png
+|   |   |   |-- 2.1.png
+|   |   |   |-- 2.2.png
+|   |   |   |-- 2.3.png
+|   |   |   |-- 2.4.png
+|   |   |   |-- 2.5.png
+|   |   |   |-- 2.6.png
+|   |   |   |-- 2.7.png
+|   |   |   |-- 2.8.png
+|   |   |   |-- 2.9.png
+|   |   |   |-- 3.1.png
+|   |   |   |-- 3.2.png
+|   |   |   |-- 3.3.png
+|   |   |   `-- 6.1.png
+|   |   `-- script
+|   |       |-- easyNSQ.dos
+|   |       |-- example.txt
+|   |       `-- startup.dos
+|   |-- easyTLDataImport
+|   |   |-- easytl_data_import.html
+|   |   |-- images
+|   |   |   `-- Module_easyTLDataImport
+|   |   |       |-- 3_1.png
+|   |   |       |-- 4_1.png
+|   |   |       |-- 4_2.png
+|   |   |       |-- 5_1.png
+|   |   |       `-- 5_2.png
+|   |   `-- src
+|   |       |-- DolphinDBModulesV1.0.zip
+|   |       `-- DolphinDBModulesV2.0.zip
+|   |-- gtja191Alpha
+|   |   |-- 191alpha.html
+|   |   |-- helper
+|   |   |   |-- gtja191AlphaRes.dos
+|   |   |   |-- gtja191Prepare.dos
+|   |   |   `-- gtja191StreamTest.dos
+|   |   `-- src
+|   |       `-- gtja191Alpha.dos
+|   |-- mytt
+|   |   |-- images
+|   |   |   |-- python_compare.png
+|   |   |   `-- toprangelowrange.png
+|   |   |-- mytt.html
+|   |   |-- src
+|   |   |   |-- 1.30.18or2.00.6
+|   |   |   |   `-- mytt.dos
+|   |   |   |-- 1.30.19or2.00.7
+|   |   |   |   `-- mytt.dos
+|   |   |   `-- 1.30.21or2.00.9
+|   |   |       `-- mytt.dos
+|   |   `-- test
+|   |       |-- DolphinDBRunTime.txt
+|   |       |-- MyTT.py
+|   |       `-- PythonRunTime.py
+|   |-- ops
+|   |   |-- ops.html
+|   |   `-- src
+|   |       `-- ops.dos
+|   |-- ta
+|   |   |-- images
+|   |   |   |-- ta_1.png
+|   |   |   |-- ta_2.png
+|   |   |   |-- ta_3.png
+|   |   |   |-- ta_4.png
+|   |   |   |-- ta_5.png
+|   |   |   `-- ta_6.png
+|   |   |-- src
+|   |   |   |-- 1.10.3
+|   |   |   |   `-- ta.dos
+|   |   |   |-- 1.30.20or2.00.8
+|   |   |   |   `-- ta.dos
+|   |   |   |-- Correctness_verification.ipynb
+|   |   |   |-- DolphinDBRunTime.txt
+|   |   |   |-- DolphinDB_vs_Python_runtime.ipynb
+|   |   |   |-- stream_batch_consistency.txt
+|   |   |   `-- test_data.7z
+|   |   `-- ta.html
+|   `-- wq101alpha
+|       |-- helper
+|       |   |-- infoDataScript.dos
+|       |   |-- prepare101.dos
+|       |   |-- wq101alphaScript.dos
+|       |   `-- wq101alphaStreamTest.dos
+|       |-- src
+|       |   `-- wq101alpha.dos
+|       |-- test
+|       |   |-- PerformanceCompare.csv
+|       |   |-- alpha101_adjusted.py
+|       |   |-- partialAlpha_npPerformance.py
+|       |   |-- verifyResult.py
+|       |   |-- wq101alphaDDBTime.dos
+|       |   |-- wq101alphaPyTime.py
+|       |   |-- wqAlphaDDBRes.dos
+|       |   `-- wqAlphaPyRes.py
+|       `-- wq101alpha.html
+|-- omc
+|   |-- images
+|   |   |-- connection_lost
+|   |   |   `-- DM_20230918182218_001.png
+|   |   `-- slow_io
+|   |       |-- DM_20230918192313_001.png
+|   |       |-- DM_20230918192313_002.png
+|   |       |-- DM_20230918192313_003.png
+|   |       |-- DM_20230918192313_004.png
+|   |       |-- DM_20230918192313_005.png
+|   |       `-- DM_20230918192313_006.png
+|   |-- omc_connection_lost_guidelines.html
+|   |-- omc_server_hang_guidelines.html
+|   `-- omc_slow_io_guidelines.html
+|-- oxygen-webhelp
+|   |-- app
+|   |   |-- 06b8c14a3b44e40e716a.png
+|   |   |-- 13e0bf06ab64b69789a1.svg
+|   |   |-- 3068af7f06fb8a53ad4f.svg
+|   |   |-- 35ec5e08510fdaca14ed.png
+|   |   |-- 3f8349153bdcfc671106.svg
+|   |   |-- 46d0d90fb53c55c724a3.svg
+|   |   |-- 522f5f3845fb9079d0f3.svg
+|   |   |-- 5408564c2b9812b0e4b6.svg
+|   |   |-- 7905db3e6db01ebd2b30.svg
+|   |   |-- 8f872dc34ceb87edd380.svg
+|   |   |-- Copy.png
+|   |   |-- a4e3132304e55c477c8b.svg
+|   |   |-- ab209b71b9b66cdcac87.svg
+|   |   |-- attention.svg
+|   |   |-- c208bc83c7ec263265c3.svg
+|   |   |-- caution.svg
+|   |   |-- commons.css
+|   |   |-- commons.css.map
+|   |   |-- commons.js
+|   |   |-- commons.js.LICENSE.txt
+|   |   |-- commons.js.map
+|   |   |-- context-help
+|   |   |   `-- context-help-map.js
+|   |   |-- context-help.js
+|   |   |-- context-help.js.map
+|   |   |-- d3405d5731f9e7f63afd.png
+|   |   |-- danger.svg
+|   |   |-- dot.png
+|   |   |-- e0a377a879d6bd5d3fdf.png
+|   |   |-- efb2f31274652f67e4ba.ttf
+|   |   |-- facets
+|   |   |   `-- search-facets.json
+|   |   |-- fastpath.svg
+|   |   |-- fe3c7cab5a249a73e311.png
+|   |   |-- important.svg
+|   |   |-- indexterms.css
+|   |   |-- indexterms.css.map
+|   |   |-- indexterms.js
+|   |   |-- indexterms.js.map
+|   |   |-- link-icon.png
+|   |   |-- localization
+|   |   |   `-- strings.js
+|   |   |-- main.css
+|   |   |-- main.css.map
+|   |   |-- main.js
+|   |   |-- main.js.map
+|   |   |-- nav-links
+|   |   |   `-- json
+|   |   |       |-- about_language_resources-d10102e19847.js
+|   |   |       |-- about_tutorials-d10102e97970.js
+|   |   |       |-- amdquote-d10102e93683.js
+|   |   |       |-- api-d10102e107082.js
+|   |   |       |-- api_protocol-d10102e93253.js
+|   |   |       |-- arrow-d10102e93775.js
+|   |   |       |-- backtest-d10102e93959.js
+|   |   |       |-- chap1_sect_using_clients-d10102e843.js
+|   |   |       |-- chap3_sect_database_distributed_computing-d10102e2311.js
+|   |   |       |-- chap4_db_programming-d10102e19900.js
+|   |   |       |-- chap4_sect_data_manipulation-d10102e24210.js
+|   |   |       |-- chap4_sect_data_type_description-d10102e20012.js
+|   |   |       |-- chap4_sect_dataforms-d10102e20128.js
+|   |   |       |-- chap4_sect_datatypes_forms-d10102e19951.js
+|   |   |       |-- chap4_sect_func_programming-d10102e25137.js
+|   |   |       |-- chap4_sect_objects-d10102e20943.js
+|   |   |       |-- chap4_sect_objects_list-d10102e21488.js
+|   |   |       |-- chap4_sect_operators-d10102e21380.js
+|   |   |       |-- chap4_sect_pro_statements_assign_statements-d10102e23011.js
+|   |   |       |-- chap4_sect_programming_statements-d10102e22964.js
+|   |   |       |-- chap4_sect_sql_statements-d10102e25832.js
+|   |   |       |-- chap6_plugin-d10102e93399.js
+|   |   |       |-- chap7_tutorials_streaming-d10102e3573.js
+|   |   |       |-- chap7_tutorials_streaming-d10102e4319.js
+|   |   |       |-- chap7_tutorials_system_management-d10102e7477.js
+|   |   |       |-- chap8_sect_series_o_funcs-d10102e91277.js
+|   |   |       |-- cluster_manage-d10102e7530.js
+|   |   |       |-- compatibility_def-d10102e107878.js
+|   |   |       |-- ctp-d10102e94651.js
+|   |   |       |-- ddl-d10102e25883.js
+|   |   |       |-- dml-d10102e26071.js
+|   |   |       |-- dql-d10102e26259.js
+|   |   |       |-- e6_97_a0_e6_a0_87_e9_a2_9810-d10102e7945.js
+|   |   |       |-- error_code_list-d10102e8593.js
+|   |   |       |-- functions_references-d10102e28664.js
+|   |   |       |-- grafana-\346\225\260\346\215\256\346\272\220\346\217\222\344\273\266-d10102e97739.js
+|   |   |       |-- hint-d10102e28569.js
+|   |   |       |-- httpclient-d10102e95204.js
+|   |   |       |-- insight-d10102e95296.js
+|   |   |       |-- intro-d10102e916.js
+|   |   |       |-- landingpage_sql_trace-d10102e28384.js
+|   |   |       |-- mdl-d10102e95849.js
+|   |   |       |-- mes-d10102e95711.js
+|   |   |       |-- nav-links.js
+|   |   |       |-- new_chap_database_manage_new_chap_dbmanage_landing_page-d10102e2258.js
+|   |   |       |-- null-\345\200\274\347\232\204\346\223\215\344\275\234-d10102e24677.js
+|   |   |       |-- null-\345\200\274\350\277\220\347\256\227-d10102e24907.js
+|   |   |       |-- odbc-d10102e96172.js
+|   |   |       |-- parameters_configuration-d10102e1975.js
+|   |   |       |-- predicates-d10102e27184.js
+|   |   |       |-- realtime_data_acces-d10102e4968.js
+|   |   |       |-- redis-d10102e96633.js
+|   |   |       |-- replay-d10102e4689.js
+|   |   |       |-- sectionddb_deployment-d10102e189.js
+|   |   |       |-- streamfunctions-d10102e3626.js
+|   |   |       |-- streamingEngineTopic-d10102e4042.js
+|   |   |       |-- table_joiners-d10102e27830.js
+|   |   |       |-- third_party-d10102e97601.js
+|   |   |       |-- third_party_rn-d10102e107694.js
+|   |   |       |-- tocId-d10102e100283.js
+|   |   |       |-- tocId-d10102e100698.js
+|   |   |       |-- tocId-d10102e102542.js
+|   |   |       |-- tocId-d10102e104939.js
+|   |   |       |-- tocId-d10102e105953.js
+|   |   |       |-- tocId-d10102e106046.js
+|   |   |       |-- tocId-d10102e106186.js
+|   |   |       |-- tocId-d10102e106251.js
+|   |   |       |-- tocId-d10102e107184.js
+|   |   |       |-- tocId-d10102e107555.js
+|   |   |       |-- tocId-d10102e108200.js
+|   |   |       |-- tocId-d10102e13019.js
+|   |   |       |-- tocId-d10102e15739.js
+|   |   |       |-- tocId-d10102e17260.js
+|   |   |       |-- tocId-d10102e17629.js
+|   |   |       |-- tocId-d10102e18413.js
+|   |   |       |-- tocId-d10102e19059.js
+|   |   |       |-- tocId-d10102e19385.js
+|   |   |       |-- tocId-d10102e242.js
+|   |   |       |-- tocId-d10102e28764.js
+|   |   |       |-- tocId-d10102e28765.js
+|   |   |       |-- tocId-d10102e30934.js
+|   |   |       |-- tocId-d10102e32778.js
+|   |   |       |-- tocId-d10102e335.js
+|   |   |       |-- tocId-d10102e40812.js
+|   |   |       |-- tocId-d10102e44167.js
+|   |   |       |-- tocId-d10102e46195.js
+|   |   |       |-- tocId-d10102e47716.js
+|   |   |       |-- tocId-d10102e5198.js
+|   |   |       |-- tocId-d10102e520.js
+|   |   |       |-- tocId-d10102e5245.js
+|   |   |       |-- tocId-d10102e5430.js
+|   |   |       |-- tocId-d10102e55144.js
+|   |   |       |-- tocId-d10102e55698.js
+|   |   |       |-- tocId-d10102e5619.js
+|   |   |       |-- tocId-d10102e5712.js
+|   |   |       |-- tocId-d10102e59429.js
+|   |   |       |-- tocId-d10102e59568.js
+|   |   |       |-- tocId-d10102e60123.js
+|   |   |       |-- tocId-d10102e62801.js
+|   |   |       |-- tocId-d10102e6404.js
+|   |   |       |-- tocId-d10102e67459.js
+|   |   |       |-- tocId-d10102e6820.js
+|   |   |       |-- tocId-d10102e68474.js
+|   |   |       |-- tocId-d10102e6876.js
+|   |   |       |-- tocId-d10102e68981.js
+|   |   |       |-- tocId-d10102e7061.js
+|   |   |       |-- tocId-d10102e70779.js
+|   |   |       |-- tocId-d10102e71148.js
+|   |   |       |-- tocId-d10102e77512.js
+|   |   |       |-- tocId-d10102e7760.js
+|   |   |       |-- tocId-d10102e8130.js
+|   |   |       |-- tocId-d10102e84442.js
+|   |   |       |-- tocId-d10102e8640.js
+|   |   |       |-- tocId-d10102e88366.js
+|   |   |       |-- tocId-d10102e89152.js
+|   |   |       |-- tocId-d10102e89660.js
+|   |   |       |-- tocId-d10102e90859.js
+|   |   |       |-- tocId-d10102e90952.js
+|   |   |       |-- tocId-d10102e91092.js
+|   |   |       |-- tocId-d10102e91699.js
+|   |   |       |-- tocId-d10102e93452.js
+|   |   |       |-- tocId-d10102e94466.js
+|   |   |       |-- tocId-d10102e9562.js
+|   |   |       |-- tocId-d10102e98023.js
+|   |   |       |-- tocId-d10102e98070.js
+|   |   |       |-- tocId-d10102e98946.js
+|   |   |       |-- topic_pg3_22w_ryb-d10102e2879.js
+|   |   |       |-- troubleshooting-d10102e8271.js
+|   |   |       |-- windtdf-d10102e97232.js
+|   |   |       |-- xtp-d10102e97370.js
+|   |   |       |-- \345\205\203\347\274\226\347\250\213-d10102e25507.js
+|   |   |       |-- \345\206\205\347\275\256\346\265\201\345\274\217\350\256\241\347\256\227\347\256\227\345\255\220-d10102e3903.js
+|   |   |       |-- \345\220\221\351\207\217-d10102e20305.js
+|   |   |       |-- \345\255\227\347\254\246\344\270\262\345\257\271\350\261\241-d10102e24257.js
+|   |   |       |-- \346\200\247\350\203\275\347\233\221\346\216\247-d10102e8037.js
+|   |   |       |-- \346\226\207\344\273\266\346\223\215\344\275\234-d10102e25647.js
+|   |   |       |-- \346\227\266\351\227\264\345\272\217\345\210\227\345\257\271\350\261\241-d10102e24442.js
+|   |   |       |-- \346\250\241\345\235\227\346\246\202\350\277\260-d10102e101759.js
+|   |   |       `-- \350\241\214\346\203\205\346\225\260\346\215\256\346\217\222\344\273\266nsq-d10102e5060.js
+|   |   |-- note.svg
+|   |   |-- notice.svg
+|   |   |-- options
+|   |   |   `-- properties.js
+|   |   |-- oxygen-webhelp-icons.ttf
+|   |   |-- remember.svg
+|   |   |-- restriction.svg
+|   |   |-- search
+|   |   |   |-- index
+|   |   |   |   |-- htmlFileInfoList.js
+|   |   |   |   |-- index-1.js
+|   |   |   |   |-- index-2.js
+|   |   |   |   |-- index-3.js
+|   |   |   |   |-- index.js
+|   |   |   |   |-- keywords.js
+|   |   |   |   |-- link-to-parent.js
+|   |   |   |   `-- stopwords.js
+|   |   |   |-- nwSearchFnt.LICENSE.txt
+|   |   |   |-- nwSearchFnt.js
+|   |   |   `-- stemmers
+|   |   |       |-- de_stemmer.js
+|   |   |       |-- en_stemmer.js
+|   |   |       |-- fr_stemmer.js
+|   |   |       `-- stemmer.js
+|   |   |-- search.css
+|   |   |-- search.css.map
+|   |   |-- search.js
+|   |   |-- search.js.map
+|   |   |-- star.png
+|   |   |-- starsSmall.png
+|   |   |-- tip.svg
+|   |   |-- topic-page-print.css
+|   |   |-- topic-page-print.css.map
+|   |   |-- topic-page-print.js
+|   |   |-- topic.css
+|   |   |-- topic.css.map
+|   |   |-- topic.js
+|   |   |-- topic.js.map
+|   |   |-- troubleshooting.svg
+|   |   `-- warning.svg
+|   `-- template
+|       |-- js
+|       |   |-- copycodeonly.html
+|       |   |-- custom.js
+|       |   |-- fuzzy.js
+|       |   |-- search-engine.js
+|       |   |-- split.html
+|       |   |-- splitandsearch.js
+|       |   `-- tokenization.js
+|       |-- resources
+|       |   |-- after-search-fragment.xml
+|       |   |-- favicon.ico
+|       |   |-- logo.png
+|       |   |-- mathjax-config.js
+|       |   |-- mathjax.xml
+|       |   `-- tex-mml-chtml.js
+|       `-- styles.css
+|-- plugins
+|   |-- ASTTrader.html
+|   |-- Arrow
+|   |   `-- arrow.html
+|   |-- EncoderDecoder.html
+|   |-- LDAP.html
+|   |-- MDL.html
+|   |-- MatchingEngine
+|   |   `-- me.html
+|   |-- SSEQuotationFile.html
+|   |-- amdquote
+|   |   |-- amdhistory.html
+|   |   |-- amdquote.html
+|   |   `-- amdquote_2.html
+|   |-- aws
+|   |   `-- aws.html
+|   |-- backtest
+|   |   |-- backtest.html
+|   |   |-- digital_currency.html
+|   |   |-- futures.html
+|   |   |-- interbank_bonds.html
+|   |   |-- interface_description.html
+|   |   |-- multi_asset.html
+|   |   |-- option.html
+|   |   |-- performance_tuning.html
+|   |   |-- quick_start.html
+|   |   |-- release
+|   |   |   |-- 2_00_14.html
+|   |   |   |-- 2_00_15.html
+|   |   |   |-- 2_00_16.html
+|   |   |   `-- 2_00_17.html
+|   |   `-- stock.html
+|   |-- ctp.html
+|   |-- ctp_2.html
+|   |-- ctp_best_practice.html
+|   |-- data
+|   |   |-- CTAstrategy.dos
+|   |   |-- Kungfu_OrderBookImbalance.txt
+|   |   |-- Kungfu_v.s._DolphinDB.dos
+|   |   |-- MT4_BollingBand.mq4
+|   |   |-- MT4_v.s._DolphinDB.dos
+|   |   |-- PythonBacktrader_onBarCTA.txt
+|   |   |-- VNPY_CTA.py
+|   |   |-- VNPY_v.s._DolphinDB.dos
+|   |   |-- backtestDemo.dos
+|   |   |-- backtrader_v.s._DolphinDB.dos
+|   |   |-- demoCrypto_min.dos
+|   |   |-- demoFutures_min.dos
+|   |   |-- demoFutures_min_old
+|   |   |-- demoStock_type0_old
+|   |   |-- demoStock_type1.dos
+|   |   |-- demoStock_type6.dos
+|   |   |-- exampleDemo.dos
+|   |   |-- indicatorsDemo.dos
+|   |   |-- mink_data.csv
+|   |   `-- quick_start
+|   |       |-- barData.csv
+|   |       `-- futureData.csv
+|   |-- datafeed.html
+|   |-- dataxwriter
+|   |   `-- README_CN.html
+|   |-- efh.html
+|   |-- excel_add_in.html
+|   |-- feather
+|   |   `-- feather.html
+|   |-- gp
+|   |   |-- gp.html
+|   |   `-- images
+|   |       `-- pointType.png
+|   |-- gurobi.html
+|   |-- hbase
+|   |   `-- hbase.html
+|   |-- hdf5
+|   |   `-- hdf5.html
+|   |-- hdfs
+|   |   `-- hdfs.html
+|   |-- httpClient
+|   |   `-- httpclient.html
+|   |-- images
+|   |   |-- WindTDF
+|   |   |   |-- 1-2.png
+|   |   |   |-- 2-1.jpg
+|   |   |   |-- 2-3-1.png
+|   |   |   |-- 2-3-2.png
+|   |   |   `-- 2-3-3.png
+|   |   |-- ctp_best_practice
+|   |   |   |-- 1-1.png
+|   |   |   |-- 1-2.png
+|   |   |   |-- 2-1.png
+|   |   |   |-- 2-2.png
+|   |   |   |-- 3-1.png
+|   |   |   `-- 4-1.png
+|   |   |-- excel_add_in
+|   |   |   |-- readme_cn.png
+|   |   |   |-- readme_cn_1-1.png
+|   |   |   |-- readme_cn_1-2.png
+|   |   |   |-- readme_cn_1-3.png
+|   |   |   |-- readme_cn_1-4.png
+|   |   |   |-- readme_cn_1-5.png
+|   |   |   |-- readme_cn_1-6.png
+|   |   |   |-- readme_cn_1-7.png
+|   |   |   |-- readme_cn_1-8.png
+|   |   |   |-- readme_cn_1-9.png
+|   |   |   |-- readme_cn_2-1.png
+|   |   |   |-- readme_cn_2-10.png
+|   |   |   |-- readme_cn_2-11.png
+|   |   |   |-- readme_cn_2-2.png
+|   |   |   |-- readme_cn_2-3.png
+|   |   |   |-- readme_cn_2-4.png
+|   |   |   |-- readme_cn_2-5.png
+|   |   |   |-- readme_cn_2-6.png
+|   |   |   |-- readme_cn_2-7.png
+|   |   |   |-- readme_cn_2-8.png
+|   |   |   |-- readme_cn_2-9.png
+|   |   |   |-- readme_cn_3-1.png
+|   |   |   |-- readme_cn_3-10.png
+|   |   |   |-- readme_cn_3-11.png
+|   |   |   |-- readme_cn_3-12.png
+|   |   |   |-- readme_cn_3-13.png
+|   |   |   |-- readme_cn_3-14.png
+|   |   |   |-- readme_cn_3-15.png
+|   |   |   |-- readme_cn_3-16.png
+|   |   |   |-- readme_cn_3-17.png
+|   |   |   |-- readme_cn_3-18.png
+|   |   |   |-- readme_cn_3-2.png
+|   |   |   |-- readme_cn_3-3.png
+|   |   |   |-- readme_cn_3-4.png
+|   |   |   |-- readme_cn_3-5.png
+|   |   |   |-- readme_cn_3-6.png
+|   |   |   |-- readme_cn_3-7.png
+|   |   |   |-- readme_cn_3-8.png
+|   |   |   `-- readme_cn_3-9.png
+|   |   |-- pluginBacktest
+|   |   |   |-- 1182138414.png
+|   |   |   |-- 1182990351.png
+|   |   |   |-- 1193214276.png
+|   |   |   `-- architecture.png
+|   |   |-- pluginmarket.png
+|   |   `-- quick_start
+|   |       `-- 1_1.png
+|   |-- insight
+|   |   |-- insight.html
+|   |   `-- insight_2.html
+|   |-- kafka
+|   |   `-- kafka.html
+|   |-- kdb
+|   |   `-- kdb.html
+|   |-- lgbm.html
+|   |-- libtorch
+|   |   |-- closing_prices.csv
+|   |   |-- images
+|   |   |   |-- libtorch_1.png
+|   |   |   `-- libtorch_2.png
+|   |   |-- libtorch.html
+|   |   `-- scripted_model.pth
+|   |-- mat
+|   |   `-- mat.html
+|   |-- matchingEngineSimulator
+|   |   |-- mes.html
+|   |   `-- rn.html
+|   |-- mongodb
+|   |   `-- mongodb.html
+|   |-- mqtt
+|   |   `-- mqtt.html
+|   |-- mseed
+|   |   `-- mseed.html
+|   |-- mysql
+|   |   `-- mysql.html
+|   |-- nsq
+|   |   |-- CMakeLists.txt
+|   |   |-- nsq.html
+|   |   `-- nsq_2.html
+|   |-- odbc
+|   |   |-- images
+|   |   |   `-- ODBC_plugin_user_guide
+|   |   |       |-- 1_1.png
+|   |   |       |-- 5_1.png
+|   |   |       |-- 5_2.png
+|   |   |       |-- 5_3.png
+|   |   |       `-- 5_4.png
+|   |   |-- odbc.html
+|   |   `-- odbc_faq.html
+|   |-- opc
+|   |   `-- opc.html
+|   |-- opcua
+|   |   `-- opcua.html
+|   |-- orc.html
+|   |-- parquet
+|   |   `-- parquet.html
+|   |-- performance_comparison.html
+|   |-- plg_dev_adv.html
+|   |-- plg_dev_tutorial.html
+|   |-- plg_howtos.html
+|   |-- plg_intro.html
+|   |-- plg_mkt_inst.html
+|   |-- pulsar.html
+|   |-- py
+|   |   |-- 1D_model.pth
+|   |   |-- py.html
+|   |   |-- py_3_9.html
+|   |   `-- saved_models.zip
+|   |-- quantlib
+|   |   |-- example
+|   |   |   |-- BarrierEngine.dos
+|   |   |   |-- BarrierEngine.py
+|   |   |   |-- EuropeanOption.dos
+|   |   |   |-- EuropeanOption.py
+|   |   |   |-- FixRateBondFunction.dos
+|   |   |   |-- FixRateBondFunction.py
+|   |   |   |-- FloatingRateBond.dos
+|   |   |   |-- FloatingRateBond.py
+|   |   |   |-- InterestRate.dos
+|   |   |   |-- InterestRate.py
+|   |   |   |-- zeroRate.dos
+|   |   |   `-- zeroRate.py
+|   |   `-- quantlib.html
+|   |-- rabbitMQ.html
+|   |-- redis.html
+|   |-- rocketMQ.html
+|   |-- script
+|   |   |-- WindTDF
+|   |   |   `-- WindTDF_script_1.dos
+|   |   |-- ctp_best_practice
+|   |   |   |-- future_basic.csv
+|   |   |   `-- startup.dos
+|   |   |-- quick_start
+|   |   |   |-- \350\202\241\347\245\250\344\270\216\346\234\237\350\264\247\347\255\226\347\225\245.dos
+|   |   |   `-- \350\202\241\347\245\250\345\277\253\347\205\247.dos
+|   |   `-- zip.zip
+|   |-- sevenzip.html
+|   |-- signal
+|   |   |-- signal.html
+|   |   `-- sipui2.html
+|   |-- slwriter.html
+|   |-- svm
+|   |   `-- svm.html
+|   |-- tcpsocket.html
+|   |-- uniqueid.html
+|   |-- websocket.html
+|   |-- windtdf.html
+|   |-- windtdf_tutorial.html
+|   |-- xgboost
+|   |   `-- xgboost.html
+|   |-- xtp.html
+|   |-- zip
+|   |   `-- zip.html
+|   |-- zlib
+|   |   `-- zlib.html
+|   `-- zmq
+|       `-- zmq.html
+|-- progr
+|   |-- anonym_func.html
+|   |-- class_objects.html
+|   |-- closure.html
+|   |-- data_forms.html
+|   |-- data_mani
+|   |   |-- create_strings.html
+|   |   |-- detect_null.html
+|   |   |-- dm_intro.html
+|   |   |-- format_temp_obj.html
+|   |   |-- func_null.html
+|   |   |-- init_null.html
+|   |   |-- null_in_tb.html
+|   |   |-- null_in_vst.html
+|   |   |-- null_oper.html
+|   |   |-- null_scalar.html
+|   |   |-- process_null.html
+|   |   |-- replace_null.html
+|   |   |-- search_in_string.html
+|   |   |-- sort_null.html
+|   |   |-- string_obj.html
+|   |   |-- string_oper.html
+|   |   |-- temp_obj_mani.html
+|   |   |-- temp_type_conv.html
+|   |   |-- temporal_obj.html
+|   |   `-- tzone_conv.html
+|   |-- data_types.html
+|   |-- data_types_forms
+|   |   |-- BigArray.html
+|   |   |-- Dictionary.html
+|   |   |-- Matrix.html
+|   |   |-- Pair.html
+|   |   |-- Scalar.html
+|   |   |-- Set.html
+|   |   |-- Table.html
+|   |   |-- TupleANYVector.html
+|   |   |-- arrayVector.html
+|   |   |-- columnarTuple.html
+|   |   |-- data_type_conv.html
+|   |   |-- subarray.html
+|   |   `-- vector.html
+|   |-- data_types_forms_intro.html
+|   |-- file_io
+|   |   |-- file_oper.html
+|   |   |-- process_bin.html
+|   |   |-- process_txt.html
+|   |   `-- tb_io.html
+|   |-- func_progr.html
+|   |-- lambda.html
+|   |-- lang_intro.html
+|   |-- macrovariations.html
+|   |-- metaProgr_func.html
+|   |-- named_func.html
+|   |-- objs
+|   |   |-- col_ref.html
+|   |   |-- const.html
+|   |   |-- dyn_tuple.html
+|   |   |-- expr.html
+|   |   |-- func_call.html
+|   |   |-- meta_progr.html
+|   |   |-- named_obj.html
+|   |   |-- objects.html
+|   |   |-- sql_query.html
+|   |   |-- undef_var.html
+|   |   `-- var.html
+|   |-- operators
+|   |   |-- add.html
+|   |   |-- and.html
+|   |   |-- at.html
+|   |   |-- cast.html
+|   |   |-- chainingComparison.html
+|   |   |-- div.html
+|   |   |-- dot.html
+|   |   |-- eachAt.html
+|   |   |-- eq.html
+|   |   |-- ge.html
+|   |   |-- gt.html
+|   |   |-- intersectionsetbitAnd.html
+|   |   |-- join.html
+|   |   |-- le.html
+|   |   |-- lshift.html
+|   |   |-- lt.html
+|   |   |-- member.html
+|   |   |-- mod.html
+|   |   |-- mul.html
+|   |   |-- ne.html
+|   |   |-- neg.html
+|   |   |-- not.html
+|   |   |-- oper_list.html
+|   |   |-- operators.html
+|   |   |-- or.html
+|   |   |-- pair.html
+|   |   |-- precedence.html
+|   |   |-- ratio.html
+|   |   |-- rshift.html
+|   |   |-- seq.html
+|   |   |-- sub.html
+|   |   |-- symmetricDifferencesetbitXor.html
+|   |   |-- ternary_operator.html
+|   |   `-- unionsetbitOr.html
+|   |-- partial_app.html
+|   |-- progr_intro.html
+|   |-- rfc.html
+|   |-- sql
+|   |   |-- Select.html
+|   |   |-- alter.html
+|   |   |-- analyticFunction.html
+|   |   |-- any.html
+|   |   |-- asofjoin.html
+|   |   |-- between.html
+|   |   |-- case.html
+|   |   |-- cgroupby.html
+|   |   |-- coalesce.html
+|   |   |-- contextBy.html
+|   |   |-- create.html
+|   |   |-- crossjoin.html
+|   |   |-- delete.html
+|   |   |-- distinct.html
+|   |   |-- drop.html
+|   |   |-- equijoin.html
+|   |   |-- exe_order.html
+|   |   |-- exec.html
+|   |   |-- exists.html
+|   |   |-- fulljoin.html
+|   |   |-- getTraces.html
+|   |   |-- groupby.html
+|   |   |-- having.html
+|   |   |-- hint.html
+|   |   |-- hint_explain.html
+|   |   |-- in.html
+|   |   |-- innerjoin.html
+|   |   |-- insertInto.html
+|   |   |-- interval.html
+|   |   |-- isnull.html
+|   |   |-- join.html
+|   |   |-- leftjoin.html
+|   |   |-- like.html
+|   |   |-- limit.html
+|   |   |-- map.html
+|   |   |-- notbetween.html
+|   |   |-- notin.html
+|   |   |-- notlike.html
+|   |   |-- orderby.html
+|   |   |-- partition.html
+|   |   |-- pivotBy.html
+|   |   |-- predicates.html
+|   |   |-- prefixjoin.html
+|   |   |-- rightjoin.html
+|   |   |-- roll.html
+|   |   |-- sample.html
+|   |   |-- setTraceMode.html
+|   |   |-- sql_ddl.html
+|   |   |-- sql_dml.html
+|   |   |-- sql_dql.html
+|   |   |-- sql_intro.html
+|   |   |-- sql_trace.html
+|   |   |-- tb_joiner_intro.html
+|   |   |-- top.html
+|   |   |-- union.html
+|   |   |-- update.html
+|   |   |-- viewTraceInfo.html
+|   |   |-- where.html
+|   |   |-- windowjoin.html
+|   |   `-- with.html
+|   `-- statements
+|       |-- Include.html
+|       |-- annotate.html
+|       |-- assert.html
+|       |-- assignments
+|       |   |-- assign_by_ref.html
+|       |   |-- assign_by_value.html
+|       |   |-- assign_intro.html
+|       |   |-- assign_multi.html
+|       |   `-- undef.html
+|       |-- blockStatement.html
+|       |-- break.html
+|       |-- comment.html
+|       |-- continue.html
+|       |-- doWhile.html
+|       |-- for.html
+|       |-- go.html
+|       |-- ifElse.html
+|       |-- mapr.html
+|       |-- module.html
+|       |-- return.html
+|       |-- share.html
+|       |-- statements_intro.html
+|       |-- throw.html
+|       |-- timer.html
+|       |-- transaction.html
+|       |-- tryCatch.html
+|       `-- use.html
+|-- rn
+|   |-- compact_report_20015.html
+|   |-- compact_report_20016.html
+|   |-- compact_report_20017.html
+|   |-- compact_report_2401.html
+|   |-- compact_report_2410.html
+|   |-- compat1.html
+|   |-- compat2.html
+|   |-- compat3.html
+|   |-- compat4.html
+|   |-- compat5.html
+|   |-- compat_def.html
+|   |-- compat_lv.html
+|   |-- compat_report_20010.html
+|   |-- compat_report_20012.html
+|   |-- compat_report_20013.html
+|   |-- plugin
+|   |   |-- 13022_20010.html
+|   |   |-- 13023_20011.html
+|   |   |-- 2_00_13.html
+|   |   |-- 2_00_14.html
+|   |   |-- 2_00_15.html
+|   |   |-- 2_00_16.html
+|   |   |-- 2_00_17.html
+|   |   `-- plg200rn.html
+|   |-- rn_gui.html
+|   |-- rn_vscode.html
+|   |-- rn_web.html
+|   `-- server
+|       |-- 2000.html
+|       |-- 2001.html
+|       |-- 20010.html
+|       |-- 20012.html
+|       |-- 2002.html
+|       |-- 2003.html
+|       |-- 2004.html
+|       |-- 2005.html
+|       |-- 2006.html
+|       |-- 2007.html
+|       |-- 2008.html
+|       |-- 2009.html
+|       |-- 2401.html
+|       |-- 2_00_13.html
+|       |-- 2_00_14.html
+|       |-- 2_00_15.html
+|       |-- 2_00_16.html
+|       |-- 2_00_17.html
+|       |-- api.html
+|       |-- datax_dolphindbreader_0.html
+|       |-- datax_writer.html
+|       |-- grafana.html
+|       `-- third_party_rn.html
+|-- search.html
+|-- sitemap.xml
+|-- stream
+|   |-- anomaly_detection_engine.html
+|   |-- asof_join_engine.html
+|   |-- cep_monitor_defining.html
+|   |-- cluster_sub.html
+|   |-- cross_cluster_sub.html
+|   |-- cross_sectional_engine.html
+|   |-- datafeed_best_practice.html
+|   |-- equi_join_engine.html
+|   |-- images
+|   |   |-- CSI_1.png
+|   |   |-- OHLC_1.png
+|   |   |-- anomaly_alerts_1.png
+|   |   |-- asof_join_engine_1.png
+|   |   |-- asof_join_engine_2.png
+|   |   |-- asof_join_engine_3.png
+|   |   |-- datafeed_best_practice
+|   |   |   |-- 2-1.png
+|   |   |   |-- 3-1.png
+|   |   |   |-- 3-2.png
+|   |   |   `-- 4-1.png
+|   |   |-- earthquake_prediction_1.png
+|   |   |-- equi_join_1.png
+|   |   |-- equi_join_2.png
+|   |   |-- forecast_taxi_1.png
+|   |   |-- forecast_taxi_2.png
+|   |   |-- forecast_taxi_3.png
+|   |   |-- knn_iot_1.png
+|   |   |-- leftsemi_engine_1.png
+|   |   |-- leftsemi_engine_2.png
+|   |   |-- leftsemi_engine_3.png
+|   |   |-- leftsemi_engine_4.png
+|   |   |-- leftsemi_engine_5.png
+|   |   |-- lookup_join_engine_1.png
+|   |   |-- lookup_join_engine_2.png
+|   |   |-- lookup_join_engine_3.png
+|   |   |-- mdl_bset_practice
+|   |   |   |-- 4-1.png
+|   |   |   `-- 4-2.png
+|   |   |-- metacode_derived_features_1.png
+|   |   |-- metacode_derived_features_2.png
+|   |   |-- ml_volatility_1.png
+|   |   |-- python_1.png
+|   |   |-- python_2.png
+|   |   |-- python_3.png
+|   |   |-- random_vibr_1.png
+|   |   |-- random_vibr_2.png
+|   |   |-- random_vibr_3.png
+|   |   |-- reactive_state_engine_1.png
+|   |   |-- snapshot_factor_1.png
+|   |   |-- snapshot_factor_2.png
+|   |   |-- snapshot_factor_3.png
+|   |   |-- stateful_operator_3.png
+|   |   |-- stateful_operators_1.png
+|   |   |-- stateless_operators_1.png
+|   |   |-- stateless_operators_2.png
+|   |   |-- stk_data_proc_1.png
+|   |   |-- stk_price_inc_1.png
+|   |   |-- stock_market_replay_1.png
+|   |   |-- stock_market_replay_2.png
+|   |   |-- stock_market_replay_3.png
+|   |   |-- str_altair_1.png
+|   |   |-- str_altair_2.png
+|   |   |-- str_altair_3.png
+|   |   |-- str_altair_4.png
+|   |   |-- str_altair_5.png
+|   |   |-- str_altair_6.png
+|   |   |-- str_batch.png
+|   |   |-- str_comp_fin_quant_1.png
+|   |   |-- str_eng_parser_1.png
+|   |   |-- str_eng_parser_10.png
+|   |   |-- str_eng_parser_2.png
+|   |   |-- str_eng_parser_3.png
+|   |   |-- str_eng_parser_4.png
+|   |   |-- str_eng_parser_5.png
+|   |   |-- str_eng_parser_6.png
+|   |   |-- str_eng_parser_7.png
+|   |   |-- str_eng_parser_8.png
+|   |   |-- str_eng_parser_9.png
+|   |   |-- str_funcs_structure.png
+|   |   |-- str_ha_1.png
+|   |   |-- str_ha_2.png
+|   |   |-- str_join_engine_1.png
+|   |   |-- str_join_engine_2.png
+|   |   |-- str_join_engine_3.png
+|   |   |-- str_monitor_1.png
+|   |   |-- str_monitor_2.png
+|   |   |-- str_monitor_3.png
+|   |   |-- str_monitor_4.png
+|   |   |-- str_monitor_5.png
+|   |   |-- str_process_1.png
+|   |   |-- str_table_1.png
+|   |   |-- str_table_2.png
+|   |   |-- str_table_3.png
+|   |   |-- stream_1.png
+|   |   |-- stream_2.png
+|   |   |-- stream_3.png
+|   |   |-- streaming_auto_sub_1.png
+|   |   |-- streaming_auto_sub_2.png
+|   |   |-- streaming_auto_sub_3.png
+|   |   |-- streaming_capital_flow_daily_1.png
+|   |   |-- streaming_capital_flow_order_by_order_1.png
+|   |   |-- streaming_capital_flow_order_by_order_2.png
+|   |   |-- sub_pub_1.png
+|   |   |-- sub_pub_2.png
+|   |   |-- sub_pub_3.png
+|   |   |-- sub_pub_4.png
+|   |   |-- try_example1_1.png
+|   |   |-- try_example1_2.png
+|   |   |-- try_example1_3.png
+|   |   |-- try_example2_1.png
+|   |   |-- try_example2_2.png
+|   |   |-- try_example2_3.png
+|   |   |-- try_example2_4.png
+|   |   |-- try_example2_5.png
+|   |   |-- try_example2_6.png
+|   |   |-- try_example2_7.png
+|   |   |-- try_example2_8.png
+|   |   |-- try_example2_9\343\200\201.png
+|   |   |-- waveform_data_storage_1.png
+|   |   |-- waveform_data_storage_2.png
+|   |   |-- window_join_engine_1.png
+|   |   |-- window_join_engine_2.png
+|   |   |-- window_join_engine_3.png
+|   |   `-- window_join_engine_4.png
+|   |-- leftsemi_join_engine.html
+|   |-- local_sub.html
+|   |-- lookup_join_engine.html
+|   |-- mdl_best_practice.html
+|   |-- nsq.html
+|   |-- py_sub.html
+|   |-- reactive_state_engine.html
+|   |-- realtime_data_acces.html
+|   |-- scripts
+|   |   |-- datafeed_best_practice
+|   |   |   `-- startup.dos
+|   |   `-- mdl_bset_practice
+|   |       `-- MDLCFFEX.zip
+|   |-- session_window_engine.html
+|   |-- stateful_operators.html
+|   |-- stateless_operators.html
+|   |-- str_altair.html
+|   |-- str_api_python.html
+|   |-- str_batch.html
+|   |-- str_eng_parser.html
+|   |-- str_funcs.html
+|   |-- str_ha.html
+|   |-- str_intro.html
+|   |-- str_join_engine.html
+|   |-- str_monitor.html
+|   |-- str_operator.html
+|   |-- str_process.html
+|   |-- str_replay.html
+|   |-- str_replay_1.html
+|   |-- str_replay_n21.html
+|   |-- str_replay_n2n.html
+|   |-- str_table.html
+|   |-- sub_pub.html
+|   |-- time_series_engine.html
+|   |-- timely_str_process.html
+|   |-- try_example1.html
+|   `-- window_join_engine.html
+|-- sys_man
+|   |-- BatchJobManagement.html
+|   |-- bak_resto.html
+|   |-- cluster_async_replc.html
+|   |-- cluster_manage.html
+|   |-- images
+|   |   `-- shutdown.png
+|   |-- om_intro.html
+|   |-- perf_man.html
+|   |-- secure_conn.html
+|   `-- shutdown.html
+|-- third_party.html
+|-- tools
+|   |-- backend_grafana.html
+|   |-- data
+|   |   `-- grafana.ini
+|   |-- datax_reader.html
+|   |-- grafana
+|   |   |-- backend1.png
+|   |   |-- backend10.png
+|   |   |-- backend2.png
+|   |   |-- backend3.png
+|   |   |-- backend4.png
+|   |   |-- backend5.png
+|   |   |-- backend6.png
+|   |   |-- backend7.png
+|   |   |-- backend8.png
+|   |   |-- backend9.png
+|   |   |-- dashboard.png
+|   |   `-- demo.png
+|   |-- grafana.html
+|   |-- grafana_2.html
+|   |-- grafana_overview.html
+|   |-- images
+|   |   |-- powerbi
+|   |   |   |-- 1-1.png
+|   |   |   |-- 2-1.png
+|   |   |   |-- 2-2.png
+|   |   |   |-- 2-3.png
+|   |   |   |-- 2-4.png
+|   |   |   |-- 2-5.png
+|   |   |   |-- 2-6.png
+|   |   |   `-- 2-7.png
+|   |   `-- sqltools
+|   |       |-- 1_1.png
+|   |       |-- 1_2.png
+|   |       |-- 1_3.png
+|   |       |-- 1_4.png
+|   |       |-- 1_5.png
+|   |       |-- 2_1.png
+|   |       |-- 2_2.png
+|   |       |-- 2_3.png
+|   |       |-- 2_4.png
+|   |       |-- 2_5.png
+|   |       `-- 2_6.png
+|   |-- power_bi.html
+|   |-- script
+|   |   `-- powerbi
+|   |       `-- DolphinDB.mez
+|   `-- sqltools.html
+|-- tutorials
+|   |-- ACL_and_Security.html
+|   |-- ARM_standalone_deploy.html
+|   |-- Anomaly_Detection_Engine.html
+|   |-- Array_Vector.html
+|   |-- CSI_1000.html
+|   |-- CSI_1000_2.html
+|   |-- ClickHouse_to_DolphinDB.html
+|   |-- Compute_Node.html
+|   |-- DECIMAL.html
+|   |-- DECIMAL_Calculation_Characteristics.html
+|   |-- Data_Move_Rebalance.html
+|   |-- Debezium_Kafka_Oracle_sync.html
+|   |-- Debezium_Kafka_PostgreSQL_sync.html
+|   |-- Debezium_and_Kafka_data_sync.html
+|   |-- DolphinDB_Explain.html
+|   |-- DolphinDB_TopN.html
+|   |-- DolphinDB_VS_PythonFile_Storage.html
+|   |-- FxSwapValuation.html
+|   |-- IV_Greeks_Calculation_for_ETF_Options_Using_JIT.html
+|   |-- ImportTLData_toturial.html
+|   |-- Iot_intelligent_O&M.html
+|   |-- LoadDataForPoc.html
+|   |-- MVO.html
+|   |-- Migrate_data_from_InfluxDB_to_DolphinDB.html
+|   |-- Migrate_data_from_Redshift_to_DolphinDB.html
+|   |-- MySQL_to_DolphinDB.html
+|   |-- OHLC.html
+|   |-- OHLC_2.html
+|   |-- OceanBase_to_DolphinDB.html
+|   |-- Oracle_to_DolphinDB.html
+|   |-- Practical_Factor_Analysis_Modeling.html
+|   |-- Python_Celery.html
+|   |-- Python_HDF5_vs_DolphinDB.html
+|   |-- SQLServer_to_DolphinDB.html
+|   |-- Startup.html
+|   |-- StreamEngineParser.html
+|   |-- Virbration_Monitor_Fault_Diagnose.html
+|   |-- about_tutorials.html
+|   |-- add_Column.html
+|   |-- ai_dataloader_ml.html
+|   |-- amd_best_prac.html
+|   |-- api_performance.html
+|   |-- appendices_market_replay_bp.html
+|   |-- arrow_plugin_usage.html
+|   |-- async_replication.html
+|   |-- backtest_introduction_usage.html
+|   |-- backtesting_using_MatchingEngineSimulator.html
+|   |-- backup-restore-new.html
+|   |-- backup_restore_before_208.html
+|   |-- behavioral_profiling_of_driving_habits.html
+|   |-- best_practice_for_factor_calculation.html
+|   |-- best_practice_for_mdl.html
+|   |-- best_practice_for_storage_compute_separation.html
+|   |-- best_practices_for_log_monitoring.html
+|   |-- best_practices_for_multi_factor.html
+|   |-- best_practices_for_partitioned_storage.html
+|   |-- best_price_selection.html
+|   |-- brinson.html
+|   |-- cachedtable.html
+|   |-- campisi.html
+|   |-- clear_cache.html
+|   |-- cloud_deployment_with_terraform.html
+|   |-- cluster_monitor.html
+|   |-- cluster_scaleout_perf_test.html
+|   |-- cpp_data_io.html
+|   |-- csap.html
+|   |-- cta.html
+|   |-- dashboard_tutorial.html
+|   |-- data
+|   |   |-- DECIMAL_Calculation_Characteristics
+|   |   |   `-- tick.csv
+|   |   |-- DolphinDB_streaming_application_in_IOT
+|   |   |   |-- deviceState.csv
+|   |   |   `-- deviceState.txt
+|   |   |-- MatchEngineSimulator
+|   |   |   `-- mesuc.rar
+|   |   |-- Oracle_to_DolphinDB
+|   |   |   `-- tick.csv
+|   |   |-- Practical_Factor_Analysis_Modeling
+|   |   |   `-- dolphindbAlpahlensTutorial.zip
+|   |   |-- Python_Celery
+|   |   |   `-- tick_close.zip
+|   |   |-- Real-Time_Stock_Price_Increase_Calculation
+|   |   |   `-- 20211201snapshot_30stocks.zip
+|   |   |-- Standard_SQL_in_DolphinDB
+|   |   |   |-- COUNTRIES.csv
+|   |   |   |-- DEPARTMENTS.csv
+|   |   |   |-- EMPLOYEES.csv
+|   |   |   |-- JOBS.csv
+|   |   |   |-- JOB_HISTORY.csv
+|   |   |   |-- LOCATIONS.csv
+|   |   |   `-- REGIONS.csv
+|   |   |-- binSample.bin
+|   |   |-- binStringSample.bin
+|   |   |-- candle_201801.csv
+|   |   |-- database
+|   |   |   `-- quotes.zip
+|   |   |-- displaying_the_dolphindb_k-line_with_klinechart
+|   |   |   `-- candle_201801.csv
+|   |   |-- dolphinscheduler_integration
+|   |   |   `-- 20230201.zip
+|   |   |-- exchdata_exchange_historical_stock_data_auto_import_module_tutorial
+|   |   |   `-- ExchData.zip
+|   |   |-- faultAnalysis
+|   |   |   |-- dataSimulate.dos
+|   |   |   `-- replayIoT.dos
+|   |   |-- import_data_06
+|   |   |   `-- sz000001.csv
+|   |   |-- k
+|   |   |   `-- testData.csv
+|   |   |-- k_line
+|   |   |   `-- trades.csv
+|   |   |-- metacode_derived_features
+|   |   |   `-- testSnapshot.csv
+|   |   |-- nx.txt
+|   |   |-- smallDataset.zip
+|   |   |-- streaming_auto_sub
+|   |   |   `-- stockData.csv
+|   |   |-- streaming_capital_flow_order_by_order
+|   |   |   `-- 20200102_SH_trade.csv
+|   |   |-- timezone
+|   |   |   |-- taq.csv
+|   |   |   `-- taqTs.csv
+|   |   `-- window_cal
+|   |       `-- CNTRADE.zip
+|   |-- data_ETL.html
+|   |-- data_import_details.html
+|   |-- data_interface_for_redash.html
+|   |-- data_replay.html
+|   |-- data_sync_among_clusters.html
+|   |-- database.html
+|   |-- database_and_table_creation_details.html
+|   |-- database_and_table_creation_wizard.html
+|   |-- datax_writer.html
+|   |-- ddb_airflow.html
+|   |-- ddb_comparison_rules_of_time_types.html
+|   |-- ddb_sql_cases.html
+|   |-- ddb_str_app_iot.html
+|   |-- ddb_str_app_iot_2.html
+|   |-- ddb_telegraf_grafana.html
+|   |-- debezium_kafka_real_time_synchronization_of_oracle_11g_data.html
+|   |-- displaying_the_dolphindb_k-line_with_klinechart.html
+|   |-- docker-compose_high_cluster.html
+|   |-- docker_single_deployment.html
+|   |-- dolphindb_tensor_libtorch_tutorial.html
+|   |-- dolphindb_update.html
+|   |-- dolphindb_user_guide.html
+|   |-- dolphinscheduler_integration.html
+|   |-- e6_97_a0_e6_a0_87_e9_a2_9810.html
+|   |-- earthquake_prediction_ddb_ml.html
+|   |-- earthquake_prediction_ddb_ml_2.html
+|   |-- edge_to_cloud.html
+|   |-- efficient_power_trading_solutions.html
+|   |-- empyrical.html
+|   |-- exchdata_exchange_historical_stock_data_auto_import_module_tutorial.html
+|   |-- factor_attribution_analysis.html
+|   |-- factor_evaluation_framework.html
+|   |-- faultAnalysis.html
+|   |-- financial_mock_data_generation_module.html
+|   |-- forecast_taxi_trip_dura.html
+|   |-- forecast_taxi_trip_dura_2.html
+|   |-- func_progr_cases.html
+|   |-- function_mapping_py.html
+|   |-- fund_factor_contrasted_by_py.html
+|   |-- futures_minute_frequency_cta_strategy_backtest_example.html
+|   |-- general_computing.html
+|   |-- generate_large_scale_statistics_with_summary.html
+|   |-- gplearn.html
+|   |-- gray_scale_upgrade_ha.html
+|   |-- haProxy_best_practices.html
+|   |-- haStreaming.html
+|   |-- ha_cluster_deployment.html
+|   |-- hf_factor_streaming.html
+|   |-- hf_factor_streaming_2.html
+|   |-- high_freq_data_storage_and_analysis.html
+|   |-- how_to_handle_crash.html
+|   |-- httpclient_msg_case.html
+|   |-- hybrid_programming_paradigms.html
+|   |-- images
+|   |   |-- ACL_and_Security
+|   |   |   |-- 2_1.png
+|   |   |   |-- 2_2.png
+|   |   |   |-- 2_3.png
+|   |   |   |-- 3_1.png
+|   |   |   |-- 4_1.png
+|   |   |   |-- 4_2.png
+|   |   |   `-- 4_3.png
+|   |   |-- Array_Vector
+|   |   |   |-- Array_Vector_1.png
+|   |   |   |-- Array_Vector_10.png
+|   |   |   |-- Array_Vector_11.png
+|   |   |   |-- Array_Vector_12.png
+|   |   |   |-- Array_Vector_13.png
+|   |   |   |-- Array_Vector_14.png
+|   |   |   |-- Array_Vector_15.png
+|   |   |   |-- Array_Vector_16.png
+|   |   |   |-- Array_Vector_2.png
+|   |   |   |-- Array_Vector_3.png
+|   |   |   |-- Array_Vector_4.png
+|   |   |   |-- Array_Vector_5.png
+|   |   |   |-- Array_Vector_6.png
+|   |   |   |-- Array_Vector_7.png
+|   |   |   |-- Array_Vector_8.png
+|   |   |   `-- Array_Vector_9.png
+|   |   |-- Asynchronous_Replication
+|   |   |   |-- 2_1.png
+|   |   |   |-- 3_1.png
+|   |   |   |-- 3_2.png
+|   |   |   |-- 3_3.png
+|   |   |   |-- 3_4.png
+|   |   |   |-- 3_5.png
+|   |   |   |-- 3_6.png
+|   |   |   |-- 4_1.png
+|   |   |   `-- 4_2.png
+|   |   |-- Best_Practices_for_DolphinDB_and_Python_AirFlow
+|   |   |   |-- 1.png
+|   |   |   |-- 1_1.png
+|   |   |   |-- 1_2.png
+|   |   |   |-- 1_3.png
+|   |   |   |-- 1_4.png
+|   |   |   |-- 1_5.png
+|   |   |   |-- 2_1.png
+|   |   |   |-- 2_10.png
+|   |   |   |-- 2_11.png
+|   |   |   |-- 2_2.png
+|   |   |   |-- 2_3.png
+|   |   |   |-- 2_4.png
+|   |   |   |-- 2_5.png
+|   |   |   |-- 2_6.png
+|   |   |   |-- 2_7.png
+|   |   |   |-- 2_8.png
+|   |   |   |-- 2_9.png
+|   |   |   |-- 3_1.png
+|   |   |   |-- 3_2.png
+|   |   |   |-- 3_3.png
+|   |   |   |-- 3_4.png
+|   |   |   `-- 3_5.png
+|   |   |-- CSI_1000
+|   |   |   |-- CSI_1000_0.png
+|   |   |   |-- CSI_1000_2.png
+|   |   |   `-- CSI_1000_3.png
+|   |   |-- ClickHouse_to_DolphinDB
+|   |   |   `-- 01.png
+|   |   |-- Compute_Node
+|   |   |   |-- 1_1.png
+|   |   |   |-- 1_2.png
+|   |   |   |-- 1_3.png
+|   |   |   |-- 1_4.png
+|   |   |   |-- 1_5.png
+|   |   |   |-- 1_6.png
+|   |   |   |-- 1_7.png
+|   |   |   |-- 1_8.png
+|   |   |   |-- 2_1.png
+|   |   |   |-- 2_2.png
+|   |   |   |-- 2_3.png
+|   |   |   |-- 2_4.png
+|   |   |   |-- 2_5.png
+|   |   |   |-- 2_6.png
+|   |   |   |-- 3_1.png
+|   |   |   |-- 3_2.png
+|   |   |   |-- 3_3.png
+|   |   |   |-- 3_4.png
+|   |   |   |-- 4.4.1.4_1.png
+|   |   |   |-- 4.4.1.4_2.png
+|   |   |   |-- 4.4.1.5.png
+|   |   |   |-- 4.4.1.6.png
+|   |   |   |-- 4_1.png
+|   |   |   |-- 4_2.png
+|   |   |   |-- 4_3.png
+|   |   |   `-- 4_4.png
+|   |   |-- DECIMAL_Calculation_Characteristics
+|   |   |   |-- 4_1.png
+|   |   |   `-- 4_2.png
+|   |   |-- DKOD
+|   |   |   |-- 1.png
+|   |   |   |-- 10.png
+|   |   |   |-- 11.png
+|   |   |   |-- 12.png
+|   |   |   |-- 13.png
+|   |   |   |-- 14.png
+|   |   |   |-- 15.png
+|   |   |   |-- 16.png
+|   |   |   |-- 17.jpg
+|   |   |   |-- 18.jpg
+|   |   |   |-- 19.jpg
+|   |   |   |-- 2.png
+|   |   |   |-- 20.jpg
+|   |   |   |-- 21.jpg
+|   |   |   |-- 22.jpg
+|   |   |   |-- 23.jpg
+|   |   |   |-- 24.jpg
+|   |   |   |-- 25.jpg
+|   |   |   |-- 26.jpg
+|   |   |   |-- 27.png
+|   |   |   |-- 28.jpg
+|   |   |   |-- 29.jpg
+|   |   |   |-- 3.png
+|   |   |   |-- 30.jpg
+|   |   |   |-- 31.jpg
+|   |   |   |-- 32.jpg
+|   |   |   |-- 33.jpg
+|   |   |   |-- 34.jpg
+|   |   |   |-- 35.jpg
+|   |   |   |-- 36.jpg
+|   |   |   |-- 4.png
+|   |   |   |-- 5.png
+|   |   |   |-- 6.png
+|   |   |   |-- 7.png
+|   |   |   |-- 8.png
+|   |   |   `-- 9.png
+|   |   |-- Debezium_Kafka_PostgreSQL_sync
+|   |   |   |-- 1-1.png
+|   |   |   |-- 3-1.png
+|   |   |   |-- 3-10.png
+|   |   |   |-- 3-11.png
+|   |   |   |-- 3-2.png
+|   |   |   |-- 3-3.png
+|   |   |   |-- 3-4.png
+|   |   |   |-- 3-5.png
+|   |   |   |-- 3-6.png
+|   |   |   |-- 3-7.png
+|   |   |   |-- 3-8.png
+|   |   |   |-- 3-9.png
+|   |   |   |-- 4-1.png
+|   |   |   |-- 4-2.png
+|   |   |   |-- 4-3.png
+|   |   |   |-- 4-4.png
+|   |   |   |-- 4-5.png
+|   |   |   |-- 4-6.png
+|   |   |   |-- 4-7.png
+|   |   |   |-- 4-8.png
+|   |   |   |-- 4-9.png
+|   |   |   |-- 7-1.jpg
+|   |   |   |-- 7-2.png
+|   |   |   `-- 7-3.png
+|   |   |-- Debezium_and_Kafka_data_sync
+|   |   |   |-- 01.png
+|   |   |   |-- 02.png
+|   |   |   |-- 03.png
+|   |   |   |-- 04.png
+|   |   |   |-- 05.png
+|   |   |   |-- 06.png
+|   |   |   |-- 07.png
+|   |   |   |-- 08.png
+|   |   |   |-- 09.png
+|   |   |   |-- 10.png
+|   |   |   |-- 11.png
+|   |   |   |-- 12.png
+|   |   |   |-- 13.png
+|   |   |   |-- 14.png
+|   |   |   |-- 15.png
+|   |   |   |-- 16.png
+|   |   |   |-- 17.png
+|   |   |   |-- 18.png
+|   |   |   |-- 19.png
+|   |   |   |-- 20.png
+|   |   |   |-- 21.png
+|   |   |   |-- 22.png
+|   |   |   |-- 23.png
+|   |   |   |-- 24.png
+|   |   |   |-- 25.png
+|   |   |   |-- 26.png
+|   |   |   |-- 27.png
+|   |   |   |-- 28.png
+|   |   |   |-- 29.png
+|   |   |   |-- 30.png
+|   |   |   |-- 31.png
+|   |   |   |-- 32.png
+|   |   |   |-- 33.png
+|   |   |   |-- 34.png
+|   |   |   |-- 35.png
+|   |   |   |-- 36.png
+|   |   |   |-- 37.png
+|   |   |   |-- 38.png
+|   |   |   |-- 39.png
+|   |   |   |-- 40.png
+|   |   |   |-- 41.png
+|   |   |   |-- 42.png
+|   |   |   `-- 43.png
+|   |   |-- DolphinDB_AI_DataLoader_for_Deep_Learning
+|   |   |   |-- DolphinDB_AI_DataLoader_for_Deep_Learning_1.png
+|   |   |   |-- DolphinDB_AI_DataLoader_for_Deep_Learning_2.png
+|   |   |   |-- DolphinDB_AI_DataLoader_for_Deep_Learning_3.png
+|   |   |   `-- DolphinDB_AI_DataLoader_for_Deep_Learning_4.png
+|   |   |-- DolphinDB_Telegraf_Grafana
+|   |   |   |-- 1_1.png
+|   |   |   |-- 3_1.png
+|   |   |   |-- 3_2.png
+|   |   |   |-- 3_3.png
+|   |   |   |-- 4_1.png
+|   |   |   |-- 4_2.png
+|   |   |   |-- 4_3.png
+|   |   |   |-- 4_4.png
+|   |   |   |-- 5_1.png
+|   |   |   |-- 5_2.png
+|   |   |   `-- 5_3.png
+|   |   |-- DolphinDB_Tensor_Libtorch_tutorial
+|   |   |   |-- 1-1.png
+|   |   |   |-- 1-2.png
+|   |   |   |-- 1-3.png
+|   |   |   |-- 2-1.png
+|   |   |   |-- 2-2.png
+|   |   |   |-- 3-1.png
+|   |   |   `-- 3-2.png
+|   |   |-- DolphinDB_VS_Python\ File_Storage
+|   |   |   |-- DolphinDB_VS_Python\ File_Storage_1.png
+|   |   |   |-- DolphinDB_VS_Python\ File_Storage_10.png
+|   |   |   |-- DolphinDB_VS_Python\ File_Storage_2.png
+|   |   |   |-- DolphinDB_VS_Python\ File_Storage_3.png
+|   |   |   |-- DolphinDB_VS_Python\ File_Storage_4.png
+|   |   |   |-- DolphinDB_VS_Python\ File_Storage_5.png
+|   |   |   |-- DolphinDB_VS_Python\ File_Storage_6.png
+|   |   |   |-- DolphinDB_VS_Python\ File_Storage_7.png
+|   |   |   |-- DolphinDB_VS_Python\ File_Storage_8.png
+|   |   |   `-- DolphinDB_VS_Python\ File_Storage_9.png
+|   |   |-- Earthquake_Prediction_with_DolphinDB_and_Machine_Learning
+|   |   |   |-- 2_1.png
+|   |   |   |-- 2_2.png
+|   |   |   |-- 2_3.png
+|   |   |   |-- 2_4.png
+|   |   |   |-- 2_5.png
+|   |   |   |-- 2_6.png
+|   |   |   |-- 2_7.png
+|   |   |   `-- 2_8.png
+|   |   |-- Forecast_of_Taxi_Trip_Duration
+|   |   |   |-- 3_1.png
+|   |   |   |-- 3_2.png
+|   |   |   |-- 3_3.png
+|   |   |   |-- 3_4.png
+|   |   |   |-- 3_5.png
+|   |   |   `-- 4_3.png
+|   |   |-- FxSwapValuation
+|   |   |   `-- fx_swap_b.png
+|   |   |-- GUI
+|   |   |   |-- add_server.png
+|   |   |   `-- module_sync.png
+|   |   |-- ID
+|   |   |   |-- 2.1.png
+|   |   |   |-- 2.2.png
+|   |   |   |-- 4.1.png
+|   |   |   |-- 4.2.png
+|   |   |   |-- 4.3.png
+|   |   |   |-- 4.4.png
+|   |   |   |-- 4.5.png
+|   |   |   `-- 5.1.png
+|   |   |-- IV_Greeks_Calculation_for_ETF_Options_Using_JIT
+|   |   |   |-- 1-1.png
+|   |   |   |-- 1-2.png
+|   |   |   |-- 1-3.png
+|   |   |   |-- 1-4.png
+|   |   |   |-- 2-1.png
+|   |   |   |-- 2-2.png
+|   |   |   |-- 2-3.png
+|   |   |   |-- 2-4.png
+|   |   |   |-- 2-5.png
+|   |   |   |-- 3-1.png
+|   |   |   |-- 3-2.png
+|   |   |   |-- 3-3.png
+|   |   |   `-- 4-1.png
+|   |   |-- Iot_intelligent_O&M
+|   |   |   |-- 01.png
+|   |   |   |-- 02.png
+|   |   |   |-- 03.png
+|   |   |   |-- 04.png
+|   |   |   |-- 05.jpg
+|   |   |   |-- 06.png
+|   |   |   `-- 07.png
+|   |   |-- Level-2_stock_data_processing
+|   |   |   |-- 3_1.png
+|   |   |   |-- 3_10.png
+|   |   |   |-- 3_11.png
+|   |   |   |-- 3_11_1.png
+|   |   |   |-- 3_12.png
+|   |   |   |-- 3_13.png
+|   |   |   |-- 3_2.png
+|   |   |   |-- 3_2_1.png
+|   |   |   |-- 3_2_2.png
+|   |   |   |-- 3_2_3.png
+|   |   |   |-- 3_2_4.png
+|   |   |   |-- 3_2_5.png
+|   |   |   |-- 3_3.png
+|   |   |   |-- 3_3_1.png
+|   |   |   |-- 3_3_2.png
+|   |   |   |-- 3_4.png
+|   |   |   |-- 3_5.png
+|   |   |   |-- 3_5_1.png
+|   |   |   |-- 3_5_2.png
+|   |   |   |-- 3_5_3.png
+|   |   |   |-- 3_6.png
+|   |   |   |-- 3_7.png
+|   |   |   |-- 3_8.png
+|   |   |   |-- 3_9.png
+|   |   |   `-- 4_1.png
+|   |   |-- Level2_Snapshot_Factor_Calculation
+|   |   |   |-- 2_4.png
+|   |   |   |-- 2_5.png
+|   |   |   |-- 3_1.png
+|   |   |   |-- 3_10.png
+|   |   |   |-- 3_11.png
+|   |   |   |-- 3_12.png
+|   |   |   |-- 3_2.png
+|   |   |   |-- 3_3.png
+|   |   |   |-- 3_4.png
+|   |   |   |-- 3_5.png
+|   |   |   |-- 3_6.png
+|   |   |   |-- 3_7.png
+|   |   |   |-- 3_8.png
+|   |   |   `-- 3_9.png
+|   |   |-- LoadDataForPoc
+|   |   |   |-- csvType.jpg
+|   |   |   |-- dataType.png
+|   |   |   |-- getRecentJobs.jpg
+|   |   |   |-- hardWrite.jpg
+|   |   |   |-- headEntrust.png
+|   |   |   |-- schemaResult.jpg
+|   |   |   |-- selectResult.jpg
+|   |   |   `-- vsType.jpg
+|   |   |-- MatchEngineSimulator
+|   |   |   |-- DM_20230922142321_001.png
+|   |   |   |-- DM_20230922142321_002.png
+|   |   |   |-- DM_20230922142321_003.png
+|   |   |   |-- DM_20230922142321_004.png
+|   |   |   |-- DM_20230922142321_005.png
+|   |   |   |-- DM_20230922142321_006.png
+|   |   |   |-- DM_20230922142321_007.png
+|   |   |   |-- DM_20230922142321_009.png
+|   |   |   |-- DM_20230922142321_010.png
+|   |   |   `-- DM_20230922142321_011.png
+|   |   |-- Migrate_data_from_Redshift_to_DolphinDB
+|   |   |   |-- 3-1.png
+|   |   |   |-- 3-2.png
+|   |   |   |-- 3-3.png
+|   |   |   `-- 3-4.png
+|   |   |-- MySQL_to_DolphinDB
+|   |   |   `-- 1-1.png
+|   |   |-- OceanBase_to_DolphinDB
+|   |   |   `-- 1_1.png
+|   |   |-- Oracle_to_DolphinDB
+|   |   |   `-- Oracle_to_DolphinDB_1.png
+|   |   |-- PIP_in_DolphinDB
+|   |   |   |-- 1_1.png
+|   |   |   |-- 3_1.png
+|   |   |   |-- 3_2.png
+|   |   |   |-- 3_3.png
+|   |   |   |-- 4_1.png
+|   |   |   `-- 4_2.png
+|   |   |-- Permission_Management
+|   |   |   |-- 2_1.png
+|   |   |   |-- 2_2.png
+|   |   |   |-- 2_3.png
+|   |   |   |-- 3_1.png
+|   |   |   |-- 4_1.png
+|   |   |   |-- 4_2.png
+|   |   |   `-- 4_3.png
+|   |   |-- Practical_Factor_Analysis_Modeling
+|   |   |   |-- 1_1.png
+|   |   |   |-- 2_2.png
+|   |   |   |-- 4_3.png
+|   |   |   |-- 5_1.png
+|   |   |   |-- 5_2.png
+|   |   |   |-- 5_3_1.png
+|   |   |   |-- 5_3_2.png
+|   |   |   `-- 5_4_2.png
+|   |   |-- Probabilistic_and_statistical_analysis
+|   |   |   |-- 1-1.png
+|   |   |   |-- 1-10.png
+|   |   |   |-- 1-11.png
+|   |   |   |-- 1-13.png
+|   |   |   |-- 1-14.png
+|   |   |   |-- 1-15.png
+|   |   |   |-- 1-16.png
+|   |   |   |-- 1-17.png
+|   |   |   |-- 1-18.png
+|   |   |   |-- 1-19.png
+|   |   |   |-- 1-2.png
+|   |   |   |-- 1-21.png
+|   |   |   |-- 1-23.png
+|   |   |   |-- 1-24.png
+|   |   |   |-- 1-29.png
+|   |   |   |-- 1-3.png
+|   |   |   |-- 1-30.png
+|   |   |   |-- 1-34.png
+|   |   |   |-- 1-36.png
+|   |   |   |-- 1-38.png
+|   |   |   |-- 1-39.png
+|   |   |   |-- 1-4.png
+|   |   |   |-- 1-41.png
+|   |   |   |-- 1-42.png
+|   |   |   |-- 1-45.png
+|   |   |   |-- 1-48.png
+|   |   |   |-- 1-49.png
+|   |   |   |-- 1-5.png
+|   |   |   |-- 1-51.png
+|   |   |   |-- 1-55.png
+|   |   |   |-- 1-56.png
+|   |   |   |-- 1-58.png
+|   |   |   |-- 1-6.png
+|   |   |   |-- 1-60.png
+|   |   |   |-- 1-61.png
+|   |   |   |-- 1-62.png
+|   |   |   |-- 1-63.png
+|   |   |   |-- 1-64.png
+|   |   |   |-- 1-9.png
+|   |   |   |-- 1.68.png
+|   |   |   |-- 2.10.png
+|   |   |   |-- 2.3.png
+|   |   |   |-- 2.4.png
+|   |   |   |-- 2.5.png
+|   |   |   |-- 2.6.png
+|   |   |   |-- 2.7.png
+|   |   |   |-- 2.8.png
+|   |   |   |-- 2.9.png
+|   |   |   |-- 2_1.png
+|   |   |   |-- 2_2.png
+|   |   |   |-- 3.1.png
+|   |   |   |-- 4.1.png
+|   |   |   |-- 4.2.png
+|   |   |   |-- 4.3.png
+|   |   |   |-- 4.4.png
+|   |   |   |-- 4.5.png
+|   |   |   `-- 5.2.png
+|   |   |-- Python_Celery
+|   |   |   |-- 1_1.png
+|   |   |   `-- 3_1.jpg
+|   |   |-- Python_HDF5_vs_DolphinDB
+|   |   |   |-- 2_1.png
+|   |   |   |-- 2_2.png
+|   |   |   |-- 3_1.png
+|   |   |   `-- 3_2.png
+|   |   |-- Random_Vibration_Signal_Analysis_Solution
+|   |   |   |-- ch1_2_1_001.png
+|   |   |   |-- ch1_2_1_002.png
+|   |   |   |-- ch1_2_3_001.png
+|   |   |   |-- ch2_1_001.svg
+|   |   |   |-- ch2_1_002.svg
+|   |   |   |-- ch2_1_003.svg
+|   |   |   |-- ch2_2_1_001.svg
+|   |   |   |-- ch2_2_1_002.svg
+|   |   |   |-- ch2_2_1_003.svg
+|   |   |   |-- ch2_2_1_004.svg
+|   |   |   |-- ch2_2_1_005.svg
+|   |   |   |-- ch2_2_1_f.svg
+|   |   |   |-- ch2_2_1_w.svg
+|   |   |   |-- ch2_2_2_001.svg
+|   |   |   |-- ch2_2_2_002.svg
+|   |   |   |-- ch2_2_2_003.svg
+|   |   |   |-- ch2_2_2_004.svg
+|   |   |   |-- ch2_2_2_005.svg
+|   |   |   |-- ch2_2_2_006.svg
+|   |   |   |-- ch2_2_2_pw.svg
+|   |   |   |-- ch2_2_2_st.svg
+|   |   |   |-- ch2_2_2_stt.svg
+|   |   |   |-- ch2_3_1_001.svg
+|   |   |   |-- ch2_3_1_002.svg
+|   |   |   |-- ch2_3_1_xn.svg
+|   |   |   |-- ch2_3_1_xnn.svg
+|   |   |   |-- ch2_3_1_xnw.svg
+|   |   |   |-- ch2_3_2_001.svg
+|   |   |   |-- ch2_3_2_002.svg
+|   |   |   |-- ch2_3_2_003.svg
+|   |   |   |-- ch2_3_2_d2n.svg
+|   |   |   |-- ch4_2_0_001.png
+|   |   |   |-- ch4_2_0_003.svg
+|   |   |   |-- ch4_5_1_001.png
+|   |   |   |-- ch4_5_2_001.png
+|   |   |   |-- ch4_5_2_002.png
+|   |   |   |-- ch4_6_0_001.png
+|   |   |   |-- ch4_6_0_002.png
+|   |   |   `-- ch_4_2_0_002.svg
+|   |   |-- Real-Time_Stock_Price_Increase_Calculation
+|   |   |   |-- 1.png
+|   |   |   |-- 2_1.png
+|   |   |   |-- 3_1.png
+|   |   |   `-- 3_2.png
+|   |   |-- Seismic_waveform_data_storage
+|   |   |   |-- 5_1.png
+|   |   |   `-- 5_2.png
+|   |   |-- Standard_SQL_in_DolphinDB
+|   |   |   |-- 2_1.png
+|   |   |   |-- 2_2.png
+|   |   |   |-- 2_3.png
+|   |   |   |-- 3_1.png
+|   |   |   |-- 3_2.png
+|   |   |   |-- 3_3.png
+|   |   |   |-- 3_4.png
+|   |   |   |-- 3_5.png
+|   |   |   |-- 3_6.png
+|   |   |   |-- 3_7.png
+|   |   |   |-- 3_8.png
+|   |   |   |-- 4_1.png
+|   |   |   |-- 4_2.png
+|   |   |   |-- 4_3.png
+|   |   |   |-- 4_4.png
+|   |   |   |-- 4_5.png
+|   |   |   |-- 4_6.png
+|   |   |   |-- 4_7.png
+|   |   |   |-- 4_8.png
+|   |   |   |-- 4_9.png
+|   |   |   |-- 5_1.png
+|   |   |   `-- 5_2.png
+|   |   |-- StreamEngineParser
+|   |   |   |-- 3_1.png
+|   |   |   |-- 3_10.png
+|   |   |   |-- 3_2.png
+|   |   |   |-- 3_3.png
+|   |   |   |-- 3_4.png
+|   |   |   |-- 3_5.png
+|   |   |   |-- 3_6.png
+|   |   |   |-- 3_7.png
+|   |   |   |-- 3_8.png
+|   |   |   `-- 3_9.png
+|   |   |-- Streaming_computing_of_financial_quantifiers
+|   |   |   |-- 1_2.png
+|   |   |   |-- 1_3.png
+|   |   |   |-- 3_1.png
+|   |   |   |-- 3_2.png
+|   |   |   |-- 3_3.png
+|   |   |   `-- 3_4.png
+|   |   |-- Virbration_Monitor_Fault_Diagnose
+|   |   |   |-- 2_1_Arch.png
+|   |   |   |-- 3_1_Resample.png
+|   |   |   |-- 3_2_MaxMin.png
+|   |   |   |-- 3_3_Alarm.png
+|   |   |   `-- 3_4_Result.png
+|   |   |-- Window_Calculations_in_DolphinDB
+|   |   |   |-- 1_1_1.png
+|   |   |   |-- 1_1_2.png
+|   |   |   |-- 1_2_1.png
+|   |   |   |-- 1_2_2.png
+|   |   |   |-- 1_2_3.png
+|   |   |   |-- 1_3_1.png
+|   |   |   |-- 1_3_2.png
+|   |   |   |-- 1_4.png
+|   |   |   `-- 1_5.png
+|   |   |-- api_performance
+|   |   |   |-- calculation_compare.jpg
+|   |   |   |-- calculation_compare_chart.jpg
+|   |   |   |-- calculation_compare_week.jpg
+|   |   |   |-- calculation_compare_week_chart.jpg
+|   |   |   |-- calculation_cplusplus.jpg
+|   |   |   |-- calculation_csharp.jpg
+|   |   |   |-- calculation_java.jpg
+|   |   |   |-- calculation_python.jpg
+|   |   |   |-- calculation_r.jpg
+|   |   |   |-- multi_user_compare.jpg
+|   |   |   |-- multi_user_compare_chart.jpg
+|   |   |   |-- multi_user_cplusplus.jpg
+|   |   |   |-- multi_user_csharp.jpg
+|   |   |   |-- multi_user_download_compare.jpg
+|   |   |   |-- multi_user_download_compare_chart.jpg
+|   |   |   |-- multi_user_download_compare_week.jpg
+|   |   |   |-- multi_user_download_compare_week_chart.jpg
+|   |   |   |-- multi_user_download_cplusplus.jpg
+|   |   |   |-- multi_user_download_csharp.jpg
+|   |   |   |-- multi_user_download_java.jpg
+|   |   |   |-- multi_user_download_python.jpg
+|   |   |   |-- multi_user_download_r.jpg
+|   |   |   |-- multi_user_java.jpg
+|   |   |   |-- multi_user_python.jpg
+|   |   |   |-- multi_user_r.jpg
+|   |   |   |-- single_user_compare.jpg
+|   |   |   |-- single_user_compare_chart.jpg
+|   |   |   |-- single_user_cplusplus.jpg
+|   |   |   |-- single_user_csharp.jpg
+|   |   |   |-- single_user_java.jpg
+|   |   |   |-- single_user_python.jpg
+|   |   |   `-- single_user_r.jpg
+|   |   |-- appendices_market_replay_bp
+|   |   |   |-- 3_1.png
+|   |   |   |-- 5_1.png
+|   |   |   `-- 5_2.png
+|   |   |-- application_in_deep_leaing_real_time_stock_volatility_prediction
+|   |   |   |-- 1-1.png
+|   |   |   |-- 2-1.png
+|   |   |   |-- 4-1.png
+|   |   |   `-- 4-2.png
+|   |   |-- arm_standalone_deploy
+|   |   |   |-- chap2_step3_result.png
+|   |   |   |-- chap2_step4_nodestatus.png
+|   |   |   `-- chap5_q2.png
+|   |   |-- arrow_plugin_usage
+|   |   |   |-- 0_1.png
+|   |   |   |-- 2_1.png
+|   |   |   |-- 3_1.png
+|   |   |   |-- 3_2.png
+|   |   |   `-- 3_3.png
+|   |   |-- backset_introduction_usage
+|   |   |   |-- 4_1_3_1.png
+|   |   |   |-- 4_1_3_2.png
+|   |   |   `-- 4_2_2_1.png
+|   |   |-- backtesting_using_MatchingEngineSimulator
+|   |   |   |-- 1-1.png
+|   |   |   `-- 1-2.png
+|   |   |-- backup_restore
+|   |   |   |-- 1.4batchJobmsg.png
+|   |   |   |-- checkBackup.png
+|   |   |   |-- dbStructure.png
+|   |   |   |-- getBackupList.png
+|   |   |   `-- getBackupStatus.png
+|   |   |-- behavioral_profiling_of_driving_habits
+|   |   |   |-- 2_1.png
+|   |   |   |-- 2_2.png
+|   |   |   |-- 2_3.png
+|   |   |   |-- 2_4.png
+|   |   |   |-- 2_5.png
+|   |   |   |-- 2_6.png
+|   |   |   |-- 2_7.png
+|   |   |   |-- 2_8.png
+|   |   |   `-- 2_9.png
+|   |   |-- best-price-selection
+|   |   |   |-- 1.png
+|   |   |   |-- 2.png
+|   |   |   |-- 3.png
+|   |   |   |-- 4.png
+|   |   |   |-- 5.png
+|   |   |   |-- 6.png
+|   |   |   |-- 7.png
+|   |   |   |-- 8.png
+|   |   |   `-- 9.png
+|   |   |-- best_implementation_for_AMD_Plugin
+|   |   |   `-- best_implementation_for_AMD_Plugin.png
+|   |   |-- best_practice_for_storage_compute_separation
+|   |   |   |-- 2-1.png
+|   |   |   |-- 2-10.png
+|   |   |   |-- 2-11.png
+|   |   |   |-- 2-12.png
+|   |   |   |-- 2-2.png
+|   |   |   |-- 2-3.png
+|   |   |   |-- 2-4.png
+|   |   |   |-- 2-5.png
+|   |   |   |-- 2-6.png
+|   |   |   |-- 2-7.png
+|   |   |   |-- 2-8.png
+|   |   |   |-- 2-9.png
+|   |   |   |-- 5-1.png
+|   |   |   `-- 5-2.png
+|   |   |-- best_practices_for_log_monitoring
+|   |   |   |-- 1-1.png
+|   |   |   |-- 3-1.png
+|   |   |   |-- 3-10.png
+|   |   |   |-- 3-11.png
+|   |   |   |-- 3-12.png
+|   |   |   |-- 3-13.png
+|   |   |   |-- 3-14.png
+|   |   |   |-- 3-15.png
+|   |   |   |-- 3-2.png
+|   |   |   |-- 3-3.png
+|   |   |   |-- 3-4.png
+|   |   |   |-- 3-5.png
+|   |   |   |-- 3-6.png
+|   |   |   |-- 3-7.png
+|   |   |   |-- 3-8.png
+|   |   |   |-- 3-9.png
+|   |   |   |-- 4-1.png
+|   |   |   |-- 4-10.png
+|   |   |   |-- 4-11.png
+|   |   |   |-- 4-12.png
+|   |   |   |-- 4-2.png
+|   |   |   |-- 4-3.png
+|   |   |   |-- 4-4.png
+|   |   |   |-- 4-5.png
+|   |   |   |-- 4-6.png
+|   |   |   |-- 4-7.png
+|   |   |   |-- 4-8.png
+|   |   |   |-- 4-9.png
+|   |   |   |-- 5-1.png
+|   |   |   |-- 5-2.png
+|   |   |   |-- 5-3.png
+|   |   |   `-- 5-4.png
+|   |   |-- best_practices_for_multi_factor
+|   |   |   |-- 2_01.png
+|   |   |   |-- 3_01.png
+|   |   |   `-- 3_02.png
+|   |   |-- best_practices_for_partitioned_storage
+|   |   |   |-- 01.png
+|   |   |   `-- 02.png
+|   |   |-- brison
+|   |   |   |-- 1_1.png
+|   |   |   |-- 1_2.png
+|   |   |   |-- 2_1.png
+|   |   |   |-- 2_2.png
+|   |   |   |-- 3_1.png
+|   |   |   |-- 3_2.png
+|   |   |   |-- 3_3.png
+|   |   |   |-- e1.png
+|   |   |   `-- e2.png
+|   |   |-- cachedTable
+|   |   |   |-- dolphindb_after.png
+|   |   |   |-- dolphindb_before.png
+|   |   |   |-- dolphindb_cachedtable_mysql_diagram.png
+|   |   |   |-- mysql_after.png
+|   |   |   `-- mysql_before.png
+|   |   |-- campisi
+|   |   |   |-- 1_1.png
+|   |   |   |-- 1_2.png
+|   |   |   |-- 2_1.png
+|   |   |   |-- 2_2.png
+|   |   |   |-- 3_1.png
+|   |   |   |-- 3_2.png
+|   |   |   |-- 3_3.png
+|   |   |   |-- 3_4.png
+|   |   |   |-- 3_5.png
+|   |   |   `-- equation.png
+|   |   |-- clear_cache
+|   |   |   `-- 1-1.png
+|   |   |-- cloud_deployment_with_terraform
+|   |   |   |-- 01.png
+|   |   |   |-- 02.png
+|   |   |   |-- 03.png
+|   |   |   |-- 04.png
+|   |   |   |-- 05.png
+|   |   |   `-- 06.png
+|   |   |-- cluster_monitor
+|   |   |   |-- 1-1.png
+|   |   |   |-- 1-2.png
+|   |   |   |-- 1-3.png
+|   |   |   |-- 2-1.png
+|   |   |   |-- 2-10.png
+|   |   |   |-- 2-11.png
+|   |   |   |-- 2-12.png
+|   |   |   |-- 2-13.png
+|   |   |   |-- 2-14.png
+|   |   |   |-- 2-15.png
+|   |   |   |-- 2-16.png
+|   |   |   |-- 2-17.png
+|   |   |   |-- 2-18.png
+|   |   |   |-- 2-2.png
+|   |   |   |-- 2-20.png
+|   |   |   |-- 2-21.png
+|   |   |   |-- 2-22.png
+|   |   |   |-- 2-23.png
+|   |   |   |-- 2-24.png
+|   |   |   |-- 2-25.png
+|   |   |   |-- 2-3.png
+|   |   |   |-- 2-4.png
+|   |   |   |-- 2-5.png
+|   |   |   |-- 2-6.png
+|   |   |   |-- 2-7.png
+|   |   |   |-- 2-8.png
+|   |   |   |-- 2-9.png
+|   |   |   |-- 3-1.png
+|   |   |   |-- 3-2.png
+|   |   |   |-- 3-3.png
+|   |   |   |-- 3-4.png
+|   |   |   |-- 3-5.png
+|   |   |   |-- 3-6.png
+|   |   |   |-- 4-1.png
+|   |   |   |-- 4-10.png
+|   |   |   |-- 4-11.png
+|   |   |   |-- 4-12.png
+|   |   |   |-- 4-13.png
+|   |   |   |-- 4-14.png
+|   |   |   |-- 4-15.png
+|   |   |   |-- 4-16.png
+|   |   |   |-- 4-17.png
+|   |   |   |-- 4-18.png
+|   |   |   |-- 4-2.png
+|   |   |   |-- 4-3.png
+|   |   |   |-- 4-4.png
+|   |   |   |-- 4-5.png
+|   |   |   |-- 4-6.png
+|   |   |   |-- 4-7.png
+|   |   |   |-- 4-8.png
+|   |   |   |-- 4-9.png
+|   |   |   |-- 5-1.png
+|   |   |   |-- 5-10.png
+|   |   |   |-- 5-11.png
+|   |   |   |-- 5-12.png
+|   |   |   |-- 5-13.png
+|   |   |   |-- 5-14.png
+|   |   |   |-- 5-15.png
+|   |   |   |-- 5-16.png
+|   |   |   |-- 5-17.png
+|   |   |   |-- 5-18.png
+|   |   |   |-- 5-19.png
+|   |   |   |-- 5-2.png
+|   |   |   |-- 5-20.png
+|   |   |   |-- 5-21.png
+|   |   |   |-- 5-22.png
+|   |   |   |-- 5-23.png
+|   |   |   |-- 5-24.png
+|   |   |   |-- 5-25.png
+|   |   |   |-- 5-26.png
+|   |   |   |-- 5-27.png
+|   |   |   |-- 5-28.png
+|   |   |   |-- 5-29.png
+|   |   |   |-- 5-3.png
+|   |   |   |-- 5-30.png
+|   |   |   |-- 5-31.png
+|   |   |   |-- 5-32.png
+|   |   |   |-- 5-33.png
+|   |   |   |-- 5-34.png
+|   |   |   |-- 5-35.png
+|   |   |   |-- 5-36.png
+|   |   |   |-- 5-37.png
+|   |   |   |-- 5-38.png
+|   |   |   |-- 5-4.png
+|   |   |   |-- 5-5.png
+|   |   |   |-- 5-6.png
+|   |   |   |-- 5-7.png
+|   |   |   |-- 5-8.png
+|   |   |   `-- 5-9.png
+|   |   |-- cluster_scale11.png
+|   |   |-- cluster_scale12.png
+|   |   |-- cluster_scale15.png
+|   |   |-- cluster_scale4.png
+|   |   |-- cluster_scale6.png
+|   |   |-- cluster_scale9.png
+|   |   |-- csvfile.PNG
+|   |   |-- cta.png
+|   |   |-- data_etl
+|   |   |   |-- ETL.png
+|   |   |   |-- distribute.png
+|   |   |   `-- rtt.png
+|   |   |-- data_import_details
+|   |   |   |-- 01.png
+|   |   |   |-- 02.png
+|   |   |   |-- 03.png
+|   |   |   |-- 04.png
+|   |   |   |-- 05.png
+|   |   |   |-- 06.png
+|   |   |   |-- 07.png
+|   |   |   |-- 08.png
+|   |   |   |-- 09.png
+|   |   |   |-- 10.png
+|   |   |   |-- 11.png
+|   |   |   |-- 12.png
+|   |   |   |-- 13.png
+|   |   |   |-- 14.png
+|   |   |   |-- 15.png
+|   |   |   |-- 16.png
+|   |   |   |-- 17.png
+|   |   |   |-- 18.png
+|   |   |   |-- 19.png
+|   |   |   |-- 20.png
+|   |   |   `-- 21.png
+|   |   |-- data_move_rebalance
+|   |   |   |-- 4_1.png
+|   |   |   |-- 4_2.png
+|   |   |   |-- 5_1.png
+|   |   |   `-- 5_2.png
+|   |   |-- database
+|   |   |   |-- hier1.png
+|   |   |   |-- hier2.png
+|   |   |   |-- list.png
+|   |   |   |-- range.png
+|   |   |   `-- value.png
+|   |   |-- database_and_table_creation_wizard
+|   |   |   |-- 1-1.png
+|   |   |   |-- 1-2.png
+|   |   |   |-- 1-3.png
+|   |   |   |-- 1-4.png
+|   |   |   |-- 1-5.png
+|   |   |   |-- 1-6.png
+|   |   |   |-- 1-7.png
+|   |   |   `-- 1-8.png
+|   |   |-- datasource.PNG
+|   |   |-- datasync
+|   |   |   |-- 1.png
+|   |   |   `-- 2.png
+|   |   |-- ddb_high_cluster
+|   |   |   |-- docker_high_outcome.png
+|   |   |   `-- docker_test_outcome.png
+|   |   |-- debezium_kafka_real_time_synchronization_of_oracle_11g_data
+|   |   |   |-- 1_1.png
+|   |   |   |-- 1_2.png
+|   |   |   |-- 1_3.png
+|   |   |   |-- 2_1.png
+|   |   |   |-- 2_2.png
+|   |   |   |-- 2_3.jpg
+|   |   |   |-- 2_4.jpg
+|   |   |   |-- 2_5.png
+|   |   |   |-- 3_1.png
+|   |   |   |-- 3_10.png
+|   |   |   |-- 3_11.png
+|   |   |   |-- 3_2.png
+|   |   |   |-- 3_3.png
+|   |   |   |-- 3_4.jpg
+|   |   |   |-- 3_5.png
+|   |   |   |-- 3_6.png
+|   |   |   |-- 3_7.png
+|   |   |   |-- 3_8.png
+|   |   |   |-- 3_9.png
+|   |   |   |-- 4_1.png
+|   |   |   |-- 4_2.png
+|   |   |   |-- 4_3.png
+|   |   |   |-- 5_1.png
+|   |   |   |-- 5_2.png
+|   |   |   |-- 5_3.png
+|   |   |   |-- 5_4.png
+|   |   |   `-- 5_5.png
+|   |   |-- deploy_standalone
+|   |   |   |-- checknode_status_singlenode_web.png
+|   |   |   |-- singlenode_faq_1.png
+|   |   |   |-- singlenode_linux_upgrade_offline_1.png
+|   |   |   |-- singlenode_linux_upgrade_offline_2.png
+|   |   |   |-- singlenode_linux_upgrade_offline_3.png
+|   |   |   |-- singlenode_linux_upgrade_offline_4.png
+|   |   |   |-- singlenode_linux_upgrade_offline_5.png
+|   |   |   |-- singlenode_linux_upgrade_online_success.png
+|   |   |   |-- singlenode_linux_upgrade_online_tip1.png
+|   |   |   |-- singlenode_linux_upgrade_online_tip2.png
+|   |   |   |-- singlenode_linux_upgrade_online_tip3.png
+|   |   |   |-- singlenode_techsupport_qr.png
+|   |   |   |-- singlenode_win_backend_vbs.png
+|   |   |   |-- singlenode_win_dbclickddbexe.png
+|   |   |   |-- singlenode_win_findstr.png
+|   |   |   |-- singlenode_win_upgade_1.png
+|   |   |   |-- singlenode_win_web_checknode.png
+|   |   |   |-- start_singlenode_linux_backend_success.png
+|   |   |   `-- start_singlenode_win_folder.png
+|   |   |-- displaying_the_dolphindb_k-line_with_klinechart
+|   |   |   `-- 3_1.png
+|   |   |-- distributed_mpp.JPG
+|   |   |-- dolphindb-mgr-aws-byol-v2
+|   |   |   |-- EC2.png
+|   |   |   |-- addrule.png
+|   |   |   |-- clusterConfig.png
+|   |   |   |-- createCluster.png
+|   |   |   |-- deleteNode.png
+|   |   |   |-- eks_ssh.png
+|   |   |   |-- inbound.png
+|   |   |   |-- local-path-path.png
+|   |   |   |-- myip.png
+|   |   |   |-- nodeAvailable.png
+|   |   |   |-- sg.png
+|   |   |   `-- version.png
+|   |   |-- dolphindb_update
+|   |   |   |-- olap_update_flowchart.png
+|   |   |   `-- tsdb_last_update_flowchart.png
+|   |   |-- dolphinscheduler_integration
+|   |   |   |-- 10.png
+|   |   |   |-- 11.png
+|   |   |   |-- 12.png
+|   |   |   |-- 13.png
+|   |   |   |-- 14.png
+|   |   |   |-- 15.png
+|   |   |   |-- 16.png
+|   |   |   |-- 17.png
+|   |   |   |-- 18.png
+|   |   |   |-- 19.png
+|   |   |   |-- 20.png
+|   |   |   |-- 21.png
+|   |   |   |-- 22.png
+|   |   |   |-- 4.png
+|   |   |   |-- 6.png
+|   |   |   |-- 7.png
+|   |   |   |-- 8.png
+|   |   |   `-- 9.png
+|   |   |-- echart
+|   |   |   |-- 1.png
+|   |   |   `-- 2.PNG
+|   |   |-- edge_to_cloud
+|   |   |   `-- 1-1.png
+|   |   |-- efficient_power_trading_solutions
+|   |   |   |-- 3_1.png
+|   |   |   |-- 5_1.png
+|   |   |   |-- 5_2.png
+|   |   |   `-- 5_3.png
+|   |   |-- empyrical
+|   |   |   |-- 4-1.png
+|   |   |   |-- 4-2.png
+|   |   |   |-- 4-3.png
+|   |   |   `-- 4-4.png
+|   |   |-- exchdata_exchange_historical_stock_data_auto_import_module_tutorial
+|   |   |   |-- 4_1.png
+|   |   |   |-- 4_2.png
+|   |   |   |-- 4_3.png
+|   |   |   |-- 4_4.png
+|   |   |   |-- 4_5.png
+|   |   |   |-- 4_6.png
+|   |   |   |-- 4_7.png
+|   |   |   |-- 4_8.png
+|   |   |   `-- 5_1.png
+|   |   |-- factor_attribution_analysis
+|   |   |   |-- 1-1.svg
+|   |   |   |-- 1-2.svg
+|   |   |   |-- 1-3.svg
+|   |   |   |-- 1-4.svg
+|   |   |   |-- 1-5.svg
+|   |   |   |-- 1-7.svg
+|   |   |   |-- 1-8.svg
+|   |   |   |-- 2-1.png
+|   |   |   |-- 2-10.png
+|   |   |   |-- 2-11.png
+|   |   |   |-- 2-12.png
+|   |   |   |-- 2-13.png
+|   |   |   |-- 2-2.png
+|   |   |   |-- 2-3.png
+|   |   |   |-- 2-4.png
+|   |   |   |-- 2-5.png
+|   |   |   |-- 2-6.png
+|   |   |   |-- 2-7.png
+|   |   |   |-- 2-8.png
+|   |   |   `-- 2-9.png
+|   |   |-- factor_evaluation_framework
+|   |   |   |-- 1-1.png
+|   |   |   |-- 2-1.png
+|   |   |   |-- 2-2.png
+|   |   |   |-- 2-3.png
+|   |   |   |-- 2-4.png
+|   |   |   |-- 2-5.png
+|   |   |   |-- 2-6.png
+|   |   |   |-- 2-7.png
+|   |   |   |-- 3-1.png
+|   |   |   |-- 3-2.png
+|   |   |   |-- 3-3.png
+|   |   |   |-- 3-4.png
+|   |   |   |-- 3-5.png
+|   |   |   |-- 3-6.png
+|   |   |   |-- 3-7.png
+|   |   |   |-- 4-1.png
+|   |   |   |-- 4-2.png
+|   |   |   |-- 4-3.png
+|   |   |   |-- formula_1.svg
+|   |   |   |-- formula_3.svg
+|   |   |   |-- formula_4.svg
+|   |   |   |-- formula_5.svg
+|   |   |   |-- formula_6.svg
+|   |   |   `-- formula_7.svg
+|   |   |-- faultAnalysis
+|   |   |   |-- 1-1.png
+|   |   |   |-- 3-3.png
+|   |   |   |-- 3-4-2-1.png
+|   |   |   |-- 3-4-2-2.png
+|   |   |   `-- 3-4-2-3.png
+|   |   |-- functional_programming
+|   |   |   |-- accumulcate.jpeg
+|   |   |   |-- moving1.png
+|   |   |   `-- segment-case1.png
+|   |   |-- fund_factor_contrasted_by_py
+|   |   |   |-- calculating_outcome.png
+|   |   |   |-- equation1.png
+|   |   |   |-- equation10.png
+|   |   |   |-- equation11.png
+|   |   |   |-- equation12.png
+|   |   |   |-- equation13.png
+|   |   |   |-- equation14.png
+|   |   |   |-- equation2.png
+|   |   |   |-- equation3.png
+|   |   |   |-- equation4.png
+|   |   |   |-- equation5.png
+|   |   |   |-- equation6.png
+|   |   |   |-- equation7.png
+|   |   |   |-- equation8.png
+|   |   |   |-- equation9.png
+|   |   |   |-- fund_10.png
+|   |   |   `-- fund_hs_10.png
+|   |   |-- futures_minute_frequency_cta_strategy_backtest_example
+|   |   |   `-- 2-1.png
+|   |   |-- gplearn
+|   |   |   |-- a.png
+|   |   |   |-- b.png
+|   |   |   |-- c.png
+|   |   |   `-- d.png
+|   |   |-- haProxy_best_practices
+|   |   |   |-- 1_1.png
+|   |   |   |-- 3_1.png
+|   |   |   |-- 3_2.png
+|   |   |   |-- 3_3.png
+|   |   |   `-- 3_4.png
+|   |   |-- haStream.png
+|   |   |-- ha_cluster_deployment
+|   |   |   |-- 1_1.png
+|   |   |   |-- 1_10.png
+|   |   |   |-- 1_11.png
+|   |   |   |-- 1_13.png
+|   |   |   |-- 1_14.png
+|   |   |   |-- 1_15.png
+|   |   |   |-- 1_16.png
+|   |   |   |-- 1_2.png
+|   |   |   |-- 1_3.png
+|   |   |   |-- 1_4.png
+|   |   |   |-- 1_5.png
+|   |   |   |-- 1_6.png
+|   |   |   |-- 1_7.png
+|   |   |   |-- 1_8.png
+|   |   |   |-- 1_9.png
+|   |   |   |-- 2_1.png
+|   |   |   |-- 2_2.png
+|   |   |   |-- 3_1.png
+|   |   |   |-- 3_10.png
+|   |   |   |-- 3_11.png
+|   |   |   |-- 3_12.png
+|   |   |   |-- 3_2.png
+|   |   |   |-- 3_3.png
+|   |   |   |-- 3_4.png
+|   |   |   |-- 3_5.png
+|   |   |   |-- 3_6.png
+|   |   |   |-- 3_7.png
+|   |   |   |-- 3_8.png
+|   |   |   |-- 3_9.png
+|   |   |   |-- 4_1.png
+|   |   |   |-- 4_2.png
+|   |   |   |-- 5_1.png
+|   |   |   `-- 6_1.png
+|   |   |-- handle\ shutdown
+|   |   |   |-- handle_shutdown1-2.png
+|   |   |   |-- handle_shutdown1-3.png
+|   |   |   |-- handle_shutdown2-1.png
+|   |   |   |-- handle_shutdown3-1.png
+|   |   |   |-- handle_shutdown3-2.png
+|   |   |   |-- handle_shutdown3-4.png
+|   |   |   |-- handle_shutdown3-5.png
+|   |   |   |-- handle_shutdown3-6.png
+|   |   |   `-- handle_shutdown3-7.png
+|   |   |-- hf_factor_demo.png
+|   |   |-- high_freq_data_storage_and_analysis
+|   |   |   |-- 01.png
+|   |   |   |-- 02.png
+|   |   |   |-- 03.png
+|   |   |   `-- 04.png
+|   |   |-- insight_plugin
+|   |   |   |-- 01.png
+|   |   |   |-- 02.png
+|   |   |   |-- 03.png
+|   |   |   |-- 04.png
+|   |   |   `-- 05.png
+|   |   |-- insight_plugin_orderbook_engine_application
+|   |   |   |-- 1_1.png
+|   |   |   |-- 2_1.png
+|   |   |   |-- 2_2.png
+|   |   |   |-- 2_3.png
+|   |   |   `-- 4_1.png
+|   |   |-- iotExam
+|   |   |   |-- asynDisasterRecovery.PNG
+|   |   |   |-- newDashboard.png
+|   |   |   `-- serverStarted.png
+|   |   |-- iot_query_case
+|   |   |   `-- time.png
+|   |   |-- k
+|   |   |   |-- 2.1.png
+|   |   |   |-- 2.10.png
+|   |   |   |-- 2.11.png
+|   |   |   |-- 2.12.png
+|   |   |   |-- 2.13.png
+|   |   |   |-- 2.14.png
+|   |   |   |-- 2.15.png
+|   |   |   |-- 2.2.png
+|   |   |   |-- 2.3.png
+|   |   |   |-- 2.4.png
+|   |   |   |-- 2.5.png
+|   |   |   |-- 2.6.png
+|   |   |   |-- 2.7.png
+|   |   |   |-- 2.8.png
+|   |   |   |-- 2.9.png
+|   |   |   |-- 3.1.png
+|   |   |   |-- 3.10.png
+|   |   |   |-- 3.2.png
+|   |   |   |-- 3.3.png
+|   |   |   |-- 3.4.png
+|   |   |   |-- 3.5.png
+|   |   |   |-- 3.6.png
+|   |   |   |-- 3.7.png
+|   |   |   |-- 3.8.png
+|   |   |   |-- 3.9.png
+|   |   |   `-- 5.1.png
+|   |   |-- k8s_deployment
+|   |   |   |-- k8s-deployment-1.png
+|   |   |   |-- k8s-deployment-2.png
+|   |   |   |-- k8s-deployment-3.png
+|   |   |   |-- k8s-deployment-4.png
+|   |   |   |-- k8s-deployment-5.png
+|   |   |   |-- k8s-deployment-6.png
+|   |   |   |-- k8s-deployment-7.png
+|   |   |   |-- k8s-deployment-8.png
+|   |   |   |-- updatelicense.png
+|   |   |   `-- updatelicense1.png
+|   |   |-- k8s_deployment_in_Aliyun
+|   |   |   |-- k8s_deployment_in_Aliyun-1.png
+|   |   |   |-- k8s_deployment_in_Aliyun-2.png
+|   |   |   `-- k8s_deployment_in_Aliyun-3.png
+|   |   |-- k_line_calculation
+|   |   |   |-- 3_1.jpg
+|   |   |   `-- 3_2.png
+|   |   |-- kafka_mqtt
+|   |   |   |-- 2-1.png
+|   |   |   |-- 2-2.png
+|   |   |   |-- 2-3.png
+|   |   |   |-- 3-1.svg
+|   |   |   |-- 3-2.png
+|   |   |   |-- 3-3.png
+|   |   |   |-- 3-4.png
+|   |   |   `-- 3-5.png
+|   |   |-- knn_iot
+|   |   |   |-- 2_1.png
+|   |   |   |-- 2_2.png
+|   |   |   |-- 2_3.png
+|   |   |   |-- 3_1_a.png
+|   |   |   |-- 3_1_b.png
+|   |   |   |-- 3_3_1.png
+|   |   |   `-- 5_3_a.png
+|   |   |-- log_analysis_tool_user_manual
+|   |   |   |-- 2.3.png
+|   |   |   |-- 2.4.png
+|   |   |   |-- 2_1.png
+|   |   |   |-- 2_2.png
+|   |   |   |-- 4_1.png
+|   |   |   |-- 4_2.png
+|   |   |   |-- 5_1.png
+|   |   |   |-- 6.10.png
+|   |   |   |-- 6.9.png
+|   |   |   |-- 6_1.png
+|   |   |   |-- 6_11.png
+|   |   |   |-- 6_2.png
+|   |   |   |-- 6_3.png
+|   |   |   |-- 6_4.png
+|   |   |   |-- 6_5.png
+|   |   |   |-- 6_6.png
+|   |   |   |-- 6_7.png
+|   |   |   `-- 6_8.png
+|   |   |-- machine_learning_volatility
+|   |   |   |-- 600196.png
+|   |   |   |-- 600703.png
+|   |   |   |-- 601066.png
+|   |   |   |-- askpress.svg
+|   |   |   |-- b.svg
+|   |   |   |-- bas.svg
+|   |   |   |-- bidpress.svg
+|   |   |   |-- dij.svg
+|   |   |   |-- grafana.png
+|   |   |   |-- press.svg
+|   |   |   |-- rmspe.svg
+|   |   |   |-- rt1t2.svg
+|   |   |   |-- rv.svg
+|   |   |   |-- s.svg
+|   |   |   |-- wap.svg
+|   |   |   `-- wi.svg
+|   |   |-- macro_var_based_metaprogr
+|   |   |   |-- a.png
+|   |   |   |-- b.png
+|   |   |   `-- c.png
+|   |   |-- manageJobOnWeb.png
+|   |   |-- market_condition_adjustments
+|   |   |   |-- 2-1.png
+|   |   |   |-- 2-2.png
+|   |   |   |-- 3-1.png
+|   |   |   |-- 3-2.png
+|   |   |   `-- 3-3.png
+|   |   |-- mdl
+|   |   |   |-- 1.png
+|   |   |   |-- 2.jpg
+|   |   |   |-- 3.png
+|   |   |   |-- 4.png
+|   |   |   `-- 5.png
+|   |   |-- memory_managment
+|   |   |   |-- cacheEngine.png
+|   |   |   |-- partition15.png
+|   |   |   |-- partition9.png
+|   |   |   `-- streaming.png
+|   |   |-- metacode_derived_features
+|   |   |   |-- bidspread.svg
+|   |   |   |-- logreturnbid.svg
+|   |   |   |-- logreturnoffer.svg
+|   |   |   |-- logreturnwap.svg
+|   |   |   |-- metacodeResult.png
+|   |   |   |-- offerspread.svg
+|   |   |   |-- pricespread.svg
+|   |   |   |-- realizedvolatility.svg
+|   |   |   |-- resultColNames.png
+|   |   |   |-- resultTable2021.png
+|   |   |   |-- rmspe.svg
+|   |   |   |-- streamingResult.png
+|   |   |   |-- totalvolume.svg
+|   |   |   |-- volumeimbalance.svg
+|   |   |   |-- wap.svg
+|   |   |   `-- wapbalance.svg
+|   |   |-- migrate_data_from_Postgre_and_Greenplum_to_DolphinDB
+|   |   |   |-- 01.png
+|   |   |   |-- 02.png
+|   |   |   `-- 03.png
+|   |   |-- module_code_versioning_and_rights_management
+|   |   |   |-- 2_1.png
+|   |   |   |-- 4_1.png
+|   |   |   |-- 4_2.png
+|   |   |   |-- 4_3.png
+|   |   |   `-- 4_4.png
+|   |   |-- monitor
+|   |   |   |-- graph.png
+|   |   |   |-- rules.png
+|   |   |   `-- targets.png
+|   |   |-- multi_asset_backtest.png
+|   |   |-- multi_asset_backtest_formula.png
+|   |   |-- multi_factor_risk_model
+|   |   |   |-- 1.1-1.png
+|   |   |   |-- 1.2-1.png
+|   |   |   |-- 1.2-2.png
+|   |   |   |-- 2.3.1-1.png
+|   |   |   |-- 2.3.1-2.png
+|   |   |   |-- 2.3.1-3.png
+|   |   |   |-- 2.3.2-1.png
+|   |   |   |-- 2.4.1-1.png
+|   |   |   |-- 2.4.1-2.png
+|   |   |   |-- 2.4.2-1.png
+|   |   |   |-- 2.4.3-1.png
+|   |   |   |-- 2.4.3-2.png
+|   |   |   |-- 2.4.4-1.png
+|   |   |   |-- 3.1-1.png
+|   |   |   |-- 3.1-3.png
+|   |   |   |-- 3.1-4.png
+|   |   |   |-- 3.1-5.png
+|   |   |   |-- 3.1-6.png
+|   |   |   |-- 3.1-7.png
+|   |   |   |-- 3.2.1.1-1.png
+|   |   |   |-- 3.2.1.1-2.png
+|   |   |   |-- 3.2.1.1-3.png
+|   |   |   |-- 3.2.1.1-4.png
+|   |   |   |-- 3.2.1.1-5.png
+|   |   |   |-- 3.2.1.2-1.png
+|   |   |   |-- 3.2.1.2-2.png
+|   |   |   |-- 3.2.1.2-4.png
+|   |   |   |-- 3.2.1.2-5.png
+|   |   |   |-- 3.2.1.2-6.png
+|   |   |   |-- 3.2.1.2-8.png
+|   |   |   |-- 3.2.2-1.png
+|   |   |   |-- 3.2.2-2.png
+|   |   |   |-- 3.2.2-3.png
+|   |   |   |-- 3.2.2-4.png
+|   |   |   |-- 3.2.2-5.png
+|   |   |   |-- 4.1-1.png
+|   |   |   |-- 4.1-2.png
+|   |   |   |-- 4.2.1-1.png
+|   |   |   |-- 4.2.2-1.png
+|   |   |   |-- 4.2.2-2.png
+|   |   |   |-- 4.2.2-3.png
+|   |   |   |-- 4.2.2-4.png
+|   |   |   |-- 4.2.3-1.png
+|   |   |   |-- 4.3.2-1.png
+|   |   |   |-- multi_factor_flow.png
+|   |   |   |-- sample.png
+|   |   |   |-- studentized\ R2\ \346\234\210\351\242\221\346\227\266\345\272\217\345\233\276.png
+|   |   |   |-- \345\220\210\346\210\220\345\233\240\345\255\220\345\211\215\347\232\204\345\233\240\345\255\220\346\232\264\351\234\262.png
+|   |   |   |-- \345\220\210\346\210\220\345\233\240\345\255\220\345\220\216\347\232\204\345\233\240\345\255\220\346\232\264\351\234\262.png
+|   |   |   |-- \345\233\240\345\255\220\ Bias\ \347\273\237\350\256\241\351\207\217\346\227\266\345\272\217\345\233\276.png
+|   |   |   |-- \345\233\240\345\255\220\ t_stat\ \346\234\210\351\242\221\346\227\266\345\272\217\345\233\276.png
+|   |   |   |-- \345\233\240\345\255\220\345\220\210\346\210\220\346\265\201\347\250\213\345\233\276.png
+|   |   |   |-- \345\233\240\345\255\220\345\235\207\345\200\274\ Bias\ \347\273\237\350\256\241\351\207\217\346\227\266\345\272\217\345\233\276.png
+|   |   |   |-- \345\233\240\345\255\220\346\250\241\345\236\213\347\211\271\345\274\202\351\243\216\351\231\251\ Bias\ \347\273\237\350\256\241\351\207\217\346\227\266\345\272\217\345\233\276.png
+|   |   |   |-- \345\233\240\345\255\220\347\232\204\ FSC\ \346\234\210\351\242\221\346\227\266\345\272\217\345\233\276.png
+|   |   |   |-- \345\233\240\345\255\220\347\232\204\ IC\ \346\234\210\351\242\221\346\227\266\345\272\217\345\233\276.png
+|   |   |   |-- \345\244\204\347\220\206\345\211\215\347\232\204\345\216\237\345\247\213\344\270\211\347\272\247\345\233\240\345\255\220\345\256\275\350\241\250\347\244\272\344\276\213\345\233\276.png
+|   |   |   |-- \345\244\204\347\220\206\345\220\216\347\232\204\344\270\211\347\272\247\345\233\240\345\255\220\345\256\275\350\241\250\347\244\272\344\276\213\345\233\276.png
+|   |   |   |-- \345\257\271\345\272\224\347\232\204\351\203\250\345\210\206\350\277\224\345\233\236\347\273\223\346\236\234\345\233\276\344\270\200.png
+|   |   |   |-- \345\257\271\345\272\224\347\232\204\351\203\250\345\210\206\350\277\224\345\233\236\347\273\223\346\236\234\345\233\276\344\270\211.png
+|   |   |   |-- \345\257\271\345\272\224\347\232\204\351\203\250\345\210\206\350\277\224\345\233\236\347\273\223\346\236\234\345\233\276\344\272\214.png
+|   |   |   |-- \346\262\252\346\267\261\ 300\ \347\232\204\345\270\202\345\200\274\345\212\240\346\235\203\350\265\204\344\272\247\347\273\204\345\220\210\ Bias.png
+|   |   |   `-- \346\262\252\346\267\261\ 300\ \347\232\204\347\255\211\346\235\203\350\265\204\344\272\247\347\273\204\345\220\210\ Bias.png
+|   |   |-- multi_machine_cluster_deployment
+|   |   |   |-- 1_1.png
+|   |   |   |-- 1_11.png
+|   |   |   |-- 1_12.png
+|   |   |   |-- 1_13.png
+|   |   |   |-- 1_14.png
+|   |   |   |-- 1_2.png
+|   |   |   |-- 1_3.png
+|   |   |   |-- 1_4.png
+|   |   |   |-- 1_5.png
+|   |   |   |-- 1_6.png
+|   |   |   |-- 1_7.png
+|   |   |   |-- 1_8.png
+|   |   |   |-- 1_9.png
+|   |   |   |-- 2_1.png
+|   |   |   |-- 2_2.png
+|   |   |   |-- 3_1.png
+|   |   |   |-- 3_10.png
+|   |   |   |-- 3_11.png
+|   |   |   |-- 3_2.png
+|   |   |   |-- 3_3.png
+|   |   |   |-- 3_4.png
+|   |   |   |-- 3_5.png
+|   |   |   |-- 3_6.png
+|   |   |   |-- 3_7.png
+|   |   |   |-- 3_8.png
+|   |   |   |-- 3_9.png
+|   |   |   |-- 4_1.png
+|   |   |   |-- 4_2.png
+|   |   |   `-- 5_1.png
+|   |   |-- mvo_images
+|   |   |   |-- 01ba1550-99ac-4164-aa92-34b1008593ae.png
+|   |   |   |-- 0b1af30f-b19f-42fa-94d8-c476f8dfde54.png
+|   |   |   |-- 6776d73e-a10f-4194-9f02-b930570966b8.png
+|   |   |   |-- 7ead9be4-58e7-43ed-9b25-f3bff9bfd2e7\ (1).png
+|   |   |   |-- c00cf790-b324-4f99-ac0a-dc702b50422c.png
+|   |   |   |-- image-20240220-100938.png
+|   |   |   |-- image-20240220-101049.png
+|   |   |   |-- image-20240220-101314.png
+|   |   |   |-- image-20240220-101456.png
+|   |   |   |-- image-20240220-101608.png
+|   |   |   |-- image-20240220-101641.png
+|   |   |   |-- image-20240220-101740.png
+|   |   |   |-- image-20240220-101825.png
+|   |   |   |-- image-20240220-102309.png
+|   |   |   |-- image-20240220-102419.png
+|   |   |   |-- image-20240220-102458.png
+|   |   |   |-- image-20240220-102515.png
+|   |   |   |-- image-20240220-102541.png
+|   |   |   |-- image-20240220-102833.png
+|   |   |   |-- image-20240220-102853.png
+|   |   |   |-- image-20240220-102956.png
+|   |   |   |-- image-20240220-103055.png
+|   |   |   |-- image-20240220-103140.png
+|   |   |   |-- image-20240220-103340.png
+|   |   |   |-- image-20240220-103356.png
+|   |   |   |-- image-20240220-103709.png
+|   |   |   |-- image-20240220-103842.png
+|   |   |   |-- image-20240220-103927.png
+|   |   |   |-- image-20240220-103953.png
+|   |   |   |-- image-20240220-104012.png
+|   |   |   |-- image-20240220-104031.png
+|   |   |   |-- image-20240222-021127.png
+|   |   |   |-- image-20240223-091128.png
+|   |   |   |-- image-20240223-091830.png
+|   |   |   |-- image-20240223-092138.png
+|   |   |   |-- image-20240223-093556.png
+|   |   |   |-- image-20240223-094715.png
+|   |   |   |-- image-20240226-010938.png
+|   |   |   |-- image-20240226-014650.png
+|   |   |   |-- image-20240226-015235.png
+|   |   |   |-- image-20240226-064535.png
+|   |   |   |-- image-20240226-074959.png
+|   |   |   |-- image-20240226-075017.png
+|   |   |   |-- image-20240226-080445.png
+|   |   |   |-- image-20240226-081840.png
+|   |   |   |-- image-20240227-013316.png
+|   |   |   |-- image-20240227-013333.png
+|   |   |   |-- image-20240227-015445.png
+|   |   |   |-- image-20240227-021244.png
+|   |   |   |-- image-20240227-021445.png
+|   |   |   |-- image-20240311-093436.png
+|   |   |   `-- image-20240311-094124.png
+|   |   |-- new_users_finance
+|   |   |   |-- 2-1.png
+|   |   |   |-- 2-2.png
+|   |   |   |-- 2-3.png
+|   |   |   |-- 2-4.png
+|   |   |   |-- 2-5.png
+|   |   |   |-- 2-6.png
+|   |   |   |-- 2-7.png
+|   |   |   |-- 2-8.png
+|   |   |   |-- 3-1.png
+|   |   |   |-- 3-2.png
+|   |   |   |-- 3-3.png
+|   |   |   |-- 3-4.png
+|   |   |   |-- 3-5.png
+|   |   |   |-- 3-6.png
+|   |   |   |-- 3-7.png
+|   |   |   |-- 3-8.png
+|   |   |   |-- 3-9.png
+|   |   |   |-- 4-1.png
+|   |   |   |-- 4-2.png
+|   |   |   |-- 4-3.png
+|   |   |   |-- 4-4.png
+|   |   |   |-- 4-5.png
+|   |   |   |-- 4-6.png
+|   |   |   |-- 4-7.png
+|   |   |   |-- 6-1.png
+|   |   |   |-- 6-2.png
+|   |   |   |-- 7-1.png
+|   |   |   |-- 7-2.png
+|   |   |   |-- 7-3.png
+|   |   |   |-- 7-4.png
+|   |   |   |-- 7-5.png
+|   |   |   |-- 7-6.png
+|   |   |   |-- 7-7.png
+|   |   |   |-- 7-8.png
+|   |   |   |-- formula_1.png
+|   |   |   `-- mark_1.png
+|   |   |-- nginx_dolphindb
+|   |   |   |-- 1-1.png
+|   |   |   `-- 2-1.png
+|   |   |-- node_red_iot
+|   |   |   |-- node_red_1.png
+|   |   |   |-- node_red_10.png
+|   |   |   |-- node_red_11.png
+|   |   |   |-- node_red_12.png
+|   |   |   |-- node_red_13.png
+|   |   |   |-- node_red_14.png
+|   |   |   |-- node_red_15.png
+|   |   |   |-- node_red_16.png
+|   |   |   |-- node_red_17.png
+|   |   |   |-- node_red_2.png
+|   |   |   |-- node_red_3.png
+|   |   |   |-- node_red_4.png
+|   |   |   |-- node_red_5.png
+|   |   |   |-- node_red_6.png
+|   |   |   |-- node_red_7.png
+|   |   |   |-- node_red_8.png
+|   |   |   `-- node_red_9.png
+|   |   |-- node_startup_process_and_questions
+|   |   |   |-- 01.png
+|   |   |   |-- 02.png
+|   |   |   |-- 03.png
+|   |   |   |-- 04.png
+|   |   |   |-- 05.png
+|   |   |   |-- 06.png
+|   |   |   |-- 07.png
+|   |   |   |-- 08.png
+|   |   |   `-- 09.png
+|   |   |-- non-standard_permission_management
+|   |   |   |-- data.png
+|   |   |   `-- web.png
+|   |   |-- oauth
+|   |   |   |-- 1.png
+|   |   |   |-- 2.png
+|   |   |   |-- 3.png
+|   |   |   `-- 4.png
+|   |   |-- oom_settlement
+|   |   |   |-- 01.png
+|   |   |   |-- 02.png
+|   |   |   |-- 03.png
+|   |   |   `-- 04.png
+|   |   |-- orderBookSnapshotEngine
+|   |   |   |-- 3_1.png
+|   |   |   |-- 3_2.png
+|   |   |   |-- 3_3.png
+|   |   |   |-- 6_1.png
+|   |   |   `-- 7_1.png
+|   |   |-- performance_optimization_based_on_glibc
+|   |   |   |-- 01.png
+|   |   |   |-- 02.png
+|   |   |   `-- 03.png
+|   |   |-- public_fund_basic_analysis
+|   |   |   |-- 01.publicFundDataTop10.png
+|   |   |   |-- 02.publicFundData.png
+|   |   |   |-- 03.fundFeeSummary.png
+|   |   |   |-- 04.feesHistogram.png
+|   |   |   |-- 05.longForm.png
+|   |   |   |-- 06.wideForm.png
+|   |   |   |-- 07.returnsMatrix.png
+|   |   |   |-- 08.fundNum.png
+|   |   |   |-- 09.qavgReturns.png
+|   |   |   |-- 10.tReturnsMatrix.png
+|   |   |   |-- 11.yearReturnsMatrix.png
+|   |   |   |-- 12.annualizedReturn.png
+|   |   |   |-- 13.annualizedVolatility.png
+|   |   |   |-- 14.sharpRatio.png
+|   |   |   |-- 15.riskReturn.png
+|   |   |   |-- equation.png
+|   |   |   `-- sharpe.png
+|   |   |-- redash
+|   |   |   |-- ds1.png
+|   |   |   |-- ds2.png
+|   |   |   |-- ds4.png
+|   |   |   |-- ds5.png
+|   |   |   |-- ds6.png
+|   |   |   `-- ds8.png
+|   |   |-- redis_plugin_tutorial
+|   |   |   |-- \345\233\2762_1.png
+|   |   |   |-- \345\233\2763_1.png
+|   |   |   |-- \345\233\2763_2.png
+|   |   |   |-- \345\233\2763_3.png
+|   |   |   `-- \345\233\2763_4.png
+|   |   |-- redoLog_cacheEngine
+|   |   |   `-- 1_1.png
+|   |   |-- repair_chunk_status
+|   |   |   |-- repair_chunk_status2.1-1.png
+|   |   |   |-- repair_chunk_status2.1-2.png
+|   |   |   |-- repair_chunk_status4.1-1.png
+|   |   |   |-- repair_chunk_status4.1-2.png
+|   |   |   |-- repair_chunk_status4.1-3.png
+|   |   |   |-- repair_chunk_status4.3-1.png
+|   |   |   `-- repair_chunk_status4.3-2.png
+|   |   |-- scaleout
+|   |   |   |-- 3.PNG
+|   |   |   |-- Controller_StartAll.PNG
+|   |   |   |-- controller_stopAll.PNG
+|   |   |   |-- scale_dfs_exp1.PNG
+|   |   |   `-- scale_dfs_exp2.PNG
+|   |   |-- service_deployment_and_migration
+|   |   |   |-- 01.png
+|   |   |   |-- 02.png
+|   |   |   |-- 03.png
+|   |   |   |-- 04.png
+|   |   |   |-- 05.png
+|   |   |   |-- 06.png
+|   |   |   |-- 07.png
+|   |   |   |-- 08.png
+|   |   |   |-- 09.png
+|   |   |   |-- 10.png
+|   |   |   |-- 11.png
+|   |   |   |-- 12.png
+|   |   |   |-- 13.png
+|   |   |   |-- 14.png
+|   |   |   |-- 15.png
+|   |   |   |-- 16.png
+|   |   |   |-- 17.png
+|   |   |   |-- 18.png
+|   |   |   |-- 19.png
+|   |   |   |-- 20.png
+|   |   |   |-- 21.png
+|   |   |   |-- 22.png
+|   |   |   `-- 23.png
+|   |   |-- shark_graph
+|   |   |   |-- 3-1.jpg
+|   |   |   |-- 3-2.png
+|   |   |   `-- fomula-3.svg
+|   |   |-- single_machine_cluster_deploy
+|   |   |   |-- 1_1.png
+|   |   |   |-- 1_10.png
+|   |   |   |-- 1_11.png
+|   |   |   |-- 1_12.png
+|   |   |   |-- 1_13.png
+|   |   |   |-- 1_2.png
+|   |   |   |-- 1_3.png
+|   |   |   |-- 1_4.png
+|   |   |   |-- 1_5.png
+|   |   |   |-- 1_6.png
+|   |   |   |-- 1_7.png
+|   |   |   |-- 1_8.png
+|   |   |   |-- 2_1.png
+|   |   |   |-- 2_10.png
+|   |   |   |-- 2_11.png
+|   |   |   |-- 2_12.png
+|   |   |   |-- 2_2.png
+|   |   |   |-- 2_3.png
+|   |   |   |-- 2_4.png
+|   |   |   |-- 2_5.png
+|   |   |   |-- 2_6.png
+|   |   |   |-- 2_7.png
+|   |   |   |-- 2_9.png
+|   |   |   |-- 3_1.png
+|   |   |   |-- 3_10.png
+|   |   |   |-- 3_11.png
+|   |   |   |-- 3_2.png
+|   |   |   |-- 3_3.png
+|   |   |   |-- 3_4.png
+|   |   |   |-- 3_5.png
+|   |   |   |-- 3_6.png
+|   |   |   |-- 3_7.png
+|   |   |   |-- 3_8.png
+|   |   |   |-- 3_9.png
+|   |   |   |-- 4_1.png
+|   |   |   |-- 4_2.png
+|   |   |   `-- 6_1.png
+|   |   |-- socp_usage_case
+|   |   |   |-- 2-1.png
+|   |   |   |-- 2-2.png
+|   |   |   |-- 2-3.png
+|   |   |   |-- 2-4.png
+|   |   |   |-- 2-5.png
+|   |   |   |-- 2-6.png
+|   |   |   |-- 3-1.png
+|   |   |   |-- 3-10.png
+|   |   |   |-- 3-11.png
+|   |   |   |-- 3-12.png
+|   |   |   |-- 3-13.png
+|   |   |   |-- 3-14.png
+|   |   |   |-- 3-15.png
+|   |   |   |-- 3-16.png
+|   |   |   |-- 3-17.png
+|   |   |   |-- 3-18.png
+|   |   |   |-- 3-19.png
+|   |   |   |-- 3-2.png
+|   |   |   |-- 3-20.png
+|   |   |   |-- 3-21.png
+|   |   |   |-- 3-22.png
+|   |   |   |-- 3-23.png
+|   |   |   |-- 3-24.png
+|   |   |   |-- 3-25.png
+|   |   |   |-- 3-26.png
+|   |   |   |-- 3-27.png
+|   |   |   |-- 3-3.png
+|   |   |   |-- 3-4.png
+|   |   |   |-- 3-5.png
+|   |   |   |-- 3-6.png
+|   |   |   |-- 3-7.png
+|   |   |   |-- 3-8.png
+|   |   |   |-- 3-9.png
+|   |   |   |-- 4-1.png
+|   |   |   |-- 4-10.png
+|   |   |   |-- 4-2.png
+|   |   |   |-- 4-3.png
+|   |   |   |-- 4-4.png
+|   |   |   |-- 4-5.png
+|   |   |   |-- 4-6.png
+|   |   |   |-- 4-7.png
+|   |   |   |-- 4-8.png
+|   |   |   `-- 4-9.png
+|   |   |-- sql_performance_optimization_wap_di_rv
+|   |   |   |-- dij.png
+|   |   |   |-- levelFileBlock.png
+|   |   |   |-- rt1t2.png
+|   |   |   |-- rv.png
+|   |   |   |-- wap.png
+|   |   |   `-- wi.png
+|   |   |-- startup.png
+|   |   |-- stock_backtest
+|   |   |   |-- 2-1.png
+|   |   |   |-- 2-2.png
+|   |   |   `-- 3-1.png
+|   |   |-- stock_market_replay
+|   |   |   |-- C\ \ API.png
+|   |   |   |-- KafkaToipic.png
+|   |   |   |-- messageStream.png
+|   |   |   `-- prevailingQuotes.png
+|   |   |-- stream_cn.png
+|   |   |-- stream_computing_in_futures_trading
+|   |   |   |-- 1-1.png
+|   |   |   |-- 3-1.png
+|   |   |   `-- 3-2.png
+|   |   |-- streaming
+|   |   |   |-- getStreamEngineStat.png
+|   |   |   |-- persisWorders_2.png
+|   |   |   |-- persistworker.png
+|   |   |   |-- pubconn.png
+|   |   |   |-- pubtables1.png
+|   |   |   |-- streaming_frame.png
+|   |   |   |-- subconn.png
+|   |   |   |-- subworker_1.png
+|   |   |   |-- subworker_2.png
+|   |   |   |-- subworker_msg.png
+|   |   |   `-- subworker_pool.png
+|   |   |-- streaming-real-time-correlation-processing
+|   |   |   |-- 1_1.png
+|   |   |   |-- 1_2.png
+|   |   |   |-- 2_1.png
+|   |   |   |-- 2_2.png
+|   |   |   |-- 2_3.png
+|   |   |   |-- 2_4.png
+|   |   |   |-- 2_5.png
+|   |   |   |-- 2_6.png
+|   |   |   |-- 2_7.png
+|   |   |   |-- 3_1.png
+|   |   |   |-- 3_10.png
+|   |   |   |-- 3_11.png
+|   |   |   |-- 3_2.png
+|   |   |   |-- 3_3.png
+|   |   |   |-- 3_4.png
+|   |   |   |-- 3_5.png
+|   |   |   |-- 3_6.png
+|   |   |   |-- 3_7.png
+|   |   |   |-- 3_8.png
+|   |   |   `-- 3_9.png
+|   |   |-- streaming_IOPV
+|   |   |   |-- IOPV-adjust.png
+|   |   |   |-- incrumental_computing.png
+|   |   |   |-- iopv-pivot.png
+|   |   |   |-- iopv.png
+|   |   |   `-- timeseriesvalue.png
+|   |   |-- streaming_auto_sub
+|   |   |   |-- database_query_result.png
+|   |   |   |-- napshot_inmemeory_table.png
+|   |   |   |-- query_result.png
+|   |   |   |-- reactive_state_engine_query_information.png
+|   |   |   |-- subscription_information.png
+|   |   |   |-- time_series_engine_query_information.png
+|   |   |   `-- variable_bar.png
+|   |   |-- streaming_capital_flow_daily
+|   |   |   |-- 02.tradeOriginalStream.png
+|   |   |   |-- 03.processBuyOrder.png
+|   |   |   |-- 04.processSellOrder.png
+|   |   |   |-- 05.capitalFlowStream.png
+|   |   |   |-- 06.getRecentJobs.png
+|   |   |   |-- 07.\350\212\202\347\202\271\345\206\205\347\232\204\350\256\241\347\256\227\347\273\223\346\236\234\350\241\250.png
+|   |   |   |-- 08.\350\212\202\347\202\271\345\206\205\347\232\20460min\350\256\241\347\256\227\347\273\223\346\236\234\350\241\250.png
+|   |   |   `-- 09.Grafana\345\256\236\346\227\266\347\233\221\346\216\247\347\273\223\346\236\234.png
+|   |   |-- streaming_capital_flow_order_by_order
+|   |   |   |-- 03.getRecentJobs.png
+|   |   |   |-- 04.\346\265\201\346\225\260\346\215\256\350\241\250\350\256\242\351\230\205\347\212\266\346\200\201\346\237\245\350\257\242.png
+|   |   |   |-- 05.\346\265\201\346\225\260\346\215\256\350\241\250\345\217\221\345\270\203\351\230\237\345\210\227\346\237\245\350\257\242.png
+|   |   |   |-- 06.\350\212\202\347\202\271\345\206\205\351\203\250\350\256\242\351\230\205\350\200\205\346\266\210\350\264\271\347\212\266\346\200\201\346\237\245\350\257\242.png
+|   |   |   |-- 07.\350\212\202\347\202\271\345\206\205\347\232\204\350\256\241\347\256\227\347\273\223\346\236\234\350\241\250.png
+|   |   |   |-- 08.PythonAPI\345\256\236\346\227\266\350\256\242\351\230\205\347\232\204\350\256\241\347\256\227\347\273\223\346\236\234.png
+|   |   |   `-- 09.Grafana\345\256\236\346\227\266\347\233\221\346\216\247\347\273\223\346\236\234.png
+|   |   |-- streaming_engine_anomaly_alerts
+|   |   |   `-- 1_1.png
+|   |   |-- streaming_timer
+|   |   |   |-- 01.png
+|   |   |   |-- 02.png
+|   |   |   |-- 03.png
+|   |   |   |-- 04.png
+|   |   |   `-- 05.png
+|   |   |-- summary.png
+|   |   |-- textdb
+|   |   |   |-- 1-1.png
+|   |   |   |-- 1-2.png
+|   |   |   `-- 4-1.png
+|   |   |-- the_ten_most_overlooked_details_of_programming
+|   |   |   `-- 10.png
+|   |   |-- threading_model
+|   |   |   `-- 1.png
+|   |   |-- timezone
+|   |   |   |-- timezone-1.png
+|   |   |   |-- timezone-2.png
+|   |   |   |-- timezone-3.png
+|   |   |   |-- timezone-4.png
+|   |   |   |-- timezone-5.png
+|   |   |   |-- timezone-6.png
+|   |   |   |-- timezone-7.png
+|   |   |   |-- timezone-8.png
+|   |   |   `-- timezone-9.png
+|   |   |-- tsdb_explained
+|   |   |   |-- LSM_Tree.png
+|   |   |   |-- cacheTable.png
+|   |   |   |-- index.png
+|   |   |   |-- indexing_mechanism.png
+|   |   |   |-- level.png
+|   |   |   |-- levelFile.png
+|   |   |   |-- location.png
+|   |   |   |-- read_write.png
+|   |   |   `-- update.png
+|   |   |-- user_level_resourses_tracking
+|   |   |   `-- 1.png
+|   |   |-- xtp
+|   |   |   |-- a.png
+|   |   |   |-- b.png
+|   |   |   |-- c.png
+|   |   |   `-- d.png
+|   |   |-- yield.png
+|   |   `-- zabbix_cluster_monitoring
+|   |       |-- 1-1.png
+|   |       |-- 3-1.png
+|   |       |-- 3-2.png
+|   |       |-- 3-3.png
+|   |       |-- 3-4.png
+|   |       |-- 3-5.png
+|   |       |-- 3-6.png
+|   |       |-- 3-7.png
+|   |       |-- 3-8.png
+|   |       |-- 3-9.png
+|   |       |-- 4-1.png
+|   |       |-- 4-2.png
+|   |       |-- 4-3.png
+|   |       |-- 4-4.png
+|   |       |-- 4-5.png
+|   |       `-- 4-6.png
+|   |-- import_csv.html
+|   |-- import_data.html
+|   |-- in_memory_table.html
+|   |-- insight_plugin.html
+|   |-- insight_plugin_orderbook_engine_application.html
+|   |-- interface_development.html
+|   |-- iot_anomaly_detection.html
+|   |-- iot_anomaly_detection_2.html
+|   |-- iot_demo.html
+|   |-- iot_demo_2.html
+|   |-- iot_examples.html
+|   |-- iot_query_case.html
+|   |-- jit.html
+|   |-- job_management_tutorial.html
+|   |-- job_management_tutorial_2.html
+|   |-- k.html
+|   |-- k8s_deployment.html
+|   |-- k8s_deployment_in_AWS.html
+|   |-- k8s_deployment_in_Aliyun.html
+|   |-- k_line_calculation\ .html
+|   |-- kafka_mqtt.html
+|   |-- kdb_to_dolphindb.html
+|   |-- knn_iot.html
+|   |-- knn_iot_2.html
+|   |-- l2_snapshot_factor_calc.html
+|   |-- l2_snapshot_factor_calc_2.html
+|   |-- l2_stk_data_proc.html
+|   |-- l2_stk_data_proc_2.html
+|   |-- log_analysis_tool_user_manual.html
+|   |-- log_searcher.html
+|   |-- machine_learning.html
+|   |-- macro_var_based_metaprogramming.html
+|   |-- market_condition_adjustments.html
+|   |-- matching_engine_simulator.html
+|   |-- matrix.html
+|   |-- memory_management.html
+|   |-- meta_programming.html
+|   |-- metacode_derived_features.html
+|   |-- metacode_derived_features_2.html
+|   |-- migrate_data_from_Postgre_and_Greenplum_to_DolphinDB.html
+|   |-- ml_volatility.html
+|   |-- ml_volatility_2.html
+|   |-- module_code_versioning_and_rights_management.html
+|   |-- module_tutorial.html
+|   |-- multi_asset_backtest.html
+|   |-- multi_factor_risk_model.html
+|   |-- multi_machine_cluster_deployment.html
+|   |-- new_users_finance.html
+|   |-- nginx_dolphindb.html
+|   |-- node_red_tutorial_iot.html
+|   |-- node_startup_exception.html
+|   |-- node_startup_process_and_questions.html
+|   |-- non-standard_permission_management.html
+|   |-- oauth.html
+|   |-- oltp_in-memory_storage_engine_non-embedded_version_tutorials.html
+|   |-- oom_settlement.html
+|   |-- oom_settlement_2.html
+|   |-- orderBookSnapshotEngine.html
+|   |-- panel_data.html
+|   |-- partitioned_in_memory_table.html
+|   |-- perf_opti_glibc.html
+|   |-- pickle_comparison.html
+|   |-- pip_ddb.html
+|   |-- plugin
+|   |   |-- Debezium_and_Kafka_data_sync
+|   |   |   |-- jdbc-1.30.22.4-ddbsync.Beta1.jar
+|   |   |   `-- kafka-connect-jdbc-10.7.4-ddb1.01.Beta1.jar
+|   |   `-- DolphinDB_Telegraf_Grafana
+|   |       `-- telegraf-dolphindb-outputs
+|   |-- plugin_development_tutorial.html
+|   |-- prep_linux_for_deploy.html
+|   |-- probabilistic_and_statistical_analysis.html
+|   |-- promethues2.html
+|   |-- public_fund_basic_analysis.html
+|   |-- quant_finance_examples.html
+|   |-- random_vibr_sig_analysis.html
+|   |-- random_vibr_sig_analysis_2.html
+|   |-- reactive_state_engine.html
+|   |-- redis_plugin_tutorial.html
+|   |-- redoLog_cacheEngine.html
+|   |-- repair_chunk_status.html
+|   |-- restore-backup.html
+|   |-- rt_stk_price_inc_calc.html
+|   |-- rt_stk_price_inc_calc_2.html
+|   |-- scale_out_cluster.html
+|   |-- scheduledJob.html
+|   |-- scheduledJob_2.html
+|   |-- script
+|   |   |-- Asynchronous_Replication
+|   |   |   `-- async_replica.zip
+|   |   |-- Best_Practices_for_DolphinDB_and_Python_AirFlow
+|   |   |   |-- DolphinDB_projects
+|   |   |   |   |-- addETL.zip
+|   |   |   |   `-- fullETL.zip
+|   |   |   |-- Python_projects
+|   |   |   |   |-- addETL.py
+|   |   |   |   `-- fullETL.py
+|   |   |   `-- variables.json
+|   |   |-- CSI_1000.dos
+|   |   |-- ClickHouse_to_DolphinDB
+|   |   |   `-- ClickHouseToDDB.zip
+|   |   |-- DKOD
+|   |   |   |-- jdbc-2.00.11.1-ddbcdc-beta1.jar
+|   |   |   |-- kafka-connect-jdbc-10.7.4-ddb1.10.jar
+|   |   |   `-- kafka-tools.tar
+|   |   |-- Debezium_Kafka_PostgreSQL_sync
+|   |   |   |-- jdbc-1.30.22.5-CDC.jar
+|   |   |   |-- kafka-connect-jdbc-4.00.jar
+|   |   |   `-- kafka-tools.tar
+|   |   |-- Debezium_and_Kafka_data_sync
+|   |   |   |-- KFDATA.tar
+|   |   |   |-- kafka-server.properties
+|   |   |   `-- kafka-tools.tar
+|   |   |-- DolphinDB_AI_DataLoader_for_Deep_Learning
+|   |   |   |-- dist
+|   |   |   |   `-- dolphindb_tools-0.1a1.whl
+|   |   |   |-- prepare
+|   |   |   |   |-- ddb_scripts.dos
+|   |   |   |   |-- prepare_data.py
+|   |   |   |   `-- prepare_index.py
+|   |   |   `-- test
+|   |   |       |-- net.py
+|   |   |       |-- test_wide_new.py
+|   |   |       `-- test_wide_old.py
+|   |   |-- DolphinDB_Demo.dos
+|   |   |-- DolphinDB_Telegraf_Grafana
+|   |   |   |-- TelegrafConfig
+|   |   |   `-- telegraf.zip
+|   |   |-- DolphinDB_Tensor_Libtorch_tutorial
+|   |   |   |-- closing_prices.csv
+|   |   |   |-- scripted_model.pth
+|   |   |   |-- \346\241\210\344\276\213\350\204\232\346\234\254.dos
+|   |   |   `-- \346\250\241\345\236\213\345\256\232\344\271\211\350\204\232\346\234\254.py
+|   |   |-- DolphinDB_VS_Python\ File_Storage
+|   |   |   `-- python_plus_file_VS_dolphindb_on_factor_calc.zip
+|   |   |-- Forecast_of_Taxi_Trip_Duration
+|   |   |   |-- taxiStream.dos
+|   |   |   |-- taxiTrain.dos
+|   |   |   `-- taxiTrain.py
+|   |   |-- FxSwapValuation
+|   |   |   |-- fxValuation.dos
+|   |   |   |-- fxValuationOptimal.dos
+|   |   |   `-- fxValuationPreparation.dos
+|   |   |-- ID
+|   |   |   |-- 4.2.py
+|   |   |   |-- 4.3.py
+|   |   |   |-- Main.java
+|   |   |   |-- Program.cs
+|   |   |   |-- dit.dos
+|   |   |   |-- example.html
+|   |   |   |-- main.cpp
+|   |   |   `-- query.py
+|   |   |-- IV_Greeks_Calculation_for_ETF_Options_Using_JIT
+|   |   |   |-- Option_IV_and_GreekS_Calculation_Functions.txt
+|   |   |   `-- calculation_scripts.txt
+|   |   |-- ImportTLData_toturials
+|   |   |   |-- ImportTLData.zip
+|   |   |   `-- example.dos
+|   |   |-- Intelligent_O&M_demo.dos
+|   |   |-- Level-2_stock_data_processing
+|   |   |   |-- entrust\346\225\260\346\215\256\345\244\204\347\220\206.dos
+|   |   |   |-- python\345\256\236\347\216\260\350\204\232\346\234\254.py
+|   |   |   |-- shapshot\346\225\260\346\215\256\345\244\204\347\220\206.dos
+|   |   |   |-- shapshot\346\225\260\346\215\256\346\265\201\345\274\217\350\256\241\347\256\227.dos
+|   |   |   |-- trade\346\225\260\346\215\256\345\244\204\347\220\206.dos
+|   |   |   |-- \344\270\216python\346\200\247\350\203\275\346\257\224\345\257\271
+|   |   |   `-- \345\273\266\346\227\266\350\256\242\345\215\225\345\233\240\345\255\220\346\265\201\345\274\217\345\256\236\347\216\260.dos
+|   |   |-- Level2_Snapshot_Factor_Calculation
+|   |   |   |-- snapshot_func.zip
+|   |   |   `-- test_scripts.zip
+|   |   |-- LoadDataForPoc
+|   |   |   |-- loadOneFile.dos
+|   |   |   `-- parallelLoad.dos
+|   |   |-- MatchingEngineSimulator
+|   |   |   `-- MatchEngineTest.zip
+|   |   |-- Migrate_data_from_InfluxDB_to_DolphinDB
+|   |   |   |-- createTable.dos
+|   |   |   |-- genMockData.flux
+|   |   |   `-- influx2ddb.json
+|   |   |-- Migrate_data_from_Redshift_to_DolphinDB
+|   |   |   `-- Redshift2DDB.txt
+|   |   |-- OceanBase_to_DolphinDB
+|   |   |   |-- OceanBase_tick.json
+|   |   |   |-- createTable.dos
+|   |   |   |-- genTickCsv.dos
+|   |   |   `-- mysql\346\217\222\344\273\266\345\257\274\345\205\245\346\225\260\346\215\256.dos
+|   |   |-- Oracle_to_DolphinDB
+|   |   |   |-- createTable.dos
+|   |   |   |-- oracleddb.json
+|   |   |   `-- \350\277\201\347\247\273.txt
+|   |   |-- Python\ HDF5_vs_DolphinDB
+|   |   |   |-- createDBAndTable.dos
+|   |   |   |-- ddbFactorCal.dos
+|   |   |   |-- gentHdf5Files.py
+|   |   |   `-- pythonFactorCal.py
+|   |   |-- Python_Celery
+|   |   |   |-- celery_project.zip
+|   |   |   `-- ddb_function.txt
+|   |   |-- Random_Vibration_Signal_Analysis_Solution
+|   |   |   `-- demo.dos
+|   |   |-- Real-Time_Stock_Price_Increase_Calculation
+|   |   |   |-- 01.\345\210\233\345\273\272\345\255\230\345\202\250\345\277\253\347\205\247\346\225\260\346\215\256\347\232\204\345\272\223\350\241\250\345\271\266\345\257\274\345\205\245\346\225\260\346\215\256.txt
+|   |   |   |-- 02.\346\270\205\347\220\206\347\216\257\345\242\203\345\271\266\345\210\233\345\273\272\347\233\270\345\205\263\346\265\201\346\225\260\346\215\256\350\241\250.txt
+|   |   |   |-- 03.\346\263\250\345\206\214\346\265\201\350\256\241\347\256\227\345\274\225\346\223\216\345\222\214\350\256\242\351\230\205\346\265\201\346\225\260\346\215\256\350\241\250.txt
+|   |   |   |-- 04.\345\216\206\345\217\262\346\225\260\346\215\256\345\233\236\346\224\276.txt
+|   |   |   `-- 05.\346\200\247\350\203\275\346\265\213\350\257\225.txt
+|   |   |-- Seismic_waveform_data_storage
+|   |   |   `-- test_scripts.zip
+|   |   |-- Standard_SQL_in_DolphinDB
+|   |   |   `-- create_db_table_sql.txt
+|   |   |-- Virbration_Monitor_Fault_Diagnose
+|   |   |   `-- \344\272\221\350\276\271\344\270\200\344\275\223\350\204\232\346\234\254\345\256\236\347\216\260.dos
+|   |   |-- alarm.txt
+|   |   |-- appendices_market_replay_bp
+|   |   |   |-- cpp_replay.cpp
+|   |   |   |-- cpp_replay_test.cpp
+|   |   |   |-- order_create.txt
+|   |   |   |-- order_upload.txt
+|   |   |   |-- python_replay.py
+|   |   |   |-- replay.txt
+|   |   |   |-- snap_create.txt
+|   |   |   |-- snap_upload.txt
+|   |   |   |-- transac_create.txt
+|   |   |   `-- transac_upload.txt
+|   |   |-- application_in_deep_leaing_real_time_stock_volatility_prediction
+|   |   |   |-- FeatureEngineering.dos
+|   |   |   |-- LSTMmodel.py
+|   |   |   |-- Snapshot.csv
+|   |   |   |-- StreamComputing.dos
+|   |   |   `-- snapshotDB.dos
+|   |   |-- arrow_plugin_usage
+|   |   |   `-- arrow_test.py
+|   |   |-- backset_introduction_usage
+|   |   |   |-- MinuteData.csv
+|   |   |   |-- dayData.csv
+|   |   |   |-- \344\275\277\347\224\250\350\236\215\350\265\204\344\270\232\345\212\241\344\270\272\346\212\225\350\265\204\347\273\204\345\220\210\347\255\226\347\225\245\345\242\236\345\212\240\346\235\240\346\235\206.dos
+|   |   |   `-- \345\234\250\346\234\211\345\210\235\345\247\213\344\273\223\344\275\215\347\232\204\346\203\205\345\206\265\344\270\213,\344\275\277\347\224\250\350\236\215\350\265\204\350\236\215\345\210\270\345\242\236\345\274\272\347\255\226\347\225\245\346\224\266\347\233\212.dos
+|   |   |-- backtesting_using_MatchingEngineSimulator
+|   |   |   |-- CppApiBacktest.zip
+|   |   |   `-- SwordfishBacktest.zip
+|   |   |-- backup_restore
+|   |   |   |-- backup_restore.txt
+|   |   |   `-- buildData.txt
+|   |   |-- behavioral_profiling_of_driving_habits
+|   |   |   `-- demo.dos
+|   |   |-- best-price-selection
+|   |   |   `-- script.zip
+|   |   |-- best_implementation_for_AMD_Plugin
+|   |   |   |-- main.cpp
+|   |   |   `-- startup.dos
+|   |   |-- best_practice_for_storage_compute_separation
+|   |   |   |-- \345\210\233\345\273\272\345\272\223\350\241\250.dos
+|   |   |   |-- \345\271\266\345\217\221\346\237\245\350\257\242\346\265\213\350\257\225case1.ipynb
+|   |   |   |-- \345\271\266\345\217\221\346\237\245\350\257\242\346\265\213\350\257\225case2.ipynb
+|   |   |   |-- \346\237\245\350\257\242\346\200\247\350\203\275.dos
+|   |   |   |-- \347\224\237\346\210\220\346\250\241\346\213\237\346\225\260\346\215\256_level2\345\277\253\347\205\247.dos
+|   |   |   |-- \347\224\237\346\210\220\346\250\241\346\213\237\346\225\260\346\215\256_\351\200\220\347\254\224\346\210\220\344\272\244.dos
+|   |   |   |-- \350\256\241\347\256\227\346\200\247\350\203\2751_1\345\210\206\351\222\237\346\267\261\345\272\246\344\270\215\345\271\263\350\241\241_\344\271\260\345\215\226\345\216\213\345\212\233\346\214\207\346\240\207_\345\256\236\351\231\205\346\263\242\345\212\250\347\216\207.dos
+|   |   |   `-- \350\256\241\347\256\227\346\200\247\350\203\2752_\344\271\260\345\215\226\350\256\242\345\215\225\344\270\215\345\271\263\350\241\241.dos
+|   |   |-- best_practices_for_log_monitoring
+|   |   |   `-- lokipromtail.zip
+|   |   |-- best_practices_for_multi_factor
+|   |   |   `-- Ten_minutes_factor_storage_Solution.dos
+|   |   |-- brison
+|   |   |   |-- brinson_data_and_script.dos
+|   |   |   `-- dolphinBrinson.dos
+|   |   |-- cachedTable
+|   |   |   `-- mysql_data.txt
+|   |   |-- campisi
+|   |   |   |-- Campisi_data_and_script.dos
+|   |   |   `-- dolphinCampisi.dos
+|   |   |-- cloud_deployment_with_terraform
+|   |   |   |-- cluster
+|   |   |   |   |-- files.tfvars
+|   |   |   |   |-- main.tf
+|   |   |   |   |-- output.tf
+|   |   |   |   `-- variables.tf
+|   |   |   `-- standalone
+|   |   |       |-- files.tfvars
+|   |   |       |-- main.tf
+|   |   |       `-- variables.tf
+|   |   |-- cluster_monitor
+|   |   |   |-- high_available_cluster_monitor.json
+|   |   |   |-- high_available_cluster_monitor_next.json
+|   |   |   `-- server_monitor.json
+|   |   |-- compressDemo.txt
+|   |   |-- csap
+|   |   |   |-- CSAPDataSimulation.dos
+|   |   |   |-- CSAPFactorTableInfo.xlsx
+|   |   |   |-- CSAPFactors.dos
+|   |   |   |-- CSAPPrepare.dos
+|   |   |   `-- parameter.csv
+|   |   |-- csvImportDemo
+|   |   |   |-- createDB.txt
+|   |   |   |-- importNewData.txt
+|   |   |   |-- importOldData.txt
+|   |   |   `-- tsdbDatabaseTableGenerationAndDataSimulationForWritingArrayVector.dos
+|   |   |-- cta
+|   |   |   |-- FXDemo.dos
+|   |   |   `-- backtestdata_.zip
+|   |   |-- data_etl
+|   |   |   |-- createData.dos
+|   |   |   |-- origin.dos
+|   |   |   `-- sqlTuning.dos
+|   |   |-- data_move_rebalance
+|   |   |   `-- config.zip
+|   |   |-- debezium_kafka_real_time_synchronization_of_oracle_11g_data
+|   |   |   |-- kafka-tools.tar
+|   |   |   `-- oracle_ddb_datacompare.zip
+|   |   |-- deploy_dolphindb_on_new_server
+|   |   |   |-- agent.cfg
+|   |   |   |-- cluster.cfg
+|   |   |   |-- cluster.nodes
+|   |   |   `-- controller.cfg
+|   |   |-- displaying_the_dolphindb_k-line_with_klinechart
+|   |   |   `-- script.zip
+|   |   |-- dolphindb_update
+|   |   |   `-- dolphindb_update.dos
+|   |   |-- dolphinscheduler_integration
+|   |   |   `-- ETLCase.zip
+|   |   |-- edge_to_cloud
+|   |   |   `-- \344\272\221\350\276\271\346\225\260\346\215\256\345\220\214\346\255\245.zip
+|   |   |-- empyrical
+|   |   |   |-- Empyrical.dos
+|   |   |   `-- samples.zip
+|   |   |-- factorPractice
+|   |   |   |-- appendix_2.1_createTickDbAndTable_main.dos
+|   |   |   |-- appendix_2.2_createSnapshotDbAndTable_main.dos
+|   |   |   |-- appendix_2.3_createTableKMinute_main.dos
+|   |   |   |-- appendix_4.1.2_streamComputationOfSmallInflowRate_main.dos
+|   |   |   |-- appendix_4.1.3_StreamComputationOfAlpha1Factor_main.dos
+|   |   |   |-- appendix_4.2_streamComputationOfDoubleEmaFactor_main.dos
+|   |   |   |-- appendix_4.3.1_python_callback_handler_subscribing_stream_main.py
+|   |   |   |-- appendix_4.3.2_zmq_consuming_ddb_stream_main.py
+|   |   |   |-- appendix_4.3.3_streamComputationOfDoubleEmaFactorPublishingOnZMQ_main.dos
+|   |   |   |-- appendix_5.1_factorDataSimulation.zip
+|   |   |   |-- appendix_5.2_factorQueryTest.dos
+|   |   |   |-- appendix_6.1_vectorisedFactorBacktest_main.dos
+|   |   |   |-- appendix_7.2_doubleEMATest.dos
+|   |   |   |-- appendix_7.5.3_factorTableControll.dos
+|   |   |   |-- appendix_8.1_case1_daily.dos
+|   |   |   |-- appendix_8.2_case2_minute.dos
+|   |   |   |-- appendix_8.3_case3_snapshot.dos
+|   |   |   |-- appendix_8.4_case4_streamTick.dos
+|   |   |   |-- factorPractice.zip
+|   |   |   `-- images
+|   |   |       |-- factor_streams.png
+|   |   |       |-- kline_samples.png
+|   |   |       |-- level2_tick_samples.png
+|   |   |       |-- snapshot_in_array_vector_samples.png
+|   |   |       `-- snapshot_samples.png
+|   |   |-- factor_attribution_analysis
+|   |   |   |-- factorAttributionUtils.dos
+|   |   |   |-- factorTestScript.dos
+|   |   |   `-- \345\233\240\345\255\220\345\275\222\345\233\240\346\250\241\345\235\227\345\217\202\346\225\260\350\257\264\346\230\216.pdf
+|   |   |-- factor_evaluation_framework
+|   |   |   |-- A_Simple,_Positive_Semi-Definite,Heteroskedasticity_and_AutocorrelationConsistent_Covariance_Matrix.pdf
+|   |   |   |-- Risk,_Return,_and_Equilibrium_Empirical_Test.pdf
+|   |   |   |-- compare_dolphindb.dos
+|   |   |   |-- compare_python.ipynb
+|   |   |   |-- factorBacktest.dos
+|   |   |   `-- factor_backtest_data.zip
+|   |   |-- financial_mock_data_generation_module
+|   |   |   `-- MockData.dos
+|   |   |-- fund_factor_contrasted_by_py
+|   |   |   |-- fund_data_load.txt
+|   |   |   |-- fund_factor.py
+|   |   |   `-- fund_factor_ddb.txt
+|   |   |-- futures_minute_frequency_cta_strategy_backtest_example
+|   |   |   |-- futureCTAStrategy.dos
+|   |   |   `-- futureTestData.csv
+|   |   |-- getTushareDailyLine.py
+|   |   |-- ha_cluster_deployment
+|   |   |   `-- ha.zip
+|   |   |-- hastreaming.dos
+|   |   |-- hits_summary.dos
+|   |   |-- iot_query_case
+|   |   |   |-- Noise_V3.dos
+|   |   |   `-- ck.sql
+|   |   |-- k
+|   |   |   |-- calHistoryOHLC.dos
+|   |   |   `-- calStreamOHLC.dos
+|   |   |-- k_line_calculation
+|   |   |   |-- FuturesOLHC.zip
+|   |   |   |-- data.zip
+|   |   |   `-- demo.dos
+|   |   |-- log_analysis_tool_user_manual
+|   |   |   `-- DDBLogAnalyser.zip
+|   |   |-- machine_learning_volatility
+|   |   |   |-- 01.dataProcess.txt
+|   |   |   |-- 02.dataProcessArrayVector.txt
+|   |   |   |-- 03.modelBuildingTraining.txt
+|   |   |   |-- 04.streamComputing.txt
+|   |   |   |-- 05.streamComputingArrayVector.txt
+|   |   |   |-- 06.streamComputingReproduction.txt
+|   |   |   |-- 130olap
+|   |   |   |   `-- dolphindb.cfg
+|   |   |   `-- 200tsdb
+|   |   |       `-- dolphindb.cfg
+|   |   |-- market_condition_adjustments
+|   |   |   |-- 600519.csv
+|   |   |   |-- 600519_back.csv
+|   |   |   |-- 600519_pre.csv
+|   |   |   `-- stock_adj.dos
+|   |   |-- mdl
+|   |   |   `-- MDL\350\220\275\345\272\223\350\204\232\346\234\254.dos
+|   |   |-- metacode_derived_features
+|   |   |   |-- metacode_derived_features.txt
+|   |   |   |-- metacode_derived_features_arrayVector.txt
+|   |   |   |-- metacode_derived_features_buildmodel.txt
+|   |   |   |-- metacode_derived_features_python_script.py
+|   |   |   `-- metacode_derived_features_streaming.txt
+|   |   |-- module_code_versioning_and_rights_management
+|   |   |   |-- demo.zip
+|   |   |   `-- gitModule.dos
+|   |   |-- multi_asset_backtest
+|   |   |   |-- futureDataIF.csv
+|   |   |   |-- futureTest.csv
+|   |   |   |-- futures_options.dos
+|   |   |   |-- optionIOdata.csv
+|   |   |   |-- stockTestData.csv
+|   |   |   `-- stocks_futures2.dos
+|   |   |-- multi_factor_risk_model
+|   |   |   |-- RiskFactors.zip
+|   |   |   |-- factor_data.xlsx
+|   |   |   |-- factor_formula.pdf
+|   |   |   `-- test
+|   |   |       |-- RiskFactorsTest.dos
+|   |   |       `-- createTable.dos
+|   |   |-- multipleValueModeWrite.txt
+|   |   |-- mvo
+|   |   |   |-- data.zip
+|   |   |   `-- script.zip
+|   |   |-- new_users_finance
+|   |   |   |-- 2022.01.04.zip
+|   |   |   |-- 3.3\345\273\272\345\272\223\345\273\272\350\241\250.dos
+|   |   |   |-- 4.2.1\345\257\274\345\205\245\344\270\200\345\271\264\345\277\253\347\205\247\346\225\260\346\215\256.dos
+|   |   |   |-- 4.2.2\345\257\274\345\205\245\344\270\200\345\244\251\345\277\253\347\205\247\346\225\260\346\215\256.dos
+|   |   |   |-- 4.2.3\345\257\274\345\205\245\351\200\220\347\254\224\346\210\220\344\272\244\346\225\260\346\215\256.dos
+|   |   |   |-- 4.3.1\345\234\272\346\231\257\344\270\200.dos
+|   |   |   |-- 4.3.1\345\234\272\346\231\257\344\272\214.dos
+|   |   |   |-- 4.3.2\345\234\272\346\231\257\344\270\200.dos
+|   |   |   |-- 4.3.2\345\234\272\346\231\257\344\272\214.dos
+|   |   |   |-- 4.3.3\ \344\270\255\346\226\207\345\257\274\345\205\245.dos
+|   |   |   |-- 5.3.3\ \345\234\272\346\231\257\344\270\200_\345\210\240\351\231\244\345\215\225\345\210\206\345\214\272.dos
+|   |   |   |-- 5.3.3\ \345\234\272\346\231\257\344\270\211_\345\210\240\351\231\244\351\207\215\345\244\215\346\225\260\346\215\256.dos
+|   |   |   |-- 5.3.3\ \345\234\272\346\231\257\344\272\214_\345\210\240\351\231\244\345\205\250\350\241\250.dos
+|   |   |   |-- 5.\346\225\260\346\215\256\350\241\250\346\223\215\344\275\234.dos
+|   |   |   |-- 6.SQL\346\211\271\350\256\241\347\256\227.dos
+|   |   |   |-- 7.2.2_\346\265\201\346\225\260\346\215\256\345\217\221\345\270\203_\344\276\2131_\346\225\260\346\215\256\345\233\236\346\224\276.dos
+|   |   |   |-- 7.2.2_\346\265\201\346\225\260\346\215\256\345\217\221\345\270\203_\344\276\2132_API\345\206\231\345\205\245\346\265\201\350\241\250.py
+|   |   |   |-- 7.2.2_\346\265\201\346\225\260\346\215\256\345\217\221\345\270\203_\344\276\2133_Kafka\350\256\242\351\230\205\345\206\231\345\205\245\346\265\201\350\241\250.py
+|   |   |   |-- 7.2.2_\346\265\201\346\225\260\346\215\256\350\256\242\351\230\205_\344\276\2131_\350\256\242\351\230\205\345\205\245\345\272\223.dos
+|   |   |   |-- 7.2.2_\346\265\201\346\225\260\346\215\256\350\256\242\351\230\205_\344\276\2132_API\ \347\253\257\350\256\242\351\230\205\346\265\201\350\241\250\350\256\241\347\256\227.dos
+|   |   |   |-- 7.2.2_\346\265\201\346\225\260\346\215\256\350\256\242\351\230\205_\344\276\2132_\350\256\242\351\230\205\346\265\201\350\241\250\350\256\241\347\256\227.py
+|   |   |   |-- 7.3\345\274\225\346\223\216\347\272\247\350\201\224.dos
+|   |   |   |-- GPLIST_gbk.csv
+|   |   |   |-- MinuteKLine.csv
+|   |   |   |-- MinuteKLine_1.csv
+|   |   |   |-- snapForDataProcess.zip
+|   |   |   |-- snap_json_kafka.txt
+|   |   |   `-- snapshot_array.csv
+|   |   |-- nginx_dolphindb
+|   |   |   |-- nginx.zip
+|   |   |   `-- nginx_ssl.zip
+|   |   |-- orderBookSnapshotEngine
+|   |   |   |-- SHorderTrans.zip
+|   |   |   |-- SHorders.zip
+|   |   |   |-- SHtrans.zip
+|   |   |   |-- engineOutput10s.zip
+|   |   |   |-- orderTrans.zip
+|   |   |   |-- orders.zip
+|   |   |   |-- tick.zip
+|   |   |   `-- trans.zip
+|   |   |-- panel_data
+|   |   |   |-- alpha98InDDB.dos
+|   |   |   |-- alpha98InPython.py
+|   |   |   `-- panelDataDailySimulate.dos
+|   |   |-- performance_optimization_based_on_glibc
+|   |   |   |-- config.tar.gz
+|   |   |   |-- glibc-2.23.tar.gz
+|   |   |   `-- testScript.zip
+|   |   |-- public_fund_basic_analysis
+|   |   |   |-- basic_analysis_of_public_fund_net_value.txt
+|   |   |   `-- basic_analysis_of_public_fund_open_market_data.txt
+|   |   |-- quant5_1.dos
+|   |   |-- quant5_2.dos
+|   |   |-- quant5_3.dos
+|   |   |-- quant5_4.dos
+|   |   |-- redis_plugin_tutorial
+|   |   |   |-- example1.txt
+|   |   |   `-- example2.txt
+|   |   |-- service_deployment_and_migration.zip
+|   |   |-- singleValueModeWrite.txt
+|   |   |-- soft_delete_test.txt
+|   |   |-- stock_backtest
+|   |   |   |-- backTest1.dos
+|   |   |   |-- backtest2.dos
+|   |   |   |-- loadData1.dos
+|   |   |   `-- loadData2.dos
+|   |   |-- stock_market_replay
+|   |   |   |-- 01.stockMarketReplay.txt
+|   |   |   |-- 02.calTradeCost_asofJoin.txt
+|   |   |   |-- 03.calTradeCost_lookUpJoin.txt
+|   |   |   |-- 04.publishToKafka.txt
+|   |   |   |-- 05.subscribe.cpp
+|   |   |   `-- 06.cleanEnvironment.txt
+|   |   |-- stream_computing_in_futures_trading
+|   |   |   |-- impv.dos
+|   |   |   |-- \345\273\272\345\272\223\345\273\272\350\241\250.dos
+|   |   |   |-- \350\256\241\347\256\227\345\274\200\345\271\263\344\273\223\344\277\241\346\201\257\350\241\250.dos
+|   |   |   `-- \350\256\241\347\256\227\346\214\201\344\273\223\346\230\216\347\273\206\350\241\250.dos
+|   |   |-- streaming-real-time-correlation-processing
+|   |   |   `-- clearStreamingEnv.dos
+|   |   |-- streaming_IOPV
+|   |   |   |-- 1.\ IOPV_hist.dos
+|   |   |   |-- 2.\ IOPV_realtime_single.dos
+|   |   |   `-- 3.\ IOPV_realtime_mult.dos
+|   |   |-- streaming_auto_sub
+|   |   |   `-- startup.dos
+|   |   |-- streaming_capital_flow_daily
+|   |   |   |-- 01.createStreamTB.txt
+|   |   |   |-- 02.createEngineSub.txt
+|   |   |   |-- 03.replay.txt
+|   |   |   `-- 04.streamStateQuery.txt
+|   |   |-- streaming_capital_flow_order_by_order
+|   |   |   |-- 01.\345\210\233\345\273\272\345\255\230\345\202\250\345\216\206\345\217\262\346\225\260\346\215\256\347\232\204\345\272\223\350\241\250\345\271\266\345\257\274\345\205\245\346\225\260\346\215\256.txt
+|   |   |   |-- 02.\345\210\233\345\273\272\345\255\230\345\202\250\345\256\236\346\227\266\346\225\260\346\215\256\347\232\204\345\272\223\350\241\250.txt
+|   |   |   |-- 03.\346\270\205\347\220\206\347\216\257\345\242\203\345\271\266\345\210\233\345\273\272\347\233\270\345\205\263\346\265\201\346\225\260\346\215\256\350\241\250.txt
+|   |   |   |-- 04.\346\263\250\345\206\214\346\265\201\350\256\241\347\256\227\345\274\225\346\223\216\345\222\214\350\256\242\351\230\205\346\265\201\346\225\260\346\215\256\350\241\250.txt
+|   |   |   |-- 05.PythonSub.py
+|   |   |   |-- 06.\345\216\206\345\217\262\346\225\260\346\215\256\345\233\236\346\224\276.txt
+|   |   |   `-- 07.\346\265\201\350\256\241\347\256\227\347\212\266\346\200\201\347\233\221\346\216\247\345\207\275\346\225\260.txt
+|   |   |-- streaming_engine_anomaly_alerts
+|   |   |   `-- seaa.zip
+|   |   |-- testHaCluster.java
+|   |   |-- textdb
+|   |   |   |-- example.zip
+|   |   |   `-- parseJsonl.dos
+|   |   |-- timezone
+|   |   |   |-- 01.DateTutorials.java
+|   |   |   |-- 02.create.sql
+|   |   |   `-- 03.mysqlToDolphinDB.dos
+|   |   |-- tsdb_explained
+|   |   |   |-- test_5_1.dos
+|   |   |   `-- test_5_2.dos
+|   |   `-- xtp
+|   |       `-- startup.dos
+|   |-- service_deployment_and_migration.html
+|   |-- shark_graph.html
+|   |-- single_machine_cluster_deploy.html
+|   |-- socp_usage_case.html
+|   |-- soft_delete.html
+|   |-- sql_performance_optimization_wap_di_rv.html
+|   |-- standalone_server.html
+|   |-- std_sql_ddb.html
+|   |-- stock_backtest.html
+|   |-- stock_market_replay.html
+|   |-- stock_market_replay_2.html
+|   |-- stockdata_csv_import_demo.html
+|   |-- str_comp_fin_quant.html
+|   |-- str_comp_fin_quant_2.html
+|   |-- stream_aggregator.html
+|   |-- stream_computing_in_futures_trading.html
+|   |-- streaming-real-time-correlation-processing.html
+|   |-- streaming-real-time-correlation-processing_2.html
+|   |-- streaming_IOPV.html
+|   |-- streaming_IOPV_2.html
+|   |-- streaming_auto_sub.html
+|   |-- streaming_auto_sub_2.html
+|   |-- streaming_capital_flow_daily.html
+|   |-- streaming_capital_flow_daily_2.html
+|   |-- streaming_capital_flow_order_by_order.html
+|   |-- streaming_capital_flow_order_by_order_2.html
+|   |-- streaming_engine_anomaly_alerts.html
+|   |-- streaming_engine_anomaly_alerts_2.html
+|   |-- streaming_timer.html
+|   |-- streaming_tutorial.html
+|   |-- textdb.html
+|   |-- the_ten_most_overlooked_details_of_programming.html
+|   |-- thread_intro.html
+|   |-- thread_intro_2.html
+|   |-- threading_model.html
+|   |-- timezone.html
+|   |-- tsdb_engine.html
+|   |-- tsdb_explained.html
+|   |-- tu_modules.html
+|   |-- udaf.html
+|   |-- user_level_resource_tracking.html
+|   |-- volatility_prediction.html
+|   |-- waveform_data_storage.html
+|   |-- waveform_data_storage_2.html
+|   |-- web_chart_integration.html
+|   |-- window_cal.html
+|   |-- xtp.html
+|   `-- zabbix_cluster_monitoring.html
+`-- whitepaper
+    `-- database
+        `-- Database_013.png
