@@ -50,6 +50,9 @@ pdf:
   display_header_footer: true
   header_template: "<div style='font-size:9px; width:100%; text-align:center; padding:5px;'><span class='title'></span></div>"
   footer_template: "<div style='font-size:9px; width:100%; text-align:center; padding:5px;'><span class='pageNumber'></span> / <span class='totalPages'></span></div>"
+  # 自定义隐藏元素的CSS选择器（如版权信息框）
+  hide_selectors:
+    - ".footer-container"  # 隐藏DolphinDB版权信息框
 
 browser:
   headless: true

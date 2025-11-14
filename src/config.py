@@ -52,6 +52,7 @@ class PDFConfig:
     display_header_footer: bool = False
     header_template: str = ""
     footer_template: str = ""
+    hide_selectors: List[str] = field(default_factory=list)  # 自定义隐藏元素的CSS选择器
 
 
 @dataclass
