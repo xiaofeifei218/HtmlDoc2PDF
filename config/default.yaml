@@ -25,6 +25,7 @@ pdf:
   footer_template: ''
   format: A4
   header_template: ''
+  hide_selectors: []  # 自定义隐藏元素的CSS选择器，例如: [".footer-container", "#copyright"]
   landscape: false
   margin:
     bottom: 15mm

@@ -145,20 +145,26 @@ class PlaywrightConverter:
                     # 如果出错,忽略并继续
                     pass
 
-            # 注入CSS样式(隐藏不需要的元素)
-            # 动态生成隐藏选择器的CSS
-            hide_selectors_css = ""
-            if self.config.pdf.hide_selectors:
-                selectors = ",\n                ".join(self.config.pdf.hide_selectors)
-                hide_selectors_css = f"""
-                /* 隐藏配置中指定的元素 */
-                {selectors} {{
+            # 构建CSS样式
+            # 默认隐藏的选择器
+            default_hide_selectors = [
+                '.search-input',
+                '.search-box',
+                '.navheader',
+                '.no-print'
+            ]
+
+            # 合并用户自定义的隐藏选择器
+            all_hide_selectors = default_hide_selectors + self.config.pdf.hide_selectors
+
+            # 生成隐藏规则的CSS
+            hide_rules = ',\n                '.join(all_hide_selectors)
+
+            css_content = f"""
+                /* 隐藏元素 */
+                {hide_rules} {{
                     display: none !important;
                 }}
-                """
-
-            await page.add_style_tag(content=f"""
-                {hide_selectors_css}
 
                 /* 优化代码块显示 */
                 pre code {{
@@ -172,7 +178,10 @@ class PlaywrightConverter:
                     .no-print {{ display: none !important; }}
                     a {{ text-decoration: none; }}
                 }}
-            """)
+            """
+
+            # 注入CSS样式
+            await page.add_style_tag(content=css_content)
 
             # 确保输出目录存在
             output_path.parent.mkdir(parents=True, exist_ok=True)
