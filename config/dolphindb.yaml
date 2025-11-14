@@ -41,15 +41,17 @@ pdf:
   format: "A4"
   landscape: false
   margin:
-    top: "15mm"
+    top: "20mm"  # 增加顶部边距以容纳页眉
     bottom: "15mm"
     left: "12mm"
     right: "12mm"
   print_background: true
   scale: 0.95
   display_header_footer: true
-  header_template: "<div style='font-size:9px; width:100%; text-align:center; padding:5px;'><span class='title'></span></div>"
-  footer_template: "<div style='font-size:9px; width:100%; text-align:center; padding:5px;'><span class='pageNumber'></span> / <span class='totalPages'></span></div>"
+  # 页眉显示HTML文件的相对路径(会通过converter.py注入到document.title)
+  header_template: "<div style='font-size:9px; width:100%; text-align:center; padding:5px 0;'><span class='title'></span></div>"
+  # 移除页脚，保持页面简洁
+  footer_template: ""
   # 自定义隐藏元素的CSS选择器（如版权信息框）
   hide_selectors:
     - ".footer-container"  # 隐藏DolphinDB版权信息框
