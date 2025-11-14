@@ -25,6 +25,7 @@ class OutputConfig:
     directory: str = "./output"
     keep_structure: bool = True
     overwrite: bool = False
+    reuse_from: str = ""  # 复用的源目录路径（用于MD5增量转换）
 
 
 @dataclass

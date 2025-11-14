@@ -10,6 +10,8 @@ import fnmatch
 from urllib.parse import quote
 from datetime import datetime
 
+from src.md5_cache import MD5Cache
+
 
 @dataclass
 class FileTask:
@@ -18,6 +20,8 @@ class FileTask:
     pdf_path: Path  # PDF输出路径(绝对路径)
     url: str  # 访问URL
     priority: int = 0  # 优先级(预留)
+    skip: bool = False  # 是否跳过(MD5未变化)
+    md5: str = ""  # HTML文件的MD5值
 
     def __str__(self):
         return f"{self.html_path.name} -> {self.pdf_path.name}"
@@ -45,6 +49,18 @@ class FileScanner:
         base_output_dir = Path(config.output.directory).resolve()
         self.output_dir = base_output_dir / output_folder_name
 
+        # 初始化MD5缓存
+        self.md5_cache = MD5Cache(self.output_dir)
+
+        # 如果指定了复用目录，从该目录加载MD5缓存
+        if config.output.reuse_from:
+            reuse_path = Path(config.output.reuse_from).resolve()
+            reuse_cache_file = reuse_path / MD5Cache.CACHE_FILENAME
+            if reuse_cache_file.exists():
+                self.md5_cache.load_cache(reuse_cache_file)
+            else:
+                print(f"警告: 复用目录的MD5缓存文件不存在: {reuse_cache_file}")
+
     def scan(self, base_url: str = "") -> List[FileTask]:
         """
         扫描文件
@@ -61,8 +77,9 @@ class FileScanner:
         # 过滤掉排除的文件
         html_files = self._apply_exclusions(html_files)
 
-        # 如果不覆盖,过滤掉已存在的PDF
-        if not self.config.output.overwrite:
+        # 如果不覆盖且不复用,过滤掉已存在的PDF
+        # 复用模式下需要保留所有文件以便进行MD5检查
+        if not self.config.output.overwrite and not self.config.output.reuse_from:
             html_files = self._filter_existing(html_files)
 
         # 构建任务列表
@@ -159,14 +176,28 @@ class FileScanner:
         """创建文件任务"""
         pdf_path = self._get_pdf_path(html_path)
 
+        # 计算HTML文件的相对路径（用于MD5缓存的key）
+        try:
+            rel_path = html_path.relative_to(self.input_dir)
+        except ValueError:
+            rel_path = Path(html_path.name)
+
+        # 计算HTML文件的MD5
+        md5 = MD5Cache.calculate_file_md5(html_path)
+
+        # 检查是否需要跳过（MD5未变化且PDF已存在）
+        skip = False
+        if self.config.output.reuse_from:
+            # 如果MD5未变化且PDF文件在复用目录中存在
+            if not self.md5_cache.has_changed(str(rel_path), md5):
+                # 检查复用目录中的PDF是否存在
+                reuse_pdf_path = Path(self.config.output.reuse_from) / rel_path.with_suffix('.pdf')
+                if reuse_pdf_path.exists():
+                    skip = True
+
         # 构建URL
         if base_url:
             # 使用HTTP服务器
-            try:
-                rel_path = html_path.relative_to(self.input_dir)
-            except ValueError:
-                rel_path = Path(html_path.name)
-
             # 转换为URL路径(使用正斜杠)
             url_path = str(rel_path).replace('\\', '/')
             # URL编码路径（特别是中文和特殊字符）
@@ -181,7 +212,9 @@ class FileScanner:
         return FileTask(
             html_path=html_path,
             pdf_path=pdf_path,
-            url=url
+            url=url,
+            md5=md5,
+            skip=skip
         )
 
 
