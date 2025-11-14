@@ -122,6 +122,29 @@ class PlaywrightConverter:
             if self.config.browser.wait_after_load > 0:
                 await page.wait_for_timeout(self.config.browser.wait_after_load)
 
+            # 计算并设置页面标题为相对路径(用于页眉显示)
+            if html_path and self.config.pdf.display_header_footer:
+                try:
+                    html_file = Path(html_path)
+                    input_dir = Path(self.config.input.directory).resolve()
+
+                    # 计算相对路径
+                    try:
+                        rel_path = html_file.relative_to(input_dir)
+                        # 获取输入目录的名称
+                        input_dir_name = input_dir.name
+                        # 构建完整的相对路径显示(包含输入目录名)
+                        display_path = f"{input_dir_name}/{rel_path}".replace('\\', '/')
+                    except ValueError:
+                        # 如果无法计算相对路径,使用文件名
+                        display_path = html_file.name
+
+                    # 注入JavaScript修改页面标题
+                    await page.evaluate(f"document.title = '{display_path}'")
+                except Exception as e:
+                    # 如果出错,忽略并继续
+                    pass
+
             # 注入CSS样式(隐藏不需要的元素)
             await page.add_style_tag(content="""
                 /* 隐藏搜索框和导航元素 */
