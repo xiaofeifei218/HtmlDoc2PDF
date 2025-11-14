@@ -1,7 +1,7 @@
 # DolphinDB文档专用配置
 
 input:
-  directory: "."
+  directory: "C:/Users/pengfang/Documents/Python Scripts/documentation.2.00.17.zh/"
   recursive: true
   include_patterns:
     - "tools/**/*.html"

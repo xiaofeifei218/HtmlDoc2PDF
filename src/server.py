@@ -15,10 +15,27 @@ from src.utils import find_available_port, is_port_in_use
 
 class SilentHTTPRequestHandler(SimpleHTTPRequestHandler):
     """静默的HTTP请求处理器(不输出访问日志)"""
+    
+    # 类变量,存储服务器根目录
+    server_root = None
 
     def log_message(self, format, *args):
         """覆盖log_message方法,禁止输出日志"""
         pass
+    
+    def translate_path(self, path):
+        """重写路径转换方法,使用指定的根目录"""
+        # 调用父类方法获取路径
+        path = super().translate_path(path)
+        
+        # 如果设置了server_root,则将路径重定向到该目录
+        if self.server_root:
+            # 获取相对路径
+            relpath = os.path.relpath(path, os.getcwd())
+            # 构建新的绝对路径
+            path = os.path.join(self.server_root, relpath)
+        
+        return path
 
 
 class LocalHTTPServer:
@@ -61,11 +78,9 @@ class LocalHTTPServer:
             else:
                 return False
 
-        # 切换到根目录
-        original_dir = os.getcwd()
-
         try:
-            os.chdir(self.root_dir)
+            # 设置请求处理器的服务器根目录
+            SilentHTTPRequestHandler.server_root = str(self.root_dir)
 
             # 创建服务器
             self.server = HTTPServer(('localhost', self.port), SilentHTTPRequestHandler)
@@ -83,8 +98,6 @@ class LocalHTTPServer:
         except Exception as e:
             print(f"启动HTTP服务器失败: {e}")
             return False
-        finally:
-            os.chdir(original_dir)
 
     def _run_server(self):
         """在后台运行服务器"""

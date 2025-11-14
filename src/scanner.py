@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import List, Set
 from dataclasses import dataclass
 import fnmatch
+from urllib.parse import quote
 
 
 @dataclass
@@ -159,7 +160,11 @@ class FileScanner:
 
             # 转换为URL路径(使用正斜杠)
             url_path = str(rel_path).replace('\\', '/')
-            url = f"{base_url.rstrip('/')}/{url_path}"
+            # URL编码路径（特别是中文和特殊字符）
+            # 对路径的每个部分分别编码，保留斜杠
+            encoded_parts = [quote(part, safe='') for part in url_path.split('/')]
+            encoded_path = '/'.join(encoded_parts)
+            url = f"{base_url.rstrip('/')}/{encoded_path}"
         else:
             # 使用file://协议
             url = html_path.as_uri()
