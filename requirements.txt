@@ -1,6 +1,8 @@
 # Core Dependencies
 playwright==1.40.0
 pyyaml==6.0.2
+beautifulsoup4==4.14.2
+lxml==6.0.2
 
 # Progress & Logging
 tqdm==4.67.1
