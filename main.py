@@ -79,6 +79,12 @@ def parse_args():
     )
 
     parser.add_argument(
+        '--reuse-from',
+        help='复用指定目录的MD5缓存(增量转换)',
+        type=str
+    )
+
+    parser.add_argument(
         '--dry-run',
         help='只扫描不转换(预览模式)',
         action='store_true'
@@ -129,6 +135,9 @@ def load_config(args) -> Config:
 
     if args.overwrite:
         config.output.overwrite = True
+
+    if args.reuse_from:
+        config.output.reuse_from = args.reuse_from
 
     if args.debug:
         config.logging.level = "DEBUG"
@@ -215,6 +224,23 @@ def main():
         # 执行批量处理
         processor = BatchProcessor(config, tasks, logger)
         stats = processor.process()
+
+        # 保存MD5缓存（无论是否复用都要保存）
+        logger.info("正在保存MD5缓存...")
+        for task in tasks:
+            # 计算相对路径
+            try:
+                rel_path = task.html_path.relative_to(Path(config.input.directory).resolve())
+            except ValueError:
+                rel_path = Path(task.html_path.name)
+
+            # 保存MD5
+            scanner.md5_cache.set_md5(str(rel_path), task.md5)
+
+        if scanner.md5_cache.save_cache():
+            logger.info(f"✓ MD5缓存已保存: {scanner.md5_cache.cache_file}")
+        else:
+            logger.warning("MD5缓存保存失败")
 
         # 返回码: 如果有失败的,返回1
         return 0 if stats.failed == 0 else 1

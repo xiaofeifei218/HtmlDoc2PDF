@@ -4,6 +4,7 @@
 """
 
 import time
+import shutil
 import multiprocessing as mp
 from pathlib import Path
 from typing import List
@@ -69,21 +70,36 @@ class BatchProcessor:
             self.logger.warning("没有要处理的任务")
             return self.stats
 
+        # 分离跳过的任务和需要转换的任务
+        tasks_to_skip = [t for t in self.tasks if t.skip]
+        tasks_to_convert = [t for t in self.tasks if not t.skip]
+
         self.logger.info(f"开始处理 {len(self.tasks)} 个文件...")
+        if tasks_to_skip:
+            self.logger.info(f"  - 需要转换: {len(tasks_to_convert)} 个")
+            self.logger.info(f"  - 跳过(未变化): {len(tasks_to_skip)} 个")
         self.logger.info(f"并发进程数: {self.config.processing.workers}")
 
         start_time = time.time()
 
-        # 根据workers数量选择处理方式
-        if self.config.processing.workers == 1:
-            # 单进程处理(便于调试)
-            results = self._process_sequential()
-        else:
-            # 多进程处理
-            results = self._process_parallel()
+        # 处理跳过的任务（复制PDF）
+        if tasks_to_skip:
+            self._handle_skipped_tasks(tasks_to_skip)
+            self.stats.skipped = len(tasks_to_skip)
 
-        # 统计结果
-        self._collect_stats(results)
+        # 处理需要转换的任务
+        results = []
+        if tasks_to_convert:
+            # 根据workers数量选择处理方式
+            if self.config.processing.workers == 1:
+                # 单进程处理(便于调试)
+                results = self._process_sequential(tasks_to_convert)
+            else:
+                # 多进程处理
+                results = self._process_parallel(tasks_to_convert)
+
+            # 统计结果
+            self._collect_stats(results)
 
         # 总耗时
         total_time = time.time() - start_time
@@ -93,21 +109,53 @@ class BatchProcessor:
         self.logger.info("处理完成!")
         self.logger.info(f"总数: {self.stats.total}")
         self.logger.info(f"成功: {self.stats.success}")
+        self.logger.info(f"跳过: {self.stats.skipped}")
         self.logger.info(f"失败: {self.stats.failed}")
-        self.logger.info(f"成功率: {self.stats.success_rate():.1f}%")
+        if tasks_to_convert:
+            self.logger.info(f"成功率: {self.stats.success_rate():.1f}%")
         self.logger.info(f"总PDF大小: {format_size(self.stats.total_size)}")
         self.logger.info(f"总耗时: {format_duration(total_time)}")
-        self.logger.info(f"平均耗时: {format_duration(self.stats.avg_duration())}/文件")
+        if self.stats.success > 0:
+            self.logger.info(f"平均耗时: {format_duration(self.stats.avg_duration())}/文件")
         self.logger.info("=" * 50)
 
         return self.stats
 
-    def _process_sequential(self) -> List[ConversionResult]:
+    def _handle_skipped_tasks(self, tasks: List[FileTask]):
+        """
+        处理跳过的任务（复制PDF文件）
+
+        Args:
+            tasks: 跳过的任务列表
+        """
+        reuse_dir = Path(self.config.output.reuse_from)
+
+        self.logger.info("正在复制未变化的PDF文件...")
+        for task in tqdm(tasks, desc="复制进度"):
+            try:
+                # 计算源PDF路径（在复用目录中）
+                rel_path = task.html_path.relative_to(Path(self.config.input.directory).resolve())
+                source_pdf = reuse_dir / rel_path.with_suffix('.pdf')
+
+                # 确保目标目录存在
+                task.pdf_path.parent.mkdir(parents=True, exist_ok=True)
+
+                # 复制PDF文件
+                shutil.copy2(source_pdf, task.pdf_path)
+
+                # 更新统计
+                if task.pdf_path.exists():
+                    self.stats.total_size += task.pdf_path.stat().st_size
+
+            except Exception as e:
+                self.logger.warning(f"复制PDF失败: {task.html_path.name}, 错误: {e}")
+
+    def _process_sequential(self, tasks: List[FileTask]) -> List[ConversionResult]:
         """顺序处理(单进程)"""
         results = []
 
-        with tqdm(total=len(self.tasks), desc="转换进度") as pbar:
-            for task in self.tasks:
+        with tqdm(total=len(tasks), desc="转换进度") as pbar:
+            for task in tasks:
                 result = self._process_single_task(task)
                 results.append(result)
 
@@ -122,7 +170,7 @@ class BatchProcessor:
 
         return results
 
-    def _process_parallel(self) -> List[ConversionResult]:
+    def _process_parallel(self, tasks: List[FileTask]) -> List[ConversionResult]:
         """并行处理(多进程)"""
         results = []
 
@@ -134,12 +182,12 @@ class BatchProcessor:
         ) as pool:
             # 提交所有任务
             async_results = []
-            for task in self.tasks:
+            for task in tasks:
                 async_result = pool.apply_async(_worker_process, (task,))
                 async_results.append((task, async_result))
 
             # 收集结果(带进度条)
-            with tqdm(total=len(self.tasks), desc="转换进度") as pbar:
+            with tqdm(total=len(tasks), desc="转换进度") as pbar:
                 for task, async_result in async_results:
                     try:
                         result = async_result.get(timeout=self.config.browser.timeout / 1000 + 10)
