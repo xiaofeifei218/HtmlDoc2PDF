@@ -15,26 +15,38 @@ from src.utils import find_available_port, is_port_in_use
 
 class SilentHTTPRequestHandler(SimpleHTTPRequestHandler):
     """静默的HTTP请求处理器(不输出访问日志)"""
-    
+
     # 类变量,存储服务器根目录
     server_root = None
 
     def log_message(self, format, *args):
         """覆盖log_message方法,禁止输出日志"""
         pass
-    
+
+    def handle(self):
+        """处理请求,捕获并静默处理连接错误"""
+        try:
+            super().handle()
+        except (ConnectionAbortedError, ConnectionResetError, BrokenPipeError):
+            # 客户端主动断开连接(如Chrome/Playwright加载完资源后关闭连接)
+            # 这是正常行为,静默处理
+            pass
+        except Exception:
+            # 其他未预期的错误也静默处理,避免打断主程序
+            pass
+
     def translate_path(self, path):
         """重写路径转换方法,使用指定的根目录"""
         # 调用父类方法获取路径
         path = super().translate_path(path)
-        
+
         # 如果设置了server_root,则将路径重定向到该目录
         if self.server_root:
             # 获取相对路径
             relpath = os.path.relpath(path, os.getcwd())
             # 构建新的绝对路径
             path = os.path.join(self.server_root, relpath)
-        
+
         return path
 
 
