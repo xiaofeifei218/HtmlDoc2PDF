@@ -31,6 +31,9 @@ def parse_args():
   # 自定义参数
   python main.py -i ./docs -o ./pdfs -w 8 --port 8000
 
+  # 平铺模式(所有PDF输出到同一文件夹)
+  python main.py -i ./docs -o ./pdfs --flat-output
+
   # 只扫描不转换(预览)
   python main.py -i ./docs --dry-run
         """
@@ -96,6 +99,12 @@ def parse_args():
         action='store_true'
     )
 
+    parser.add_argument(
+        '--flat-output',
+        help='忽略目录结构,所有PDF输出到同一文件夹(平铺模式)',
+        action='store_true'
+    )
+
     return parser.parse_args()
 
 
@@ -138,6 +147,9 @@ def load_config(args) -> Config:
 
     if args.reuse_from:
         config.output.reuse_from = args.reuse_from
+
+    if args.flat_output:
+        config.output.keep_structure = False
 
     if args.debug:
         config.logging.level = "DEBUG"
