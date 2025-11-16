@@ -79,8 +79,8 @@ class MetadataExtractor:
             PDF文件名，如 "db_distr_comp-cfg-cluster.pdf"
         """
         # 移除.html后缀，替换路径分隔符为连字符
-        pdf_name = relative_html_path.replace('.html', '').replace('/', '-').replace('\\', '-')
-        return f"{pdf_name}.pdf"
+        pdf_name = relative_html_path.replace('.html', '.pdf')
+        return pdf_name
 
     def extract_metadata(self, html_path: Path) -> Optional[Dict]:
         """
@@ -120,15 +120,12 @@ class MetadataExtractor:
 
             # 构建元数据
             metadata = {
-                "pdf_path": str(pdf_path),
-                "pdf_filename": pdf_filename,
-                "source_html": relative_path_str,
                 "title": title,
+                "pdf_filename": pdf_filename,
                 "category_level1": path_parts[0] if len(path_parts) > 0 else "",
                 "category_level2": path_parts[1] if len(path_parts) > 1 else "",
                 "category_level3": path_parts[2] if len(path_parts) > 2 else "",
-                "breadcrumb": title,  # 简化版：只用当前标题
-                "path_depth": len(path_parts),
+                # "path_depth": len(path_parts),
             }
 
             return metadata
