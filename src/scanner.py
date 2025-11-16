@@ -91,6 +91,9 @@ class FileScanner:
         # 排序(按路径)
         tasks.sort(key=lambda t: str(t.html_path))
 
+        # 解决平铺模式下的路径冲突
+        tasks = self._resolve_path_conflicts(tasks)
+
         return tasks
 
     def _collect_html_files(self) -> Set[Path]:
@@ -167,8 +170,23 @@ class FileScanner:
 
             pdf_path = self.output_dir / rel_path.with_suffix('.pdf')
         else:
-            # 平铺
-            pdf_path = self.output_dir / html_path.with_suffix('.pdf').name
+            # 平铺 - 使用路径前缀避免同名文件冲突
+            try:
+                rel_path = html_path.relative_to(self.input_dir)
+            except ValueError:
+                rel_path = Path(html_path.name)
+
+            # 将路径转换为带前缀的文件名
+            # 例如: docs/api/index.html -> docs_api_index.pdf
+            path_parts = rel_path.with_suffix('.pdf').parts
+            if len(path_parts) > 1:
+                # 有目录结构,用下划线连接所有部分
+                flat_name = '_'.join(path_parts)
+            else:
+                # 只有文件名
+                flat_name = path_parts[0]
+
+            pdf_path = self.output_dir / flat_name
 
         return pdf_path
 
@@ -216,6 +234,61 @@ class FileScanner:
             md5=md5,
             skip=skip
         )
+
+    def _resolve_path_conflicts(self, tasks: List[FileTask]) -> List[FileTask]:
+        """解决平铺模式下的PDF路径冲突
+
+        当多个HTML文件映射到同一个PDF路径时,为后续文件添加数字后缀
+        例如: page.pdf, page_1.pdf, page_2.pdf
+        """
+        if self.config.output.keep_structure:
+            # 保持结构模式不需要处理冲突
+            return tasks
+
+        # 按PDF路径分组
+        path_groups = {}
+        for task in tasks:
+            pdf_path_str = str(task.pdf_path)
+            if pdf_path_str not in path_groups:
+                path_groups[pdf_path_str] = []
+            path_groups[pdf_path_str].append(task)
+
+        # 处理冲突的路径
+        resolved_tasks = []
+        for pdf_path_str, task_group in path_groups.items():
+            if len(task_group) == 1:
+                # 没有冲突,直接添加
+                resolved_tasks.append(task_group[0])
+            else:
+                # 有冲突,为除了第一个之外的所有任务添加数字后缀
+                for i, task in enumerate(task_group):
+                    if i == 0:
+                        # 第一个任务保持原样
+                        resolved_tasks.append(task)
+                    else:
+                        # 后续任务添加数字后缀
+                        stem = task.pdf_path.stem
+                        suffix = task.pdf_path.suffix
+                        parent = task.pdf_path.parent
+
+                        new_name = f"{stem}_{i}{suffix}"
+                        new_pdf_path = parent / new_name
+
+                        # 创建新的 FileTask (保持其他字段不变)
+                        new_task = FileTask(
+                            html_path=task.html_path,
+                            pdf_path=new_pdf_path,
+                            url=task.url,
+                            priority=task.priority,
+                            skip=task.skip,
+                            md5=task.md5
+                        )
+                        resolved_tasks.append(new_task)
+
+        # 重新排序
+        resolved_tasks.sort(key=lambda t: str(t.html_path))
+
+        return resolved_tasks
 
 
 if __name__ == "__main__":

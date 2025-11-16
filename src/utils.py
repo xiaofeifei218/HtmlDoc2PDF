@@ -81,8 +81,20 @@ def build_output_path(
         rel_path = get_relative_path(html_path, input_dir)
         pdf_path = output_dir / rel_path.with_suffix('.pdf')
     else:
-        # 平铺在输出目录
-        pdf_path = output_dir / html_path.with_suffix('.pdf').name
+        # 平铺 - 使用路径前缀避免同名文件冲突
+        rel_path = get_relative_path(html_path, input_dir)
+
+        # 将路径转换为带前缀的文件名
+        # 例如: docs/api/index.html -> docs_api_index.pdf
+        path_parts = rel_path.with_suffix('.pdf').parts
+        if len(path_parts) > 1:
+            # 有目录结构,用下划线连接所有部分
+            flat_name = '_'.join(path_parts)
+        else:
+            # 只有文件名
+            flat_name = path_parts[0]
+
+        pdf_path = output_dir / flat_name
 
     # 确保父目录存在
     pdf_path.parent.mkdir(parents=True, exist_ok=True)
