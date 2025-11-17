@@ -109,10 +109,6 @@ class MetadataExtractor:
             # 生成PDF文件名和路径
             pdf_filename = self.generate_pdf_filename(relative_path_str)
 
-            # PDF路径可能在多级子目录中，保持与HTML相同的目录结构
-            pdf_relative_path = str(relative_path).replace('.html', '.pdf')
-            pdf_path = self.pdf_output_dir / pdf_relative_path
-
             # 提取标题
             title = self.extract_title_from_html(html_path)
             if not title:
@@ -128,7 +124,6 @@ class MetadataExtractor:
                 "category_level3": path_parts[2] if len(path_parts) > 2 else "",
                 # "path_depth": len(path_parts),
             }
-
             return metadata
 
         except Exception as e:
@@ -187,7 +182,7 @@ class MetadataExtractor:
             metadata = self.extract_metadata(html_file)
             if metadata:
                 # 使用PDF文件名作为key
-                metadata_collection["documents"][metadata["name"]] = metadata
+                metadata_collection["documents"][metadata["path"].replace('/', '_')] = metadata
                 success_count += 1
                 print("✓")
             else:
@@ -249,11 +244,6 @@ def main():
         help='PDF输出目录'
     )
 
-    parser.add_argument(
-        '-o', '--output',
-        default='metadata.json',
-        help='输出JSON文件路径 (默认: metadata.json)'
-    )
 
     parser.add_argument(
         '--extensions',
@@ -272,7 +262,7 @@ def main():
 
     # 执行生成
     success = extractor.scan_and_generate(
-        output_json=args.output,
+        output_json=args.pdf_dir+"/metadata.json",
         file_extensions=args.extensions
     )
 
