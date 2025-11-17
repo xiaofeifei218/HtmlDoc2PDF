@@ -121,7 +121,8 @@ class MetadataExtractor:
             # 构建元数据
             metadata = {
                 "title": title,
-                "pdf_filename": pdf_filename,
+                'name':path_parts[-1],
+                "path": pdf_filename,
                 "category_level1": path_parts[0] if len(path_parts) > 0 else "",
                 "category_level2": path_parts[1] if len(path_parts) > 1 else "",
                 "category_level3": path_parts[2] if len(path_parts) > 2 else "",
@@ -186,7 +187,7 @@ class MetadataExtractor:
             metadata = self.extract_metadata(html_file)
             if metadata:
                 # 使用PDF文件名作为key
-                metadata_collection["documents"][metadata["pdf_filename"]] = metadata
+                metadata_collection["documents"][metadata["name"]] = metadata
                 success_count += 1
                 print("✓")
             else:
